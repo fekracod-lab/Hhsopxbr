@@ -1,0 +1,3205 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "مسجد الهدئ",
+        "id": 1765453905290,
+        "type": "Point",
+        "category": "mosque"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          40.97105874788873,
+          34.38871285296532
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "مجمع السكك",
+        "id": 1765453919827,
+        "type": "Point",
+        "category": "residential"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          40.974643983947864,
+          34.38861809265995
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "جامع السكك",
+        "id": 1765453937762,
+        "type": "Point",
+        "category": "mosque"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          40.97607297483264,
+          34.386596513926214
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "مشروع ماء السكك القديم",
+        "id": 1765453961066,
+        "type": "Point",
+        "category": "water"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          40.97452914214245,
+          34.38585947418858
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "جامع الرحمن",
+        "id": 1765453977594,
+        "type": "Point",
+        "category": "mosque"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          40.97941576564552,
+          34.38977626111626
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "حي 7 نيسان",
+        "id": 1765453993276,
+        "type": "Point",
+        "category": "residential"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          40.97945140466603,
+          34.39330327137503
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "جامع علي بن ابي طالب",
+        "id": 1765454018050,
+        "type": "Point",
+        "category": "mosque"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          40.98126457792508,
+          34.39402037882576
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "السوق",
+        "id": 1765454041154,
+        "type": "Point",
+        "category": "market"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          40.98183320622733,
+          34.3967116900954
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "محطة القائم الحدوديه",
+        "id": 1765454063539,
+        "type": "Point",
+        "category": "government"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          40.98363565070572,
+          34.39684448283348
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "محكمة القائم",
+        "id": 1765454079874,
+        "type": "Point",
+        "category": "government"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          40.98395707515297,
+          34.39708225181671
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "مركز الشرطه",
+        "id": 1765454105162,
+        "type": "Point",
+        "category": "government"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          40.98481633277004,
+          34.396776092336744
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "عيادة الدكتور كريم بردان",
+        "id": 1765454128666,
+        "type": "Point",
+        "category": "hospital"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          40.986131265910686,
+          34.39683564694706
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "مركز ماء القائم",
+        "id": 1765454151882,
+        "type": "Point",
+        "category": "water"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          40.985872786673944,
+          34.396241315261896
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "كراج القائم القديم",
+        "id": 1765454172538,
+        "type": "Point",
+        "category": "commercial"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          40.98653470292748,
+          34.396649775946344
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "مجمع الاميره التجاري",
+        "id": 1765454202778,
+        "type": "Point",
+        "category": "commercial"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          40.98453164475596,
+          34.39502773868787
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "جامع القوزي",
+        "id": 1765454220242,
+        "type": "Point",
+        "category": "mosque"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          40.98553119361561,
+          34.39525685836071
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "كوفي ارشد",
+        "id": 1765454243562,
+        "type": "Point",
+        "category": "restaurant"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          40.986421687016964,
+          34.39665340890648
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "مكتب البركه للبيع جمله",
+        "id": 1765454280106,
+        "type": "Point",
+        "category": "commercial"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          40.986687225711506,
+          34.395332108902714
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "محل هويدي",
+        "id": 1765454303818,
+        "type": "Point",
+        "category": "market"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          40.983416623350244,
+          34.392685915286265
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "جامع حسن العداي",
+        "id": 1765454320786,
+        "type": "Point",
+        "category": "mosque"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          40.98481500850334,
+          34.39210150489075
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "مسجد النور",
+        "id": 1765454342539,
+        "type": "Point",
+        "category": "mosque"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          40.98233909169119,
+          34.39087234992634
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "مدرسة الجوه الناضره",
+        "id": 1765454360082,
+        "type": "Point",
+        "category": "school"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          40.985075855991184,
+          34.39032486026781
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "مسجد محمد الفاتح",
+        "id": 1765454384050,
+        "type": "Point",
+        "category": "mosque"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          40.98593702035092,
+          34.38663331682283
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "جامع غزوة حنين",
+        "id": 1765454407602,
+        "type": "Point",
+        "category": "mosque"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          40.99000969146802,
+          34.38602299328366
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "مجمع الرشاد التجاري",
+        "id": 1765454430610,
+        "type": "Point",
+        "category": "commercial"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          40.99208078763757,
+          34.38686192467114
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "مركز القائم الصحي",
+        "id": 1765454449562,
+        "type": "Point",
+        "category": "hospital"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          40.994091192307266,
+          34.387237562863106
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "كراج السيد رياض",
+        "id": 1765454476505,
+        "type": "Point",
+        "category": "commercial"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          41.00048655505597,
+          34.38519657505186
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "اسواق شتوان",
+        "id": 1765454492250,
+        "type": "Point",
+        "category": "market"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          40.999060305727575,
+          34.388358206799886
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "ملعب الشباب",
+        "id": 1765454508418,
+        "type": "Point",
+        "category": "sports"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          40.9997546279801,
+          34.39039794978906
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "جامع المحسنين",
+        "id": 1765454524722,
+        "type": "Point",
+        "category": "mosque"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          40.99684561974299,
+          34.389324018316124
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "دائرة بلدية القائم",
+        "id": 1765454550801,
+        "type": "Point",
+        "category": "government"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          40.99946083592914,
+          34.39224479269172
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "مدرسة الامام الزهري الابتدائية",
+        "id": 1765454575489,
+        "type": "Point",
+        "category": "school"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          40.99779630652018,
+          34.39188000006379
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "محطة القمه",
+        "id": 1765454604721,
+        "type": "Point",
+        "category": "transport"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          40.99877435229463,
+          34.39300304251978
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "مخبز العائله",
+        "id": 1765454634601,
+        "type": "Point",
+        "category": "commercial"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          40.998102232793215,
+          34.39419731243009
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "مستشفى القائم العام",
+        "id": 1765454658817,
+        "type": "Point",
+        "category": "hospital"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          41.001309496801376,
+          34.39447648289849
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "متوسطة الام للبنات",
+        "id": 1765454680249,
+        "type": "Point",
+        "category": "school"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          40.999550238078626,
+          34.394714707614725
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "معرض الباديه للسيراميك",
+        "id": 1765454728441,
+        "type": "Point",
+        "category": "market"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          41.00255489440884,
+          34.395112794153135
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "اسواق خليل كاظم",
+        "id": 1765454746649,
+        "type": "Point",
+        "category": "market"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          41.00213915201975,
+          34.39517033879117
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "مطعم تنور المندي",
+        "id": 1765454762081,
+        "type": "Point",
+        "category": "restaurant"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          41.00167512985907,
+          34.39522567013798
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "مطعم البوكمال",
+        "id": 1765454779257,
+        "type": "Point",
+        "category": "restaurant"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          40.99954545591001,
+          34.39562184150969
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "مطعم الميزان",
+        "id": 1765454791985,
+        "type": "Point",
+        "category": "restaurant"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          40.99899828526723,
+          34.39569266524485
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "مطعم الباديه",
+        "id": 1765454807713,
+        "type": "Point",
+        "category": "restaurant"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          40.99709525797729,
+          34.395771235259694
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "جامع عائشه خاتون",
+        "id": 1765454824609,
+        "type": "Point",
+        "category": "mosque"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          40.99578231667108,
+          34.39577676835742
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "حديقة القائم",
+        "id": 1765454839225,
+        "type": "Point",
+        "category": "park"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          40.996157825909144,
+          34.3963732340156
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "اعدادية القائم للبنين",
+        "id": 1765454858489,
+        "type": "Point",
+        "category": "school"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          40.99508896562474,
+          34.39563733421525
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "مطعم مندي الملكي",
+        "id": 1765454885633,
+        "type": "Point",
+        "category": "restaurant"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          40.99353958958505,
+          34.396932147099434
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "مكتب بريد القائم",
+        "id": 1765454903337,
+        "type": "Point",
+        "category": "government"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          40.99311781856265,
+          34.39641104346055
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "سوق القصابين",
+        "id": 1765454915801,
+        "type": "Point",
+        "category": "market"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          40.99311105218295,
+          34.396431515450516
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "مكتب بريد القائم",
+        "id": 1765454932144,
+        "type": "Point",
+        "category": "government"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          40.992996023728004,
+          34.3966883454446
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "الروية التقنيه",
+        "id": 1765454947273,
+        "type": "Point",
+        "category": "school"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          40.99292476638167,
+          34.39632751016334
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "مطبعة الوان القائم",
+        "id": 1765454961729,
+        "type": "Point",
+        "category": "commercial"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          40.99253216848754,
+          34.3967312754899
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "انشائية عثمان فرع 2",
+        "id": 1765454976833,
+        "type": "Point",
+        "category": "commercial"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          40.9924183719988,
+          34.3966217269505
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "معرض الاقصى",
+        "id": 1765455000609,
+        "type": "Point",
+        "category": "market"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          40.992264746731564,
+          34.39683769393445
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "جامع السنبل",
+        "id": 1765455015168,
+        "type": "Point",
+        "category": "mosque"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          40.99219073276395,
+          34.3970591402705
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "ارض الطاقة لتجارة المواد الكهربائية",
+        "id": 1765455032849,
+        "type": "Point",
+        "category": "market"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          40.992357759258056,
+          34.39714434675646
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "معرض آثاث اليمامه",
+        "id": 1765455052848,
+        "type": "Point",
+        "category": "market"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          40.99210514774912,
+          34.3973006768195
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "نجارة عمر زهدي الراوي",
+        "id": 1765455069664,
+        "type": "Point",
+        "category": "commercial"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          40.991613457490715,
+          34.397268108080446
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "معرض الليث للأجهزة الكهربائيه",
+        "id": 1765455092112,
+        "type": "Point",
+        "category": "market"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          40.99180950672614,
+          34.39663563708187
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "سوق الخضروات (جملون الخضره)",
+        "id": 1765455110928,
+        "type": "Point",
+        "category": "market"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          40.99155469686731,
+          34.39666883531183
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "كافي رويال ونز",
+        "id": 1765455132616,
+        "type": "Point",
+        "category": "restaurant"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          40.991557543582694,
+          34.396434974389514
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "حلويات بيت رحوم 1",
+        "id": 1765455161136,
+        "type": "Point",
+        "category": "restaurant"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          40.99104857469136,
+          34.39637374411752
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "السدن",
+        "id": 1765455196184,
+        "type": "Point",
+        "category": "market"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          40.9907280507134,
+          34.396584000012574
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "ازياء ابو حافظ",
+        "id": 1765455223448,
+        "type": "Point",
+        "category": "market"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          40.990714639666194,
+          34.39688721021884
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "كوخ قدوري للألبسة الرجاليه",
+        "id": 1765455244744,
+        "type": "Point",
+        "category": "market"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          40.99091848754941,
+          34.39703770830737
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "مركز الراوي لصيانة الجوالات",
+        "id": 1765455286144,
+        "type": "Point",
+        "category": "commercial"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          40.98997897572695,
+          34.396411493547085
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "ماكولات شام",
+        "id": 1765455315055,
+        "type": "Point",
+        "category": "restaurant"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          40.9895030736701,
+          34.39636682737385
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "مطعم چكن تايم",
+        "id": 1765455333472,
+        "type": "Point",
+        "category": "restaurant"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          40.990378192111685,
+          34.396686934449406
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "الجامع القائم الكبير",
+        "id": 1765455359927,
+        "type": "Point",
+        "category": "mosque"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          40.98932940324552,
+          34.39663668516364
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "محلات المفتي",
+        "id": 1765455392255,
+        "type": "Point",
+        "category": "market"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          40.988987440178335,
+          34.39675151088782
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "مصور عمار",
+        "id": 1765455416263,
+        "type": "Point",
+        "category": "commercial"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          40.987234947808936,
+          34.396584013281334
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "قيصرية الخياطين",
+        "id": 1765455441591,
+        "type": "Point",
+        "category": "commercial"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          40.98806532929859,
+          34.39578923094777
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "اسواق سامي ابو احمد",
+        "id": 1765455460439,
+        "type": "Point",
+        "category": "market"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          40.98728066260406,
+          34.395573406781445
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "ختام باتريات",
+        "id": 1765455479423,
+        "type": "Point",
+        "category": "commercial"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          40.98641146880459,
+          34.39521150525082
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "شركة فرات التركيه 🇹🇷",
+        "id": 1765455543231,
+        "type": "Point",
+        "category": "commercial"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          40.98564927764246,
+          34.39797375537039
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "شركة كالدي التركيه",
+        "id": 1765455559847,
+        "type": "Point",
+        "category": "commercial"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          40.98591542191077,
+          34.39846507257281
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "علوة خضار القائم",
+        "id": 1765455577799,
+        "type": "Point",
+        "category": "market"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          40.98435013273406,
+          34.398636288511824
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "مجمع الرازي الطبي",
+        "id": 1765455597655,
+        "type": "Point",
+        "category": "hospital"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          40.98779201695284,
+          34.398214881395226
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "مجمع د.لمعان العاني الطبي",
+        "id": 1765455613255,
+        "type": "Point",
+        "category": "hospital"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          40.98865032384834,
+          34.39861103861
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "مختبر علاء للتحليلات المرضية",
+        "id": 1765455627895,
+        "type": "Point",
+        "category": "hospital"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          40.988607408504954,
+          34.398489314525946
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "مركز سمايل لطب الاسنان",
+        "id": 1765455644807,
+        "type": "Point",
+        "category": "hospital"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          40.98909526401709,
+          34.39789377338379
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "صيدليه سما الكندي",
+        "id": 1765455660583,
+        "type": "Point",
+        "category": "hospital"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          40.99004481265034,
+          34.39803521361525
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "قرطاسيه ديار الامل.",
+        "id": 1765455675191,
+        "type": "Point",
+        "category": "commercial"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          40.990101199157266,
+          34.39827715030123
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "مجمع الشام الطبي",
+        "id": 1765455689991,
+        "type": "Point",
+        "category": "hospital"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          40.990326745147364,
+          34.398630748811954
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "مجمع روز الطبي",
+        "id": 1765455709559,
+        "type": "Point",
+        "category": "hospital"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          40.99038313164968,
+          34.398319954414355
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "مجمع نبض الحياه",
+        "id": 1765455729551,
+        "type": "Point",
+        "category": "hospital"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          40.99068310781692,
+          34.39858980590845
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "معرض المتحدة لتجارة المواد الكهربائية",
+        "id": 1765455755807,
+        "type": "Point",
+        "category": "market"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          40.99260024877083,
+          34.39749550617774
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "شركة عواد الفهيم لتجارة المواد الكهربائية",
+        "id": 1765455771839,
+        "type": "Point",
+        "category": "commercial"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          40.993186668362036,
+          34.398204569361745
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "مدرسة الظفر الابتدائيه",
+        "id": 1765455795847,
+        "type": "Point",
+        "category": "school"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          40.99536684589365,
+          34.3983462233934
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "كراج البلدية",
+        "id": 1765455813655,
+        "type": "Point",
+        "category": "commercial"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          40.995759340001285,
+          34.396917645122564
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "ثانوية الرحاب للبنات المكان الجديد",
+        "id": 1765455829119,
+        "type": "Point",
+        "category": "school"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          40.99662798655945,
+          34.39684252630336
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "معهد المجد للتطوير التربوي والمهني",
+        "id": 1765455860455,
+        "type": "Point",
+        "category": "school"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          40.998933676183206,
+          34.396970535353944
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "جامع الرسالة",
+        "id": 1765455878519,
+        "type": "Point",
+        "category": "mosque"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          41.002529234640186,
+          34.396323862361385
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "دجاج حجي ياسين الشهير",
+        "id": 1765455917655,
+        "type": "Point",
+        "category": "restaurant"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          41.005029826867236,
+          34.39497253651407
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "HUMMER GYM",
+        "id": 1765455939112,
+        "type": "Point",
+        "category": "sports"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          41.006245031020136,
+          34.394508754852296
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "قصر الاميرة للاثاث",
+        "id": 1765455957814,
+        "type": "Point",
+        "category": "market"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          41.00667418446773,
+          34.39433501281076
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "معرض البادية 2",
+        "id": 1765455972750,
+        "type": "Point",
+        "category": "market"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          41.006985320717924,
+          34.39413249774831
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "دائرة مرور القائم",
+        "id": 1765455988814,
+        "type": "Point",
+        "category": "government"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          41.007757796909445,
+          34.39380493136643
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "جنسية والأحوال المدنية القائم",
+        "id": 1765456005654,
+        "type": "Point",
+        "category": "government"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          41.00803942885484,
+          34.39350724324185
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "دفاع المدني القائم",
+        "id": 1765456021767,
+        "type": "Point",
+        "category": "government"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          41.00871802773388,
+          34.393195167560485
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "مركز شرطة القائم",
+        "id": 1765456037382,
+        "type": "Point",
+        "category": "government"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          41.00927995052381,
+          34.392888624004414
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "نافورة مدخل القائم",
+        "id": 1765456062806,
+        "type": "Point",
+        "category": "landmark"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          41.010691477828445,
+          34.39089925209439
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "معرض الشارقة للادوات الاحتياطية",
+        "id": 1765456086007,
+        "type": "Point",
+        "category": "market"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          41.01198770705996,
+          34.394076912564884
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "معمل غاز القائم الاهلي",
+        "id": 1765456102367,
+        "type": "Point",
+        "category": "commercial"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          41.01067036012881,
+          34.394634905845614
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "مركز القائم للمشروبات الغازية",
+        "id": 1765456121630,
+        "type": "Point",
+        "category": "commercial"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          41.008150495528696,
+          34.3962983353918
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "مشتل القائم المركزي",
+        "id": 1765456139854,
+        "type": "Point",
+        "category": "commercial"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          41.00834506734079,
+          34.396751035177346
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "ملعب احمد راضي",
+        "id": 1765456158422,
+        "type": "Point",
+        "category": "sports"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          41.007097893844495,
+          34.39744323999821
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "معرض السلام لبيع وشراء السيارات",
+        "id": 1765456176550,
+        "type": "Point",
+        "category": "commercial"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          41.00555407804092,
+          34.39785645460986
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "مجمع البركة التجاري",
+        "id": 1765456191383,
+        "type": "Point",
+        "category": "commercial"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          41.00507562274372,
+          34.39812491140427
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "مركز USA لعنايه السيارات",
+        "id": 1765456209062,
+        "type": "Point",
+        "category": "commercial"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          41.00448552784935,
+          34.39787751008563
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "مجزرة و مشويات الطائي",
+        "id": 1765456232799,
+        "type": "Point",
+        "category": "restaurant"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          40.99757069587072,
+          34.39953349149591
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Cafe88",
+        "id": 1765456250806,
+        "type": "Point",
+        "category": "restaurant"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          40.994797261742505,
+          34.39978914356642
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "ملعب الأمير السباعي",
+        "id": 1765456267086,
+        "type": "Point",
+        "category": "sports"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          40.99479346851217,
+          34.399912772230465
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "قطرة حلا",
+        "id": 1765456287750,
+        "type": "Point",
+        "category": "commercial"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          40.99315479904591,
+          34.39913187419255
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "مجمع المصطفى الطبي",
+        "id": 1765456305887,
+        "type": "Point",
+        "category": "hospital"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          40.99236960325408,
+          34.39939947734715
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "مكان #115",
+        "id": 1765456315966,
+        "type": "Point",
+        "category": "commercial"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          40.99195033385811,
+          34.399035454777696
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "معمل مياه النبع الصافي",
+        "id": 1765456344238,
+        "type": "Point",
+        "category": "water"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          40.99058005954446,
+          34.39888583441258
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "مكان #117",
+        "id": 1765456354830,
+        "type": "Point",
+        "category": "commercial"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          40.98745824249084,
+          34.399261418646596
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "مول الأميرة",
+        "id": 1765456394206,
+        "type": "Point",
+        "category": "commercial"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          40.98484752973894,
+          34.40303039408237
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "مسبح الفرات",
+        "id": 1765456409462,
+        "type": "Point",
+        "category": "sports"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          40.9885135477441,
+          34.4007740064906
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "اسواق محمد",
+        "id": 1765456438326,
+        "type": "Point",
+        "category": "market"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          40.998459251603784,
+          34.40734259259514
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "السنجق (بساتين حصيبة)",
+        "id": 1765456457126,
+        "type": "Point",
+        "category": "residential"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          41.007954406460954,
+          34.41149255093117
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "مسجد ال رجا",
+        "id": 1765456475398,
+        "type": "Point",
+        "category": "mosque"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          41.01164389490308,
+          34.4066699954104
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "معمل بلوك الامين",
+        "category": "other",
+        "id": 1765541362135,
+        "type": "Point"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          41.0141590545255,
+          34.39240169145076
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "سوق القائم العصري الجديد",
+        "category": "market",
+        "id": 1765541393502,
+        "type": "Point"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          41.01217278867811,
+          34.39071525298247
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "معمل المنيوم الوليد",
+        "category": "other",
+        "id": 1765541431254,
+        "type": "Point"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          41.011548998782935,
+          34.38954788103323
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "جامع صلاح الدين",
+        "category": "mosque",
+        "id": 1765541457126,
+        "type": "Point"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          41.01172943776537,
+          34.388719125111415
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "الكراج الموحد",
+        "category": "commercial",
+        "id": 1765541497638,
+        "type": "Point"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          41.016565788953386,
+          34.38890694157456
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "اوركس للسيراميك",
+        "category": "commercial",
+        "id": 1765541515134,
+        "type": "Point"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          41.01764592024202,
+          34.38839027063588
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "ماركت السلطان",
+        "category": "commercial",
+        "id": 1765541531807,
+        "type": "Point"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          41.016877202045144,
+          34.38834815491714
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "مسجد الخليل",
+        "category": "commercial",
+        "id": 1765541549966,
+        "type": "Point"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          41.01832532676958,
+          34.38762428781218
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "جامع الحسن بن علي",
+        "category": "mosque",
+        "id": 1765541574878,
+        "type": "Point"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          41.02152140821947,
+          34.38672405163076
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "محل ضياء الحداد",
+        "category": "commercial",
+        "id": 1765541606894,
+        "type": "Point"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          41.021639427202814,
+          34.386868827104195
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "خدمات و محطة الشاكر",
+        "category": "commercial",
+        "id": 1765541627822,
+        "type": "Point"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          41.02413377419735,
+          34.386471352002616
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "مركز ابو لآرا العنايه بل سيارات",
+        "category": "commercial",
+        "id": 1765541646974,
+        "type": "Point"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          41.026162424695755,
+          34.38519468082964
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "مدرسة المكارم الإبتدائية",
+        "category": "school",
+        "id": 1765541668459,
+        "type": "Point"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          41.02662493148305,
+          34.38493144724256
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "ورشه كهربائي سيارات محمد",
+        "category": "commercial",
+        "id": 1765541688943,
+        "type": "Point"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          41.0280411592019,
+          34.38516835749946
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "مجمع الأصدقاء للزيوت والفلاتر",
+        "category": "commercial",
+        "id": 1765541710414,
+        "type": "Point"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          41.02970937336058,
+          34.38484194762208
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "معرض السنك للأدوات الاحتياطية وكماليات السيارات",
+        "category": "commercial",
+        "id": 1765541729221,
+        "type": "Point"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          41.03075878533424,
+          34.38447605116345
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "خدمات بغداد بنچر ودهن وتصفير فلنجات",
+        "category": "commercial",
+        "id": 1765541764222,
+        "type": "Point"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          41.03101077179077,
+          34.38422071240447
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "معرض عبدالله للادوات الاحتياطيه للسيارات",
+        "category": "commercial",
+        "id": 1765541779607,
+        "type": "Point"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          41.0302356742093,
+          34.38414174149659
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "ورشة احمد للمفاتيح والبرمجة",
+        "category": "commercial",
+        "id": 1765541796094,
+        "type": "Point"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          41.03121172303229,
+          34.38394168152382
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "محل الحاج عطا",
+        "category": "commercial",
+        "id": 1765541812781,
+        "type": "Point"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          41.032168633648915,
+          34.38405224103326
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "مركز الرعاية الصحية الاولية في الحي الصناعي",
+        "category": "hospital",
+        "id": 1765541837534,
+        "type": "Point"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          41.03469487765794,
+          34.383917990171774
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "جامع العدل",
+        "category": "mosque",
+        "id": 1765541863871,
+        "type": "Point"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          41.03559437363001,
+          34.38275447371009
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "مدرسهة عدن الابتدائيه للبنين",
+        "category": "school",
+        "id": 1765541882517,
+        "type": "Point"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          41.035811273377334,
+          34.38252018902565
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "محل الخطاط شهاب",
+        "category": "commercial",
+        "id": 1765541903237,
+        "type": "Point"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          41.037335950947686,
+          34.38289135883011
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "قصابه البركه",
+        "category": "commercial",
+        "id": 1765541918053,
+        "type": "Point"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          41.03797389136313,
+          34.38248070277112
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "مطعم البركه",
+        "category": "restaurant",
+        "id": 1765541944925,
+        "type": "Point"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          41.039042441544495,
+          34.38293874208988
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "جامع الهجرة",
+        "category": "mosque",
+        "id": 1765541965693,
+        "type": "Point"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          41.039929178709244,
+          34.383183555182804
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "ملعب العنقاء",
+        "category": "sports",
+        "id": 1765541994997,
+        "type": "Point"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          41.04298491327564,
+          34.38324936503638
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "ثانوية أويس القرني",
+        "category": "school",
+        "id": 1765542023005,
+        "type": "Point"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          41.04539132354034,
+          34.3819066129493
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "مدرسة العروبة الابتدائية و",
+        "category": "school",
+        "id": 1765542041733,
+        "type": "Point"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          41.04615755326576,
+          34.381449557147896
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "حدادة دحام عبيد وأولاده حدادة عامة",
+        "category": "commercial",
+        "id": 1765542062230,
+        "type": "Point"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          41.048934187610776,
+          34.382056877304265
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "إستيديو الديرة للتصوير",
+        "category": "commercial",
+        "id": 1765542079477,
+        "type": "Point"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          41.050398369135955,
+          34.381565386578686
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "دائرة كهرباء الكرابلة",
+        "category": "government",
+        "id": 1765542095821,
+        "type": "Point"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          41.04974972915019,
+          34.38103632646712
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "كولدن جم",
+        "category": "sports",
+        "id": 1765542119709,
+        "type": "Point"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          41.0508383822512,
+          34.38091736573973
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "مدرسة تغلب الابتدائية",
+        "category": "school",
+        "id": 1765542141798,
+        "type": "Point"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          41.05097873127098,
+          34.3803663875532
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "اسواق المثلث التجارية",
+        "category": "commercial",
+        "id": 1765542165109,
+        "type": "Point"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          41.05341018293007,
+          34.37998132678032
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "طرق وجسور القائم",
+        "category": "government",
+        "id": 1765542221946,
+        "type": "Point"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          41.016174435714035,
+          34.38663818858472
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "مؤسسة نهر الخير للإغاثة والتنمية المستدامة",
+        "category": "government",
+        "id": 1765542251927,
+        "type": "Point"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          41.019751443434835,
+          34.384215276265756
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "مكتب حزب تقدم / القائم",
+        "category": "government",
+        "id": 1765542268773,
+        "type": "Point"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          41.02018007690255,
+          34.383698754657296
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "مسجد مالك الملك",
+        "category": "mosque",
+        "id": 1765542303229,
+        "type": "Point"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          41.02373811382863,
+          34.383548493226435
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "جامع عمر بن عبد العزيز",
+        "category": "mosque",
+        "id": 1765542343170,
+        "type": "Point"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          41.02969346350362,
+          34.381930035334
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "مكتبة قبة الصخرة",
+        "category": "commercial",
+        "id": 1765542392253,
+        "type": "Point"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          41.034014871814264,
+          34.380629233780226
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "معهد علم الحياة",
+        "category": "landmark",
+        "id": 1765542426382,
+        "type": "Point"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          41.03667711474653,
+          34.38150681369581
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "مقبرة البوحسين",
+        "category": "other",
+        "id": 1765542458341,
+        "type": "Point"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          41.03686356204349,
+          34.37745043987106
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "متوسطة النيازك للبنات",
+        "category": "school",
+        "id": 1765542481457,
+        "type": "Point"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          41.040353321075486,
+          34.377678978973385
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "روضة أطفال ورود المستقبل",
+        "category": "school",
+        "id": 1765542498482,
+        "type": "Point"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          41.04201474985028,
+          34.37648931644036
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "جامع الكرابلة الكبير",
+        "category": "mosque",
+        "id": 1765542525104,
+        "type": "Point"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          41.04484155416869,
+          34.381508475398455
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "مشروع ماء الكرابله",
+        "category": "water",
+        "id": 1765542574157,
+        "type": "Point"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          41.04954008684353,
+          34.37964219258364
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "معهد العلم النافع",
+        "category": "landmark",
+        "id": 1765542600556,
+        "type": "Point"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          41.050598400869,
+          34.37991628515291
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "جامع السلام",
+        "category": "mosque",
+        "id": 1766088182004,
+        "type": "Point"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          40.97412578878794,
+          34.37557445995213
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "ملعب الرحبيين",
+        "category": "sports",
+        "id": 1766088203842,
+        "type": "Point"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          40.97377492157,
+          34.37607465894854
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "مدرسة القرطاس الابتدائية (للبنين. والبنات)",
+        "category": "school",
+        "id": 1766088233215,
+        "type": "Point"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          40.97394716550173,
+          34.37715402556356
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "حي التنك",
+        "category": "residential",
+        "id": 1766088289991,
+        "type": "Point"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          40.97294891341233,
+          34.38046955949603
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "محل محمد لحلاقه الرجالي",
+        "category": "commercial",
+        "id": 1766088312184,
+        "type": "Point"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          40.97468620652656,
+          34.380294247709685
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "اسواق رائد التجارية لبيع المواد الغذائية والمنزلية",
+        "category": "commercial",
+        "id": 1766088343224,
+        "type": "Point"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          40.97634004882942,
+          34.3801878082336
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "مقبرة السلمان",
+        "category": "commercial",
+        "id": 1766088362025,
+        "type": "Point"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          40.97763281539868,
+          34.378149347502884
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "ملعب الامراء",
+        "category": "sports",
+        "id": 1766088383046,
+        "type": "Point"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          40.9747458267427,
+          34.38230410407897
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "شارع الأذاعه",
+        "category": "residential",
+        "id": 1766088424263,
+        "type": "Point"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          40.98001458115079,
+          34.383167791022224
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "مسجد ثاني أثنين",
+        "category": "mosque",
+        "id": 1766088445688,
+        "type": "Point"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          40.982955700861666,
+          34.38216263726275
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "جامع الاذاكرين",
+        "category": "mosque",
+        "id": 1766088506712,
+        "type": "Point"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          40.98444395784019,
+          34.37452407506572
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "مدرسة الدرة",
+        "category": "school",
+        "id": 1766088537584,
+        "type": "Point"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          40.98992142261583,
+          34.374336870212936
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "المركز الصحي في حي الامين",
+        "category": "hospital",
+        "id": 1766088564872,
+        "type": "Point"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          40.99724715656438,
+          34.37864073487781
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "ابن قدامه",
+        "category": "school",
+        "id": 1766088596192,
+        "type": "Point"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          40.99865456354259,
+          34.37603461489299
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "جامع آل معجل",
+        "category": "mosque",
+        "id": 1766088639872,
+        "type": "Point"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          41.001397202782165,
+          34.377196209818194
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "ماركت الغيث للتسوق المنزلي والعائلي",
+        "category": "commercial",
+        "id": 1766088677397,
+        "type": "Point"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          40.99894302870784,
+          34.38008925855978
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "جامع الحسين",
+        "category": "mosque",
+        "id": 1766088697152,
+        "type": "Point"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          41.00142138980747,
+          34.38181589035656
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "مقبرة الامين",
+        "category": "mosque",
+        "id": 1766088718216,
+        "type": "Point"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          41.01139717700746,
+          34.3800836436218
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "جامع المصور",
+        "category": "mosque",
+        "id": 1766088735360,
+        "type": "Point"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          41.013482689220695,
+          34.37626928694779
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "جامع الزيتون",
+        "category": "mosque",
+        "id": 1766088749968,
+        "type": "Point"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          41.01698316314833,
+          34.377937208444685
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "مدرسه الزيتون",
+        "category": "school",
+        "id": 1766088776872,
+        "type": "Point"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          41.02322627615423,
+          34.37355884376899
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "مدرسة القمر الابتدائية",
+        "category": "school",
+        "id": 1766088862794,
+        "type": "Point"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          41.0366593041328,
+          34.373847349347976
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "جامع صلاح الدين",
+        "category": "mosque",
+        "id": 1766088889787,
+        "type": "Point"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          41.01070924238006,
+          34.38886423275853
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "طرق وجسور القائم",
+        "category": "market",
+        "id": 1766088915530,
+        "type": "Point"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          41.01475102656329,
+          34.38685404991418
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "مدرسة الناصر صلاح الدين الابتدائية",
+        "category": "school",
+        "id": 1766088936928,
+        "type": "Point"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          41.01445612279417,
+          34.384209317713136
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "مجمع ابو الوليد",
+        "category": "commercial",
+        "id": 1766088960208,
+        "type": "Point"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          41.020554833072595,
+          34.38260882587469
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "مطعم مندي القائم",
+        "category": "restaurant",
+        "id": 1766088979875,
+        "type": "Point"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          41.0263345731188,
+          34.38035544994974
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "سوق الجمعه (الوكفه)",
+        "category": "market",
+        "id": 1766088999146,
+        "type": "Point"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          41.0295753104121,
+          34.37670148257061
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "علوة",
+        "category": "market",
+        "id": 1766089018048,
+        "type": "Point"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          41.02993255714613,
+          34.379039197607625
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,4 @@
+# shimmer: For loading effect
+shimmer: ^3.0.0
+# badges: For notification badges
+badges: ^3.1.2

@@ -1,0 +1,31 @@
+Privacy Policy for Mudar App
+
+We respect your privacy and are committed to protecting your personal data. This policy explains how your information is collected, used, and protected when using the Mudar app.
+
+1. Information We Collect
+- We may collect basic information such as your email address when you register or log in.
+- Usage data may be collected anonymously to improve user experience.
+- We do not collect or store any sensitive information without your consent.
+
+2. Use of Information
+- Information is used only to provide and improve app services.
+- Your data is not shared with any third party except as required by law.
+
+3. App Permissions
+- The app requires internet access to provide updated content and services.
+- The app may request other permissions such as phone or location only when needed for a specific feature.
+
+4. Data Protection
+- We use appropriate security measures to protect your data from unauthorized access or use.
+
+5. User Rights
+- You can request to delete your account or data at any time through the app settings or by contacting us.
+
+6. Changes to Privacy Policy
+- We may update this policy from time to time. You will be notified of any significant changes through the app.
+
+7. Contact Us
+If you have any questions about this privacy policy, please contact us at:
+omar.muthana.rawi@gmail.com
+
+Last updated: May 8, 2025

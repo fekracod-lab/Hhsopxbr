@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+  <base href="/">
+
+  <!-- Charset -->
+  <meta charset="UTF-8">
+
+  <!-- Viewport -->
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+
+  <!-- SEO -->
+  <meta name="description" content="مدار – خدمات القائم صارت بجيبك: تكسي، مطاعم، مرسال، توصيل">
+
+  <!-- PWA -->
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="مدار">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="theme-color" content="#07191A">
+
+  <!-- iOS Fixes -->
+  <meta name="format-detection" content="telephone=no">
+  <meta name="apple-touch-fullscreen" content="yes">
+
+  <!-- Icons -->
+  <link rel="icon" type="image/png" href="icons/dala_alqaim_logo.png">
+  <link rel="apple-touch-icon" href="icons/icon-192.png">
+
+  <!-- Manifest -->
+  <link rel="manifest" href="manifest.json">
+
+  <title>مدار</title>
+
+  <!-- Performance -->
+  <link rel="preconnect" href="https://www.gstatic.com">
+  <link rel="preconnect" href="https://maps.googleapis.com">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600&display=swap" rel="stylesheet">
+
+  <style>
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+      background: #07191A;
+      height: 100%;
+      width: 100%;
+      overflow: hidden;
+      font-family: 'Cairo', sans-serif;
+      -webkit-text-size-adjust: 100%;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    body {
+      padding:
+        env(safe-area-inset-top)
+        env(safe-area-inset-right)
+        env(safe-area-inset-bottom)
+        env(safe-area-inset-left);
+    }
+
+    /* Splash Screen */
+
+    #splash {
+      position: fixed;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(180deg, #07191A, #0F2323);
+      z-index: 9999;
+      transition: opacity .4s ease;
+    }
+
+    #logo {
+      width: 110px;
+      height: 110px;
+      border-radius: 22px;
+      animation: pulse 1.5s infinite ease-in-out;
+      will-change: transform;
+    }
+
+    #loading {
+      margin-top: 24px;
+      font-size: 16px;
+      color: #4DB6AC;
+    }
+
+    #dots::after {
+      content: '';
+      animation: dots 1.3s steps(3, end) infinite;
+    }
+
+    @keyframes pulse {
+
+      0%,
+      100% {
+        transform: scale(1);
+        opacity: 1
+      }
+
+      50% {
+        transform: scale(1.08);
+        opacity: .8
+      }
+    }
+
+    @keyframes dots {
+      0% {
+        content: ""
+      }
+
+      33% {
+        content: "."
+      }
+
+      66% {
+        content: ".."
+      }
+
+      100% {
+        content: "..."
+      }
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <!-- Splash -->
+  <div id="splash">
+
+    <img id="logo" src="icons/dala_alqaim_logo.png">
+
+    <div id="loading">
+      جاري التحميل <span id="dots"></span>
+    </div>
+
+  </div>
+
+  <!-- Security -->
+  <script>
+
+    document.addEventListener('contextmenu', e => e.preventDefault());
+
+    document.addEventListener('keydown', function (e) {
+
+      if (
+        e.key === 'F12' ||
+        (e.ctrlKey && e.shiftKey && e.key === 'I') ||
+        (e.ctrlKey && e.shiftKey && e.key === 'J') ||
+        (e.ctrlKey && e.key === 'U')
+      ) {
+        e.preventDefault();
+      }
+
+    });
+
+    document.addEventListener('selectstart', e => e.preventDefault());
+    document.addEventListener('dragstart', e => e.preventDefault());
+
+  </script>
+
+  <!-- Deep Link Router -->
+
+  <script>
+
+    (function () {
+
+      var path = window.location.pathname;
+
+      var ua = navigator.userAgent || navigator.vendor;
+
+      if (path.startsWith('/reel')) {
+
+        if (/android/i.test(ua)) {
+
+          window.location.replace(
+            "https://play.google.com/store/apps/details?id=com.dalal.alqaimapp"
+          );
+
+        }
+
+        else if (/iPhone|iPad|iPod/i.test(ua)) {
+
+          window.location.replace(
+            "https://apps.apple.com/app/idXXXXXXXX"
+          );
+
+        }
+
+      }
+
+    })();
+
+  </script>
+
+  <!-- Firebase -->
+
+  <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-messaging-compat.js"></script>
+
+  <!-- Google Maps -->
+
+  <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY"></script>
+
+  <!-- Service Worker -->
+
+  <script>
+
+    if ('serviceWorker' in navigator) {
+
+      window.addEventListener('load', function () {
+
+        navigator.serviceWorker.register(
+          'flutter_service_worker.js?v=' + Date.now()
+        );
+
+      });
+
+    }
+
+  </script>
+
+  <!-- Flutter Bootstrap & Safe Hide Splash -->
+  <script src="flutter_bootstrap.js" async></script>
+
+  <script>
+    function hideSplash() {
+      var splash = document.getElementById("splash");
+      if (splash) {
+        splash.style.opacity = "0";
+        setTimeout(function() {
+          if (splash && splash.parentNode) {
+            splash.parentNode.removeChild(splash);
+          }
+        }, 400);
+      }
+    }
+
+    window.addEventListener('flutter-first-frame', hideSplash);
+    window.addEventListener('load', function() {
+      setTimeout(hideSplash, 2500);
+    });
+  </script>
+</body>
+
+</html>

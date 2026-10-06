@@ -1,0 +1,581 @@
+﻿diff --git a/lib/features/delivery/presentation/pages/delivery_boy/delivery_dashboard_page.dart b/lib/features/delivery/presentation/pages/delivery_boy/delivery_dashboard_page.dart
+index 08d797c..61e89bc 100644
+--- a/lib/features/delivery/presentation/pages/delivery_boy/delivery_dashboard_page.dart
++++ b/lib/features/delivery/presentation/pages/delivery_boy/delivery_dashboard_page.dart
+@@ -4,17 +4,9 @@ import 'package:url_launcher/url_launcher.dart';
+ import 'package:cloud_firestore/cloud_firestore.dart';
+ import 'package:firebase_auth/firebase_auth.dart';
+ import 'package:dalal_alqaim/services/driver_service.dart';
+-import 'package:dalal_alqaim/services/mersal_service.dart';
+-import 'package:dalal_alqaim/services/parcel_delivery_service.dart';
+ import 'package:dalal_alqaim/services/delegate_service.dart';
+-import 'package:dalal_alqaim/models/mersal_request.dart';
+-import 'package:dalal_alqaim/models/parcel_delivery_request.dart';
+ import 'package:dalal_alqaim/models/delegate_request.dart';
+-import 'package:dalal_alqaim/features/delivery/presentation/pages/mersal_order_details_page.dart';
+-import 'package:dalal_alqaim/features/delivery/presentation/pages/parcel_management_page.dart';
+ import 'package:dalal_alqaim/features/delivery/presentation/pages/delegate_order_details_page.dart';
+-import 'package:dalal_alqaim/pages/food_order_details_page.dart';
+-import 'package:dalal_alqaim/services/food_order_service.dart';
+ import 'package:media_kit/media_kit.dart';
+ import 'package:dalal_alqaim/features/delivery/presentation/pages/delivery_boy/profile_edit_page.dart';
+ import 'package:dalal_alqaim/features/delivery/presentation/pages/delivery_boy/wallet_page.dart';
+@@ -44,11 +36,8 @@ class DeliveryDashboardPage extends StatefulWidget {
+ }
+ 
+ class _DeliveryDashboardPageState extends State<DeliveryDashboardPage> {
+-  final MersalService _mersalService = MersalService();
+-  final ParcelDeliveryService _parcelService = ParcelDeliveryService();
+   final DelegateService _delegateService = DelegateService();
+   final DriverService _driverService = DriverService();
+-  final FoodOrderService _foodOrderService = FoodOrderService();
+ 
+   int _currentIndex = 0;
+   String? _uid;
+@@ -56,10 +45,7 @@ class _DeliveryDashboardPageState extends State<DeliveryDashboardPage> {
+   late final Player _player;
+ 
+   // Streams for recovery
+-  Stream<List<MersalRequest>>? _currentMersalOrdersStream;
+-  Stream<List<ParcelDeliveryRequest>>? _currentParcelOrdersStream;
+   Stream<List<DelegateRequest>>? _currentDelegateOrdersStream;
+-  Stream<List<Map<String, dynamic>>>? _currentFoodOrdersStream;
+ 
+   @override
+   void initState() {
+@@ -69,16 +55,10 @@ class _DeliveryDashboardPageState extends State<DeliveryDashboardPage> {
+ 
+     final uid = _uid;
+     if (uid != null) {
+-      _currentMersalOrdersStream = _mersalService.getDriverActiveOrders(uid);
+-      _currentParcelOrdersStream = _parcelService.getDriverActiveOrders(uid);
+       _currentDelegateOrdersStream = _delegateService.getDriverActiveOrders(uid);
+-      _currentFoodOrdersStream = _foodOrderService.getDriverActiveOrders(uid);
+ 
+-      // Listeners for auto-recovery: Fix status if ALL active streams are empty
+-      _currentMersalOrdersStream?.listen((orders) => _checkAndFixStatus(uid));
+-      _currentParcelOrdersStream?.listen((parcels) => _checkAndFixStatus(uid));
++      // Listeners for auto-recovery: Fix status if active stream is empty
+       _currentDelegateOrdersStream?.listen((delegates) => _checkAndFixStatus(uid));
+-      _currentFoodOrdersStream?.listen((food) => _checkAndFixStatus(uid));
+     }
+   }
+ 
+@@ -210,48 +190,27 @@ class _DeliveryDashboardPageState extends State<DeliveryDashboardPage> {
+   }
+ 
+   Widget _buildAvailableRequestsList() {
+-    return StreamBuilder<List<MersalRequest>>(
+-      stream: _mersalService.getPendingRequestsStream(),
+-      builder: (context, mersalSnap) {
+-        return StreamBuilder<List<ParcelDeliveryRequest>>(
+-          stream: _parcelService.getPendingRequestsStream(),
+-          builder: (context, parcelSnap) {
+-            return StreamBuilder<List<DelegateRequest>>(
+-              stream: _delegateService.getPendingRequestsStream(),
+-              builder: (context, delegateSnap) {
+-                return StreamBuilder<List<Map<String, dynamic>>>(
+-                  stream: _foodOrderService.getPendingReadyOrders(),
+-                  builder: (context, foodSnap) {
+-                    final mersalList = mersalSnap.data ?? [];
+-                    final parcelList = parcelSnap.data ?? [];
+-                    final delegateList = delegateSnap.data ?? [];
+-                    final foodList = foodSnap.data ?? [];
+-                    final combined = [...mersalList, ...parcelList, ...delegateList, ...foodList];
+-
+-                    combined.sort((a, b) {
+-                      DateTime da = _getCreatedAt(a);
+-                      DateTime db = _getCreatedAt(b);
+-                      return db.compareTo(da);
+-                    });
+-
+-                    if (combined.isEmpty) {
+-                      return SliverFillRemaining(
+-                        hasScrollBody: false,
+-                        child: _buildEmptyState(),
+-                      );
+-                    }
++    return StreamBuilder<List<DelegateRequest>>(
++      stream: _delegateService.getPendingRequestsStream(),
++      builder: (context, delegateSnap) {
++        if (delegateSnap.connectionState == ConnectionState.waiting) {
++          return const SliverFillRemaining(
++            child: Center(child: CircularProgressIndicator(color: kPrimary)),
++          );
++        }
++        final delegateList = delegateSnap.data ?? [];
++        if (delegateList.isEmpty) {
++          return SliverFillRemaining(
++            hasScrollBody: false,
++            child: _buildEmptyState(),
++          );
++        }
+ 
+-                    return SliverList(
+-                      delegate: SliverChildBuilderDelegate(
+-                        (context, index) => _unifiedTaskCard(combined[index]),
+-                        childCount: combined.length,
+-                      ),
+-                    );
+-                  },
+-                );
+-              },
+-            );
+-          },
++        return SliverList(
++          delegate: SliverChildBuilderDelegate(
++            (context, index) => _unifiedTaskCard(delegateList[index]),
++            childCount: delegateList.length,
++          ),
+         );
+       },
+     );
+@@ -418,62 +377,45 @@ class _DeliveryDashboardPageState extends State<DeliveryDashboardPage> {
+     if (_uid == null) return const SizedBox.shrink();
+ 
+     return StreamBuilder<Map<String, dynamic>>(
+-      stream: _mersalService.getDriverDailyStatsStream(_uid!),
+-      builder: (context, mSnap) {
+-        return StreamBuilder<Map<String, dynamic>>(
+-          stream: _parcelService.getDriverDailyStatsStream(_uid!),
+-          builder: (context, pSnap) {
+-            return StreamBuilder<Map<String, dynamic>>(
+-              stream: _foodOrderService.getDriverDailyStatsStream(_uid!),
+-              builder: (context, fSnap) {
+-                final mData = mSnap.data ?? {'earnings': 0.0, 'count': 0};
+-                final pData = pSnap.data ?? {'earnings': 0.0, 'count': 0};
+-                final fData = fSnap.data ?? {'earnings': 0.0, 'count': 0};
++      stream: _delegateService.getDriverDailyStatsStream(_uid!),
++      builder: (context, dSnap) {
++        final dData = dSnap.data ?? {'earnings': 0.0, 'count': 0};
++        final totalEarnings = dData['earnings']?.toDouble() ?? 0.0;
++        final totalTrips = dData['count'] as int? ?? 0;
+ 
+-                final totalEarnings = (mData['earnings']?.toDouble() ?? 0.0) +
+-                                      (pData['earnings']?.toDouble() ?? 0.0) +
+-                                      (fData['earnings']?.toDouble() ?? 0.0);
+-                final totalTrips = (mData['count'] as int? ?? 0) +
+-                                   (pData['count'] as int? ?? 0) +
+-                                   (fData['count'] as int? ?? 0);
+-
+-                return Row(
+-                   children: [
+-                     Expanded(
+-                       flex: 3,
+-                       child: _bentoCard(
+-                         label: 'أرباح اليوم',
+-                         value: '${totalEarnings.toInt()}',
+-                         unit: 'د.ع',
+-                         icon: Icons.account_balance_wallet_rounded,
+-                         color: kPrimary,
+-                       ),
+-                     ),
+-                     const SizedBox(width: 12),
+-                     Expanded(
+-                       flex: 2,
+-                       child: _bentoCard(
+-                         label: 'الطلبات',
+-                         value: '$totalTrips',
+-                         icon: Icons.local_shipping_rounded,
+-                         color: kWarning,
+-                       ),
+-                     ),
+-                     const SizedBox(width: 12),
+-                     Expanded(
+-                       flex: 2,
+-                       child: _bentoCard(
+-                         label: 'التقييم',
+-                         value: '4.9',
+-                         icon: Icons.star_rounded,
+-                         color: kWarning,
+-                       ),
+-                     ),
+-                   ],
+-                );
+-              },
+-            );
+-          },
++        return Row(
++          children: [
++            Expanded(
++              flex: 3,
++              child: _bentoCard(
++                label: 'أرباح اليوم',
++                value: '${totalEarnings.toInt()}',
++                unit: 'د.ع',
++                icon: Icons.account_balance_wallet_rounded,
++                color: kPrimary,
++              ),
++            ),
++            const SizedBox(width: 12),
++            Expanded(
++              flex: 2,
++              child: _bentoCard(
++                label: 'الطلبات',
++                value: '$totalTrips',
++                icon: Icons.local_shipping_rounded,
++                color: kWarning,
++              ),
++            ),
++            const SizedBox(width: 12),
++            Expanded(
++              flex: 2,
++              child: _bentoCard(
++                label: 'التقييم',
++                value: '4.9',
++                icon: Icons.star_rounded,
++                color: kWarning,
++              ),
++            ),
++          ],
+         );
+       },
+     );
+@@ -701,42 +643,27 @@ class _DeliveryDashboardPageState extends State<DeliveryDashboardPage> {
+     return CustomScrollView(
+       slivers: [
+         _buildTabHeader('مهامي الحالية'),
+-        StreamBuilder<List<MersalRequest>>(
+-          stream: _mersalService.getDriverActiveOrders(_uid!),
+-          builder: (context, mersalSnap) {
+-            return StreamBuilder<List<ParcelDeliveryRequest>>(
+-              stream: _parcelService.getDriverActiveOrders(_uid!),
+-              builder: (context, parcelSnap) {
+-                return StreamBuilder<List<DelegateRequest>>(
+-                  stream: _delegateService.getDriverActiveOrders(_uid!),
+-                  builder: (context, delegateSnap) {
+-                    return StreamBuilder<List<Map<String, dynamic>>>(
+-                      stream: _foodOrderService.getDriverActiveOrders(_uid!),
+-                      builder: (context, foodSnap) {
+-                        final mersalList = mersalSnap.data ?? [];
+-                        final parcelList = parcelSnap.data ?? [];
+-                        final delegateList = delegateSnap.data ?? [];
+-                        final foodList = foodSnap.data ?? [];
+-                        final combined = [...mersalList, ...parcelList, ...delegateList, ...foodList];
+-
+-                        if (combined.isEmpty) {
+-                          return SliverFillRemaining(
+-                            hasScrollBody: false,
+-                            child: _buildEmptyState('لا توجد مهام نشطة حالياً'),
+-                          );
+-                        }
++        StreamBuilder<List<DelegateRequest>>(
++          stream: _delegateService.getDriverActiveOrders(_uid!),
++          builder: (context, delegateSnap) {
++            if (delegateSnap.connectionState == ConnectionState.waiting) {
++              return const SliverFillRemaining(
++                child: Center(child: CircularProgressIndicator(color: kPrimary)),
++              );
++            }
++            final delegateList = delegateSnap.data ?? [];
++            if (delegateList.isEmpty) {
++              return SliverFillRemaining(
++                hasScrollBody: false,
++                child: _buildEmptyState('لا توجد مهام نشطة حالياً'),
++              );
++            }
+ 
+-                        return SliverList(
+-                          delegate: SliverChildBuilderDelegate(
+-                            (context, index) => _unifiedTaskCard(combined[index]),
+-                            childCount: combined.length,
+-                          ),
+-                        );
+-                      },
+-                    );
+-                  },
+-                );
+-              },
++            return SliverList(
++              delegate: SliverChildBuilderDelegate(
++                (context, index) => _unifiedTaskCard(delegateList[index]),
++                childCount: delegateList.length,
++              ),
+             );
+           },
+         ),
+@@ -748,42 +675,27 @@ class _DeliveryDashboardPageState extends State<DeliveryDashboardPage> {
+     return CustomScrollView(
+       slivers: [
+         _buildTabHeader('سجل العمليات'),
+-        StreamBuilder<List<MersalRequest>>(
+-          stream: _mersalService.getDriverHistoryStream(_uid!),
+-          builder: (context, mersalSnap) {
+-            return StreamBuilder<List<ParcelDeliveryRequest>>(
+-              stream: _parcelService.getDriverHistoryStream(_uid!),
+-              builder: (context, parcelSnap) {
+-                return StreamBuilder<List<DelegateRequest>>(
+-                  stream: _delegateService.getDriverHistoryStream(_uid!),
+-                  builder: (context, delegateSnap) {
+-                    return StreamBuilder<List<Map<String, dynamic>>>(
+-                      stream: _foodOrderService.getDriverHistoryStream(_uid!),
+-                      builder: (context, foodSnap) {
+-                        final mersalList = mersalSnap.data ?? [];
+-                        final parcelList = parcelSnap.data ?? [];
+-                        final delegateList = delegateSnap.data ?? [];
+-                        final foodList = foodSnap.data ?? [];
+-                        final combined = [...mersalList, ...parcelList, ...delegateList, ...foodList];
+-
+-                        if (combined.isEmpty) {
+-                          return SliverFillRemaining(
+-                            hasScrollBody: false,
+-                            child: _buildEmptyState('السجل فارغ'),
+-                          );
+-                        }
++        StreamBuilder<List<DelegateRequest>>(
++          stream: _delegateService.getDriverHistoryStream(_uid!),
++          builder: (context, delegateSnap) {
++            if (delegateSnap.connectionState == ConnectionState.waiting) {
++              return const SliverFillRemaining(
++                child: Center(child: CircularProgressIndicator(color: kPrimary)),
++              );
++            }
++            final delegateList = delegateSnap.data ?? [];
++            if (delegateList.isEmpty) {
++              return SliverFillRemaining(
++                hasScrollBody: false,
++                child: _buildEmptyState('السجل فارغ'),
++              );
++            }
+ 
+-                        return SliverList(
+-                          delegate: SliverChildBuilderDelegate(
+-                            (context, index) => _unifiedTaskCard(combined[index]),
+-                            childCount: combined.length,
+-                          ),
+-                        );
+-                      },
+-                    );
+-                  },
+-                );
+-              },
++            return SliverList(
++              delegate: SliverChildBuilderDelegate(
++                (context, index) => _unifiedTaskCard(delegateList[index]),
++                childCount: delegateList.length,
++              ),
+             );
+           },
+         ),
+@@ -791,45 +703,13 @@ class _DeliveryDashboardPageState extends State<DeliveryDashboardPage> {
+     );
+   }
+ 
+-  Widget _unifiedTaskCard(dynamic req) {
+-    final bool isMersal = req is MersalRequest;
+-    final bool isParcel = req is ParcelDeliveryRequest;
+-    final bool isDelegate = req is DelegateRequest;
+-    final bool isFood = req is Map<String, dynamic> && req['type'] == 'food_order';
+-
+-    final String voiceUrl = isMersal ? (req.voiceUrl ?? '') : '';
+-    final bool hasVoice = voiceUrl.isNotEmpty;
+-
+-    final String userName =
+-        isFood
+-            ? (req['customerName'] ?? 'زبون')
+-            : (isMersal
+-                ? req.userName
+-                : (isParcel ? req.userName : (req as DelegateRequest).userName));
+-
+-    final String status = isFood ? (req['status'] ?? 'pending') : req.status;
+-
+-    final String priceText =
+-        isFood
+-            ? (req['deliveryFee']?.toString() ?? '1000')
+-            : (isMersal ? (req.price ?? '0') : (isParcel ? req.price.toString() : 'قيد الاتفاق'));
+-
+-    final String typeText =
+-        isFood ? 'طلب مطعم' : (isMersal ? 'طلب مرسال' : (isParcel ? 'شحنة لوجستية' : 'خدمة مندوب'));
+-
+-    final IconData typeIcon =
+-        isFood
+-            ? Icons.restaurant_menu_rounded
+-            : (isMersal
+-                ? Icons.shopping_bag_rounded
+-                : (isParcel ? Icons.inventory_2_rounded : Icons.person_search_rounded));
+-
+-    final String description =
+-        isFood
+-            ? 'توصيل من: ${req['restaurantName'] ?? 'مطعم'}'
+-            : (isMersal
+-                ? req.requestDescription
+-                : (isParcel ? req.itemDescription : (req as DelegateRequest).taskDescription));
++  Widget _unifiedTaskCard(DelegateRequest req) {
++    final String userName = req.userName;
++    final String status = req.status;
++    final String priceText = req.price.toInt().toString();
++    final String typeText = 'خدمة مندوب';
++    final IconData typeIcon = Icons.person_search_rounded;
++    final String description = req.taskDescription;
+ 
+     return Container(
+       margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
+@@ -933,22 +813,6 @@ class _DeliveryDashboardPageState extends State<DeliveryDashboardPage> {
+                     ),
+                   ),
+                   const SizedBox(width: 12),
+-                  if (hasVoice)
+-                    Column(
+-                      children: [
+-                        Container(
+-                          decoration: BoxDecoration(
+-                            color: kPrimary.withValues(alpha: 0.2),
+-                            shape: BoxShape.circle,
+-                          ),
+-                          child: IconButton(
+-                            icon: const Icon(Icons.play_circle_fill_rounded, color: kPrimary, size: 30),
+-                            onPressed: () => _playVoiceNote(voiceUrl),
+-                          ),
+-                        ),
+-                        const Text('ملاحظة صوتية', style: TextStyle(color: kPrimary, fontSize: 8, fontFamily: 'Cairo')),
+-                      ],
+-                    ),
+                   Container(
+                     padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 10),
+                     decoration: BoxDecoration(
+@@ -987,17 +851,7 @@ class _DeliveryDashboardPageState extends State<DeliveryDashboardPage> {
+                       flex: 2,
+                       child: OutlinedButton.icon(
+                         onPressed: () {
+-                          String phone = '';
+-                          if (isFood) {
+-                            phone = req['customerPhone'] ?? '';
+-                          } else if (isMersal) {
+-                            phone = req.userPhone;
+-                          } else if (isParcel) {
+-                            phone = req.userPhone;
+-                          } else if (isDelegate) {
+-                            phone = req.userPhone;
+-                          }
+-                          _launchCaller(phone);
++                          _launchCaller(req.userPhone);
+                         },
+                         icon: const Icon(Icons.phone, size: 14),
+                         label: const Text(
+@@ -1017,25 +871,10 @@ class _DeliveryDashboardPageState extends State<DeliveryDashboardPage> {
+                       flex: 2,
+                       child: OutlinedButton.icon(
+                         onPressed: () {
+-                          String id = '';
+-                          String name = '';
+-                          if (isFood) {
+-                            id = req['id']?.toString() ?? '';
+-                            name = req['customerName']?.toString() ?? 'زبون';
+-                          } else if (isMersal) {
+-                            id = req.id;
+-                            name = req.userName;
+-                          } else if (isParcel) {
+-                            id = req.id;
+-                            name = req.userName;
+-                          } else if (isDelegate) {
+-                            id = req.id;
+-                            name = req.userName;
+-                          }
+                           Navigator.push(
+                             context,
+                             MaterialPageRoute(
+-                              builder: (context) => ChatPage(orderId: id, otherUserName: name),
++                              builder: (context) => ChatPage(orderId: req.id, otherUserName: req.userName),
+                             ),
+                           );
+                         },
+@@ -1057,18 +896,8 @@ class _DeliveryDashboardPageState extends State<DeliveryDashboardPage> {
+                       flex: 2,
+                       child: ElevatedButton.icon(
+                         onPressed: () {
+-                          double? lat;
+-                          double? lng;
+-                          if (isMersal) {
+-                            lat = req.dropoffLat;
+-                            lng = req.dropoffLng;
+-                          } else if (isParcel) {
+-                            lat = req.dropoffLat;
+-                            lng = req.dropoffLng;
+-                          }
+-
+-                          if (lat != null && lng != null && lat != 0) {
+-                            _launchMaps(lat, lng);
++                          if (req.pickupLat != 0) {
++                            _launchMaps(req.pickupLat, req.pickupLng);
+                           } else {
+                             _showSnack('الموقع غير متوفر للخرائط', kWarning);
+                           }
+@@ -1124,60 +953,17 @@ class _DeliveryDashboardPageState extends State<DeliveryDashboardPage> {
+     );
+   }
+ 
+-  DateTime _getCreatedAt(dynamic req) {
+-    if (req is MersalRequest) return req.createdAt ?? DateTime.now();
+-    if (req is ParcelDeliveryRequest) return req.createdAt;
+-    if (req is DelegateRequest) return req.createdAt;
+-    if (req is Map<String, dynamic>) {
+-      final ts = req['createdAt'];
+-      if (ts is Timestamp) return ts.toDate();
+-      if (ts is int) return DateTime.fromMillisecondsSinceEpoch(ts);
+-    }
+-    return DateTime.now();
+-  }
+-
+-  void _handleTaskTap(dynamic req) async {
+-    final bool isMersal = req is MersalRequest;
+-    final bool isParcel = req is ParcelDeliveryRequest;
+-    final bool isDelegate = req is DelegateRequest;
+-    final bool isFood = req is Map<String, dynamic> && req['type'] == 'food_order';
+-
++  void _handleTaskTap(DelegateRequest req) async {
+     final driverDoc = await _driverService.getDriverData(_uid!);
+ 
+-    if (isFood) {
+-      if (!mounted) return;
+-      Navigator.push(
+-        context,
+-        MaterialPageRoute(
+-          builder:
+-              (_) => FoodOrderDetailsPage(order: req, driverId: _uid!, driverData: driverDoc ?? {}),
+-        ),
+-      );
+-      return;
+-    }
+-
+     if (!mounted) return;
+ 
+-    if (isMersal) {
+-      Navigator.push(
+-        context,
+-        MaterialPageRoute(
+-          builder: (_) => MersalOrderDetailsPage(request: req, driverData: driverDoc ?? {}),
+-        ),
+-      );
+-    } else if (isParcel) {
+-      Navigator.push(
+-        context,
+-        MaterialPageRoute(builder: (_) => ParcelManagementPage(driverId: _uid)),
+-      );
+-    } else if (isDelegate) {
+-      Navigator.push(
+-        context,
+-        MaterialPageRoute(
+-          builder: (_) => DelegateOrderDetailsPage(request: req, driverData: driverDoc ?? {}),
+-        ),
+-      );
+-    }
++    Navigator.push(
++      context,
++      MaterialPageRoute(
++        builder: (_) => DelegateOrderDetailsPage(request: req, driverData: driverDoc ?? {}),
++      ),
++    );
+   }
+ 
+   Widget _statusChip(String status) {
+@@ -1330,8 +1116,8 @@ class _DeliveryDashboardPageState extends State<DeliveryDashboardPage> {
+   Widget _buildPerformanceTab(Map<String, dynamic> driverData) {
+     return FutureBuilder<List<dynamic>>(
+       future: Future.wait([
+-        _driverService.getWeeklyChartData(_uid!),
+-        _driverService.getTotalTrips(_uid!),
++        _delegateService.getDriverWeeklyChartData(_uid!),
++        _delegateService.getDriverTotalTrips(_uid!),
+       ]),
+       builder: (context, snapshot) {
+         if (!snapshot.hasData) {

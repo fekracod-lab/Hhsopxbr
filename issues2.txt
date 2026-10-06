@@ -1,0 +1,412 @@
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\features\taxi\presentation\pages\captain\driver_dashboard_page.dart:101 - undefined_identifier - Undefined name '_fadeAnimation'.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\features\taxi\presentation\pages\captain\driver_dashboard_page.dart:108 - undefined_identifier - Undefined name '_slideAnimation'.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\features\taxi\presentation\pages\captain\driver_dashboard_page.dart:167 - undefined_identifier - Undefined name '_currentRideRequestId'.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\features\trip\presentation\widgets\live_map_view.dart:114 - expected_class_member - Expected a class member.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\features\trip\presentation\widgets\live_map_view.dart:114 - concrete_class_with_abstract_member - 'Stack' must have a method body because 'LiveMapView' isn't abstract.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\features\trip\presentation\widgets\live_map_view.dart:115 - named_parameter_outside_group - Named parameters must be enclosed in curly braces ('{' and '}').
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\features\trip\presentation\widgets\live_map_view.dart:115 - obsolete_colon_for_default_value - Using a colon as the separator before a default value is no longer supported.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\features\trip\presentation\widgets\live_map_view.dart:116 - named_parameter_outside_group - Named parameters must be enclosed in curly braces ('{' and '}').
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\features\trip\presentation\widgets\live_map_view.dart:116 - obsolete_colon_for_default_value - Using a colon as the separator before a default value is no longer supported.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\features\trip\presentation\widgets\live_map_view.dart:116 - non_constant_default_value - The default value of an optional parameter must be constant.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\features\trip\presentation\widgets\live_map_view.dart:132 - expected_identifier_but_got_keyword - 'return' can't be used as an identifier because it's a keyword.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\features\trip\presentation\widgets\live_map_view.dart:132 - expected_token - Expected to find ';'.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\features\trip\presentation\widgets\live_map_view.dart:132 - missing_const_final_var_or_type - Variables must be declared using the keywords 'const', 'final', 'var' or a type name.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\features\trip\presentation\widgets\live_map_view.dart:132 - missing_function_parameters - Functions must have an explicit list of parameters.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\features\trip\presentation\widgets\live_map_view.dart:132 - missing_function_body - A function body must be provided.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\features\trip\presentation\widgets\live_map_view.dart:132 - expected_executable - Expected a method, getter, setter or operator declaration.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\features\trip\presentation\widgets\live_map_view.dart:132 - missing_identifier - Expected an identifier.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\features\trip\presentation\widgets\live_map_view.dart:132 - named_parameter_outside_group - Named parameters must be enclosed in curly braces ('{' and '}').
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\features\trip\presentation\widgets\live_map_view.dart:132 - obsolete_colon_for_default_value - Using a colon as the separator before a default value is no longer supported.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\features\trip\presentation\widgets\live_map_view.dart:132 - missing_function_body - A function body must be provided.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\features\trip\presentation\widgets\live_map_view.dart:133 - expected_executable - Expected a method, getter, setter or operator declaration.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\features\trip\presentation\widgets\live_map_view.dart:149 - expected_executable - Expected a method, getter, setter or operator declaration.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\add_food_page.dart:158 - undefined_identifier - Undefined name '_uploadedImageUrl'.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\add_place_page.dart:14 - new_with_undefined_constructor_default - The class '_AddPlacePageState' doesn't have an unnamed constructor.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\add_place_page.dart:779 - not_a_type - IconData isn't a type.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\add_place_page.dart:800 - not_a_type - IconData isn't a type.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\add_place_page.dart:853 - cast_to_non_type - The name 'IconData' isn't a type, so it can't be used in an 'as' expression.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\add_place_page.dart:912 - expected_class_member - Expected a class member.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\add_place_page.dart:912 - invalid_constructor_name - The name of a constructor must match the name of the enclosing class.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\add_place_page.dart:913 - missing_identifier - Expected an identifier.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\add_place_page.dart:913 - expected_token - Expected to find ')'.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\add_place_page.dart:915 - missing_function_body - A function body must be provided.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\add_place_page.dart:915 - expected_class_member - Expected a class member.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\add_place_page.dart:915 - expected_class_member - Expected a class member.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\add_place_page.dart:915 - expected_class_member - Expected a class member.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\add_place_page.dart:916 - expected_token - Expected to find ';'.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\add_place_page.dart:916 - missing_const_final_var_or_type - Variables must be declared using the keywords 'const', 'final', 'var' or a type name.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\add_place_page.dart:916 - missing_const_final_var_or_type - Variables must be declared using the keywords 'const', 'final', 'var' or a type name.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\add_place_page.dart:920 - undefined_identifier - Undefined name '_isLoadingGovernorates'.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\add_place_page.dart:924 - undefined_identifier - Undefined name '_selectedGovernorateId'.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\add_place_page.dart:929 - invalid_constant - Invalid constant value.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\add_place_page.dart:929 - undefined_identifier - Undefined name 'accentColor'.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\add_place_page.dart:938 - undefined_identifier - Undefined name '_governorates'.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\add_place_page.dart:942 - undefined_identifier - Undefined name '_governorates'.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\add_place_page.dart:943 - undefined_function - The function 'setState' isn't defined.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\add_place_page.dart:944 - undefined_identifier - Undefined name '_selectedGovernorateId'.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\add_place_page.dart:945 - undefined_identifier - Undefined name '_selectedGovernorateName'.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\add_place_page.dart:947 - undefined_function - The function '_fetchRegions' isn't defined.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\add_place_page.dart:954 - undefined_identifier - Undefined name '_isLoadingRegions'.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\add_place_page.dart:958 - undefined_identifier - Undefined name '_selectedRegionId'.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\add_place_page.dart:963 - invalid_constant - Invalid constant value.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\add_place_page.dart:963 - undefined_identifier - Undefined name 'accentColor'.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\add_place_page.dart:972 - undefined_identifier - Undefined name '_regions'.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\add_place_page.dart:976 - undefined_identifier - Undefined name '_regions'.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\add_place_page.dart:977 - undefined_function - The function 'setState' isn't defined.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\add_place_page.dart:978 - undefined_identifier - Undefined name '_selectedRegionId'.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\add_place_page.dart:979 - undefined_identifier - Undefined name '_selectedRegionName'.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\add_place_page.dart:985 - expected_executable - Expected a method, getter, setter or operator declaration.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:33 - new_with_undefined_constructor_default - The class '_AdminDashboardPageState' doesn't have an unnamed constructor.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:247 - undefined_method - The method 'of' isn't defined for the type 'Function'.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:253 - undefined_method - The method 'of' isn't defined for the type 'Function'.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:255 - undefined_method - The method 'of' isn't defined for the type 'Function'.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:258 - undefined_method - The method 'of' isn't defined for the type 'Function'.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:301 - undefined_method - The method 'of' isn't defined for the type 'Function'.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:326 - undefined_method - The method 'of' isn't defined for the type 'Function'.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:334 - undefined_method - The method 'of' isn't defined for the type 'Function'.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:342 - undefined_method - The method 'of' isn't defined for the type 'Function'.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:350 - undefined_method - The method 'of' isn't defined for the type 'Function'.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:357 - undefined_method - The method 'of' isn't defined for the type 'Function'.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:363 - undefined_method - The method 'of' isn't defined for the type 'Function'.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:395 - undefined_method - The method 'of' isn't defined for the type 'Function'.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:401 - undefined_method - The method 'push' isn't defined for the type 'Function'.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:411 - undefined_method - The method 'of' isn't defined for the type 'Function'.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:416 - undefined_method - The method 'of' isn't defined for the type 'Function'.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:421 - wrong_number_of_type_arguments_method - The method 'dynamic Function({dynamic builder, dynamic context})' is declared with 0 type parameters, but 1 type arguments are given.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:428 - undefined_method - The method 'of' isn't defined for the type 'Function'.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:430 - undefined_method - The method 'of' isn't defined for the type 'Function'.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:443 - undefined_method - The method 'of' isn't defined for the type 'Function'.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:446 - undefined_method - The method 'of' isn't defined for the type 'Function'.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:538 - undefined_method - The method 'of' isn't defined for the type 'Function'.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:544 - undefined_method - The method 'of' isn't defined for the type 'Function'.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:623 - undefined_method - The method 'pop' isn't defined for the type 'Function'.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:634 - undefined_method - The method 'push' isn't defined for the type 'Function'.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:637 - undefined_method - The method 'push' isn't defined for the type 'Function'.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:640 - undefined_method - The method 'push' isn't defined for the type 'Function'.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:643 - undefined_method - The method 'push' isn't defined for the type 'Function'.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:646 - undefined_method - The method 'push' isn't defined for the type 'Function'.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:649 - undefined_method - The method 'push' isn't defined for the type 'Function'.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:652 - undefined_method - The method 'push' isn't defined for the type 'Function'.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:683 - undefined_method - The method 'pop' isn't defined for the type 'Function'.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:869 - undefined_method - The method 'push' isn't defined for the type 'Function'.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:880 - undefined_method - The method 'push' isn't defined for the type 'Function'.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:891 - undefined_method - The method 'push' isn't defined for the type 'Function'.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:902 - undefined_method - The method 'push' isn't defined for the type 'Function'.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:926 - undefined_method - The method 'push' isn't defined for the type 'Function'.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:937 - undefined_method - The method 'push' isn't defined for the type 'Function'.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:948 - undefined_method - The method 'push' isn't defined for the type 'Function'.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:961 - undefined_method - The method 'push' isn't defined for the type 'Function'.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:985 - undefined_method - The method 'push' isn't defined for the type 'Function'.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:996 - undefined_method - The method 'push' isn't defined for the type 'Function'.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:1009 - undefined_method - The method 'push' isn't defined for the type 'Function'.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:1022 - undefined_method - The method 'push' isn't defined for the type 'Function'.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:1096 - undefined_method - The method 'push' isn't defined for the type 'Function'.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:1259 - undefined_method - The method 'pop' isn't defined for the type 'Function'.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:1267 - undefined_method - The method 'pop' isn't defined for the type 'Function'.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:1275 - undefined_method - The method 'of' isn't defined for the type 'Function'.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:1286 - undefined_method - The method 'of' isn't defined for the type 'Function'.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:1511 - undefined_method - The method 'push' isn't defined for the type 'Function'.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:1612 - undefined_method - The method 'pop' isn't defined for the type 'Function'.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:1622 - undefined_method - The method 'pop' isn't defined for the type 'Function'.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:1640 - undefined_method - The method 'of' isn't defined for the type 'Function'.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:1644 - undefined_method - The method 'of' isn't defined for the type 'Function'.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:1656 - undefined_method - The method 'push' isn't defined for the type 'Function'.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:1660 - undefined_method - The method 'push' isn't defined for the type 'Function'.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:1664 - invalid_constructor_name - The name of a constructor must match the name of the enclosing class.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:1665 - concrete_class_with_abstract_member - 'showDialog' must have a method body because '_AdminDashboardPageState' isn't abstract.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:1666 - named_parameter_outside_group - Named parameters must be enclosed in curly braces ('{' and '}').
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:1666 - obsolete_colon_for_default_value - Using a colon as the separator before a default value is no longer supported.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:1666 - non_constant_default_value - The default value of an optional parameter must be constant.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:1667 - named_parameter_outside_group - Named parameters must be enclosed in curly braces ('{' and '}').
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:1667 - obsolete_colon_for_default_value - Using a colon as the separator before a default value is no longer supported.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:1667 - non_constant_default_value - The default value of an optional parameter must be constant.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:1731 - wrong_number_of_type_arguments_method - The method 'dynamic Function({dynamic builder, dynamic context})' is declared with 0 type parameters, but 1 type arguments are given.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:1744 - undefined_method - The method 'pop' isn't defined for the type 'Function'.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:1766 - undefined_method - The method 'pop' isn't defined for the type 'Function'.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:1778 - undefined_method - The method 'pop' isn't defined for the type 'Function'.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:1791 - missing_function_parameters - Functions must have an explicit list of parameters.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:1791 - missing_function_body - A function body must be provided.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:1791 - expected_executable - Expected a method, getter, setter or operator declaration.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:1791 - missing_function_body - A function body must be provided.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:1793 - named_parameter_outside_group - Named parameters must be enclosed in curly braces ('{' and '}').
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:1793 - obsolete_colon_for_default_value - Using a colon as the separator before a default value is no longer supported.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:1793 - undefined_identifier - Undefined name 'context'.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:1794 - named_parameter_outside_group - Named parameters must be enclosed in curly braces ('{' and '}').
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:1794 - obsolete_colon_for_default_value - Using a colon as the separator before a default value is no longer supported.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:1794 - non_constant_default_value - The default value of an optional parameter must be constant.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:1820 - undefined_method - The method 'pop' isn't defined for the type 'Function'.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:1830 - undefined_method - The method 'pop' isn't defined for the type 'Function'.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:1838 - missing_function_body - A function body must be provided.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:1839 - expected_executable - Expected a method, getter, setter or operator declaration.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:1908 - wrong_number_of_type_arguments_method - The method 'dynamic Function({dynamic builder, dynamic context})' is declared with 0 type parameters, but 1 type arguments are given.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:1921 - undefined_method - The method 'pop' isn't defined for the type 'Function'.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:1943 - undefined_method - The method 'pop' isn't defined for the type 'Function'.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:1953 - undefined_method - The method 'pop' isn't defined for the type 'Function'.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:1965 - duplicate_definition - The name 'showDialog' is already defined.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:1966 - named_parameter_outside_group - Named parameters must be enclosed in curly braces ('{' and '}').
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:1966 - obsolete_colon_for_default_value - Using a colon as the separator before a default value is no longer supported.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:1966 - undefined_identifier - Undefined name 'context'.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:1967 - named_parameter_outside_group - Named parameters must be enclosed in curly braces ('{' and '}').
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:1967 - obsolete_colon_for_default_value - Using a colon as the separator before a default value is no longer supported.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:1967 - non_constant_default_value - The default value of an optional parameter must be constant.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:1968 - undefined_identifier - Undefined name 'data'.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:1969 - undefined_identifier - Undefined name 'data'.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:1970 - undefined_identifier - Undefined name 'data'.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:1993 - undefined_method - The method 'pop' isn't defined for the type 'Function'.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:1996 - undefined_identifier - Undefined name 'docId'.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:2001 - undefined_method - The method 'pop' isn't defined for the type 'Function'.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:2008 - missing_function_body - A function body must be provided.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:2009 - expected_executable - Expected a method, getter, setter or operator declaration.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:2012 - duplicate_definition - The name 'showDialog' is already defined.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:2013 - named_parameter_outside_group - Named parameters must be enclosed in curly braces ('{' and '}').
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:2013 - obsolete_colon_for_default_value - Using a colon as the separator before a default value is no longer supported.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:2013 - undefined_identifier - Undefined name 'context'.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:2014 - named_parameter_outside_group - Named parameters must be enclosed in curly braces ('{' and '}').
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:2014 - obsolete_colon_for_default_value - Using a colon as the separator before a default value is no longer supported.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:2015 - non_constant_default_value - The default value of an optional parameter must be constant.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:2019 - undefined_method - The method 'of' isn't defined for the type 'Function'.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:2022 - undefined_identifier - Undefined name 'docId'.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:2023 - undefined_method - The method 'of' isn't defined for the type 'Function'.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:2030 - missing_function_body - A function body must be provided.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:2031 - expected_executable - Expected a method, getter, setter or operator declaration.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:2174 - expected_executable - Expected a method, getter, setter or operator declaration.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:2510 - undefined_method - The method '_navigateToEditSection' isn't defined for the type '_AdminDashboardPageState'.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:2512 - undefined_method - The method 'push' isn't defined for the type 'Function'.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:2533 - undefined_method - The method 'of' isn't defined for the type 'Function'.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:2540 - undefined_method - The method 'of' isn't defined for the type 'Function'.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:2695 - undefined_method - The method 'pop' isn't defined for the type 'Function'.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:2696 - undefined_method - The method 'push' isn't defined for the type 'Function'.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:2707 - undefined_method - The method 'pop' isn't defined for the type 'Function'.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:2708 - undefined_method - The method 'push' isn't defined for the type 'Function'.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:2719 - undefined_method - The method 'pop' isn't defined for the type 'Function'.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:2728 - undefined_method - The method 'pop' isn't defined for the type 'Function'.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:2729 - undefined_method - The method 'push' isn't defined for the type 'Function'.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:2740 - undefined_method - The method 'pop' isn't defined for the type 'Function'.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:2749 - undefined_method - The method 'pop' isn't defined for the type 'Function'.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:2764 - wrong_number_of_type_arguments_method - The method 'dynamic Function({dynamic builder, dynamic context})' is declared with 0 type parameters, but 1 type arguments are given.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:2854 - undefined_method - The method 'pop' isn't defined for the type 'Function'.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:2855 - undefined_method - The method 'push' isn't defined for the type 'Function'.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:2879 - undefined_method - The method 'pop' isn't defined for the type 'Function'.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:2936 - undefined_method - The method 'pop' isn't defined for the type 'Function'.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:2941 - undefined_method - The method 'pop' isn't defined for the type 'Function'.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:2942 - undefined_method - The method 'of' isn't defined for the type 'Function'.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:2965 - undefined_method - The method 'of' isn't defined for the type 'Function'.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:3048 - final_not_initialized_constructor - All final variables must be initialized, but 'colors', 'icon', and 2 others aren't.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:3048 - invalid_constructor_name - The name of a constructor must match the name of the enclosing class.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:3049 - concrete_class_with_abstract_member - 'showDialog' must have a method body because '_QuickActionItem' isn't abstract.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:3050 - named_parameter_outside_group - Named parameters must be enclosed in curly braces ('{' and '}').
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:3050 - obsolete_colon_for_default_value - Using a colon as the separator before a default value is no longer supported.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:3050 - undefined_identifier - Undefined name 'context'.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:3051 - named_parameter_outside_group - Named parameters must be enclosed in curly braces ('{' and '}').
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:3051 - obsolete_colon_for_default_value - Using a colon as the separator before a default value is no longer supported.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:3051 - non_constant_default_value - The default value of an optional parameter must be constant.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:3072 - undefined_method - The method 'of' isn't defined for the type 'Function'.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:3076 - undefined_method - The method 'of' isn't defined for the type 'Function'.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:3077 - undefined_method - The method 'of' isn't defined for the type 'Function'.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:3077 - undefined_identifier - Undefined name 'context'.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:3090 - missing_function_parameters - Functions must have an explicit list of parameters.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:3090 - duplicate_definition - The name 'Navigator' is already defined.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:3090 - missing_function_body - A function body must be provided.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:3090 - expected_executable - Expected a method, getter, setter or operator declaration.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:3090 - duplicate_definition - The name 'pop' is already defined.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:3090 - missing_function_body - A function body must be provided.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:3091 - missing_function_parameters - Functions must have an explicit list of parameters.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:3091 - missing_function_body - A function body must be provided.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:3091 - expected_executable - Expected a method, getter, setter or operator declaration.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:3091 - missing_function_body - A function body must be provided.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:3091 - expected_executable - Expected a method, getter, setter or operator declaration.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:3093 - named_parameter_outside_group - Named parameters must be enclosed in curly braces ('{' and '}').
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:3093 - obsolete_colon_for_default_value - Using a colon as the separator before a default value is no longer supported.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:3100 - named_parameter_outside_group - Named parameters must be enclosed in curly braces ('{' and '}').
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:3100 - obsolete_colon_for_default_value - Using a colon as the separator before a default value is no longer supported.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:3102 - missing_function_body - A function body must be provided.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:3103 - expected_executable - Expected a method, getter, setter or operator declaration.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:3104 - expected_executable - Expected a method, getter, setter or operator declaration.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\merchant_page.dart:25 - missing_identifier - Expected an identifier.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\page_items_screen.dart:75 - undefined_identifier - Undefined name '_fadeAnimation'.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\settings_page.dart:22 - missing_identifier - Expected an identifier.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:1841 - unused_element - The declaration '_navigateToEditSection' isn't referenced.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:3048 - unused_element - The declaration '_QuickActionItem.pop' isn't referenced.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\merchant_page.dart:25 - undefined_hidden_name - The library 'package:dalal_alqaim/pages/add_food_page.dart' doesn't export a member with the hidden name ''.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\settings_page.dart:22 - undefined_hidden_name - The library 'package:dalal_alqaim/pages/login_page.dart' doesn't export a member with the hidden name ''.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\services\delegate_service.dart:24 - dead_null_aware_expression - The left operand can't be null, so the right operand is never executed.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\services\delegate_service.dart:24 - dead_null_aware_expression - The left operand can't be null, so the right operand is never executed.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\services\delegate_service.dart:143 - dead_null_aware_expression - The left operand can't be null, so the right operand is never executed.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\services\delegate_service.dart:143 - dead_null_aware_expression - The left operand can't be null, so the right operand is never executed.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\services\delegate_service.dart:174 - dead_null_aware_expression - The left operand can't be null, so the right operand is never executed.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\services\delegate_service.dart:174 - dead_null_aware_expression - The left operand can't be null, so the right operand is never executed.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\fix_spaces.dart:9 - avoid_print - Don't invoke 'print' in production code.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\fix_spaces.dart:13 - avoid_print - Don't invoke 'print' in production code.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\features\auth\pages\login_page.dart:473 - use_build_context_synchronously - Don't use 'BuildContext's across async gaps, guarded by an unrelated 'mounted' check.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\features\auth\pages\login_page.dart:480 - use_build_context_synchronously - Don't use 'BuildContext's across async gaps, guarded by an unrelated 'mounted' check.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\features\auth\pages\phone_login_page.dart:165 - use_build_context_synchronously - Don't use 'BuildContext's across async gaps.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\features\auth\pages\phone_login_page.dart:210 - deprecated_member_use - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\features\taxi\presentation\pages\uber_page.dart:92 - deprecated_member_use - 'fromAssetImage' is deprecated and shouldn't be used. Use BitmapDescriptor.asset method instead.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\features\taxi\presentation\widgets\taxi_request_panel.dart:848 - curly_braces_in_flow_control_structures - Statements in an if should be enclosed in a block.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\features\taxi\presentation\widgets\taxi_request_panel.dart:850 - curly_braces_in_flow_control_structures - Statements in an if should be enclosed in a block.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\features\trip\presentation\widgets\live_map_view.dart:114 - non_constant_identifier_names - The variable name 'Stack' isn't a lowerCamelCase identifier.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\features\trip\presentation\widgets\live_map_view.dart:132 - prefer_typing_uninitialized_variables - An uninitialized variable should have an explicit type annotation.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\features\trip\presentation\widgets\live_map_view.dart:132 - non_constant_identifier_names - The variable name 'Image' isn't a lowerCamelCase identifier.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\models\notification_model.dart:12 - constant_identifier_names - The constant name 'real_estate' isn't a lowerCamelCase identifier.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\SearchScreen.dart:1 - file_names - The file name 'SearchScreen.dart' isn't a lower_case_with_underscores identifier.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\add_food_page.dart:318 - use_build_context_synchronously - Don't use 'BuildContext's across async gaps, guarded by an unrelated 'mounted' check.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\add_food_page.dart:987 - use_build_context_synchronously - Don't use 'BuildContext's across async gaps, guarded by an unrelated 'mounted' check.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\add_place_page.dart:284 - use_build_context_synchronously - Don't use 'BuildContext's across async gaps.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\add_place_page.dart:913 - use_function_type_syntax_for_parameters - Use the generic function type syntax to declare the parameter ''.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\add_place_page.dart:915 - empty_constructor_bodies - Empty constructor bodies should be written using a ';' rather than '{}'.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\add_place_page.dart:916 - prefer_typing_uninitialized_variables - An uninitialized field should have an explicit type annotation.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\add_place_page.dart:916 - prefer_typing_uninitialized_variables - An uninitialized field should have an explicit type annotation.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\add_place_page.dart:916 - non_constant_identifier_names - The variable name 'IconData' isn't a lowerCamelCase identifier.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:255 - use_build_context_synchronously - Don't use 'BuildContext's across async gaps, guarded by an unrelated 'mounted' check.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:259 - use_build_context_synchronously - Don't use 'BuildContext's across async gaps, guarded by an unrelated 'mounted' check.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:1384 - curly_braces_in_flow_control_structures - Statements in an if should be enclosed in a block.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:1386 - curly_braces_in_flow_control_structures - Statements in an if should be enclosed in a block.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:1571 - curly_braces_in_flow_control_structures - Statements in an if should be enclosed in a block.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:1791 - non_constant_identifier_names - The variable name 'Navigator' isn't a lowerCamelCase identifier.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:3048 - prefer_const_constructors_in_immutables - Constructors in '@immutable' classes should be declared as 'const'.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:3090 - non_constant_identifier_names - The variable name 'Navigator' isn't a lowerCamelCase identifier.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:3091 - non_constant_identifier_names - The variable name 'ScaffoldMessenger' isn't a lowerCamelCase identifier.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:3092 - non_constant_identifier_names - The variable name 'SnackBar' isn't a lowerCamelCase identifier.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:3092 - use_function_type_syntax_for_parameters - Use the generic function type syntax to declare the parameter 'SnackBar'.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\all_sections_page.dart:334 - deprecated_member_use - 'value' is deprecated and shouldn't be used. Use component accessors like .r or .g, or toARGB32 for an explicit conversion.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\all_sections_page.dart:826 - deprecated_member_use - 'value' is deprecated and shouldn't be used. Use component accessors like .r or .g, or toARGB32 for an explicit conversion.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\dropship_orders_management.dart:820 - deprecated_member_use - 'Table.fromTextArray' is deprecated and shouldn't be used. Use TableHelper.fromTextArray() instead.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\edit_item_page.dart:230 - use_build_context_synchronously - Don't use 'BuildContext's across async gaps, guarded by an unrelated 'mounted' check.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\events_management_page.dart:128 - use_build_context_synchronously - Don't use 'BuildContext's across async gaps, guarded by an unrelated 'mounted' check.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\events_management_page.dart:154 - use_build_context_synchronously - Don't use 'BuildContext's across async gaps, guarded by an unrelated 'mounted' check.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\governorates_management_page.dart:420 - use_build_context_synchronously - Don't use 'BuildContext's across async gaps, guarded by an unrelated 'mounted' check.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\governorates_management_page.dart:471 - use_build_context_synchronously - Don't use 'BuildContext's across async gaps, guarded by an unrelated 'mounted' check.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\item_details_page.dart:217 - use_build_context_synchronously - Don't use 'BuildContext's across async gaps, guarded by an unrelated 'mounted' check.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\item_details_page.dart:221 - use_build_context_synchronously - Don't use 'BuildContext's across async gaps, guarded by an unrelated 'mounted' check.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\limited_admins_management_page.dart:148 - use_build_context_synchronously - Don't use 'BuildContext's across async gaps, guarded by an unrelated 'mounted' check.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\limited_admins_management_page.dart:231 - use_build_context_synchronously - Don't use 'BuildContext's across async gaps, guarded by an unrelated 'mounted' check.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\limited_admins_management_page.dart:269 - deprecated_member_use - 'groupValue' is deprecated and shouldn't be used. Use a RadioGroup ancestor to manage group value instead. This feature was deprecated after v3.32.0-0.0.pre.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\limited_admins_management_page.dart:270 - deprecated_member_use - 'onChanged' is deprecated and shouldn't be used. Use RadioGroup to handle value change instead. This feature was deprecated after v3.32.0-0.0.pre.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\limited_admins_management_page.dart:290 - use_build_context_synchronously - Don't use 'BuildContext's across async gaps, guarded by an unrelated 'mounted' check.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\login_page.dart:473 - use_build_context_synchronously - Don't use 'BuildContext's across async gaps, guarded by an unrelated 'mounted' check.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\login_page.dart:480 - use_build_context_synchronously - Don't use 'BuildContext's across async gaps, guarded by an unrelated 'mounted' check.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\menu_page.dart:336 - curly_braces_in_flow_control_structures - Statements in an if should be enclosed in a block.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\merchant_page.dart:1019 - use_build_context_synchronously - Don't use 'BuildContext's across async gaps.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\merchant_page.dart:1563 - use_build_context_synchronously - Don't use 'BuildContext's across async gaps, guarded by an unrelated 'mounted' check.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\merchant_page.dart:1564 - use_build_context_synchronously - Don't use 'BuildContext's across async gaps, guarded by an unrelated 'mounted' check.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\merchant_page.dart:1719 - use_build_context_synchronously - Don't use 'BuildContext's across async gaps, guarded by an unrelated 'mounted' check.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\merchant_page.dart:2223 - use_build_context_synchronously - Don't use 'BuildContext's across async gaps.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\merchant_page.dart:2270 - use_build_context_synchronously - Don't use 'BuildContext's across async gaps, guarded by an unrelated 'mounted' check.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\merchant_page.dart:2393 - use_build_context_synchronously - Don't use 'BuildContext's across async gaps, guarded by an unrelated 'mounted' check.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\merchant_page.dart:2394 - use_build_context_synchronously - Don't use 'BuildContext's across async gaps, guarded by an unrelated 'mounted' check.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\merchant_page.dart:2404 - use_build_context_synchronously - Don't use 'BuildContext's across async gaps, guarded by an unrelated 'mounted' check.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\merchant_page.dart:2408 - use_build_context_synchronously - Don't use 'BuildContext's across async gaps, guarded by an unrelated 'mounted' check.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\merchant_page.dart:3300 - use_build_context_synchronously - Don't use 'BuildContext's across async gaps, guarded by an unrelated 'mounted' check.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\merchant_page.dart:3522 - use_build_context_synchronously - Don't use 'BuildContext's across async gaps, guarded by an unrelated 'mounted' check.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\merchant_page.dart:3977 - use_build_context_synchronously - Don't use 'BuildContext's across async gaps, guarded by an unrelated 'mounted' check.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\my_addresses_page.dart:329 - use_build_context_synchronously - Don't use 'BuildContext's across async gaps.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\my_addresses_page.dart:334 - use_build_context_synchronously - Don't use 'BuildContext's across async gaps.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\page_items_screen.dart:480 - use_build_context_synchronously - Don't use 'BuildContext's across async gaps, guarded by an unrelated 'mounted' check.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\page_items_screen.dart:481 - use_build_context_synchronously - Don't use 'BuildContext's across async gaps, guarded by an unrelated 'mounted' check.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\page_items_screen.dart:675 - use_build_context_synchronously - Don't use 'BuildContext's across async gaps, guarded by an unrelated 'mounted' check.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\page_items_screen.dart:717 - deprecated_member_use - 'WillPopScope' is deprecated and shouldn't be used. Use PopScope instead. The Android predictive back feature will not work with WillPopScope. This feature was deprecated after v3.12.0-1.0.pre.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\page_list_page.dart:179 - deprecated_member_use - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\page_list_page.dart:355 - deprecated_member_use - 'value' is deprecated and shouldn't be used. Use component accessors like .r or .g, or toARGB32 for an explicit conversion.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\pages_in_section_page.dart:33 - deprecated_member_use - 'WillPopScope' is deprecated and shouldn't be used. Use PopScope instead. The Android predictive back feature will not work with WillPopScope. This feature was deprecated after v3.12.0-1.0.pre.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\pages_in_section_page.dart:225 - use_build_context_synchronously - Don't use 'BuildContext's across async gaps.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\pages_list_in_section_page.dart:33 - deprecated_member_use - 'WillPopScope' is deprecated and shouldn't be used. Use PopScope instead. The Android predictive back feature will not work with WillPopScope. This feature was deprecated after v3.12.0-1.0.pre.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\pages_list_in_section_page.dart:225 - use_build_context_synchronously - Don't use 'BuildContext's across async gaps.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\photography_studios_page.dart:1594 - use_build_context_synchronously - Don't use 'BuildContext's across async gaps, guarded by an unrelated 'mounted' check.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\photography_studios_page.dart:1595 - use_build_context_synchronously - Don't use 'BuildContext's across async gaps, guarded by an unrelated 'mounted' check.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\profile_page.dart:361 - use_build_context_synchronously - Don't use 'BuildContext's across async gaps.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\real_estate_page.dart:878 - use_build_context_synchronously - Don't use 'BuildContext's across async gaps.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\real_estate_page.dart:879 - use_build_context_synchronously - Don't use 'BuildContext's across async gaps.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\real_estate_page.dart:1179 - use_build_context_synchronously - Don't use 'BuildContext's across async gaps, guarded by an unrelated 'mounted' check.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\real_estate_page.dart:1180 - use_build_context_synchronously - Don't use 'BuildContext's across async gaps, guarded by an unrelated 'mounted' check.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\real_estate_page.dart:1847 - avoid_types_as_parameter_names - The parameter name 'sum' matches a visible type name.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\real_estate_page.dart:2112 - use_build_context_synchronously - Don't use 'BuildContext's across async gaps.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\real_estate_page.dart:2165 - use_build_context_synchronously - Don't use 'BuildContext's across async gaps.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\real_estate_page.dart:2166 - use_build_context_synchronously - Don't use 'BuildContext's across async gaps.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\regions_management_page.dart:297 - use_build_context_synchronously - Don't use 'BuildContext's across async gaps, guarded by an unrelated 'mounted' check.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\regions_management_page.dart:355 - use_build_context_synchronously - Don't use 'BuildContext's across async gaps, guarded by an unrelated 'mounted' check.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\restaurant_details_page.dart:556 - curly_braces_in_flow_control_structures - Statements in an if should be enclosed in a block.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\restaurant_details_page.dart:863 - avoid_types_as_parameter_names - The parameter name 'sum' matches a visible type name.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\restaurant_requests_page.dart:225 - curly_braces_in_flow_control_structures - Statements in an if should be enclosed in a block.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\restaurant_requests_page.dart:227 - curly_braces_in_flow_control_structures - Statements in an if should be enclosed in a block.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\restaurant_requests_page.dart:229 - curly_braces_in_flow_control_structures - Statements in an if should be enclosed in a block.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\restaurants_management_page.dart:25 - use_build_context_synchronously - Don't use 'BuildContext's across async gaps.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\restaurants_management_page.dart:114 - use_build_context_synchronously - Don't use 'BuildContext's across async gaps.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\restaurants_management_page.dart:115 - use_build_context_synchronously - Don't use 'BuildContext's across async gaps.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\restaurants_management_page.dart:562 - use_build_context_synchronously - Don't use 'BuildContext's across async gaps.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\settings_page.dart:1074 - use_build_context_synchronously - Don't use 'BuildContext's across async gaps, guarded by an unrelated 'mounted' check.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\settings_page.dart:1075 - use_build_context_synchronously - Don't use 'BuildContext's across async gaps, guarded by an unrelated 'mounted' check.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\settings_page.dart:1319 - use_build_context_synchronously - Don't use 'BuildContext's across async gaps, guarded by an unrelated 'mounted' check.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\settings_page.dart:1320 - use_build_context_synchronously - Don't use 'BuildContext's across async gaps, guarded by an unrelated 'mounted' check.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\settings_page.dart:1444 - use_build_context_synchronously - Don't use 'BuildContext's across async gaps, guarded by an unrelated 'mounted' check.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\studio_meem_page.dart:933 - curly_braces_in_flow_control_structures - Statements in an if should be enclosed in a block.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\studio_meem_page.dart:1097 - use_build_context_synchronously - Don't use 'BuildContext's across async gaps, guarded by an unrelated 'mounted' check.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\studio_meem_page.dart:1128 - use_build_context_synchronously - Don't use 'BuildContext's across async gaps, guarded by an unrelated 'mounted' check.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\studio_meem_page.dart:1202 - use_build_context_synchronously - Don't use 'BuildContext's across async gaps, guarded by an unrelated 'mounted' check.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\studio_meem_page.dart:1239 - use_build_context_synchronously - Don't use 'BuildContext's across async gaps, guarded by an unrelated 'mounted' check.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\studio_meem_page.dart:1289 - use_build_context_synchronously - Don't use 'BuildContext's across async gaps, guarded by an unrelated 'mounted' check.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\studio_meem_page.dart:1330 - use_build_context_synchronously - Don't use 'BuildContext's across async gaps, guarded by an unrelated 'mounted' check.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\studio_meem_page.dart:1358 - use_build_context_synchronously - Don't use 'BuildContext's across async gaps, guarded by an unrelated 'mounted' check.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\teacher\create_quiz_page.dart:543 - deprecated_member_use - 'groupValue' is deprecated and shouldn't be used. Use a RadioGroup ancestor to manage group value instead. This feature was deprecated after v3.32.0-0.0.pre.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\teacher\create_quiz_page.dart:545 - deprecated_member_use - 'onChanged' is deprecated and shouldn't be used. Use RadioGroup to handle value change instead. This feature was deprecated after v3.32.0-0.0.pre.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\teacher_dashboard_page.dart:144 - deprecated_member_use - 'translate' is deprecated and shouldn't be used. Use translateByVector3, translateByVector4, or translateByDouble instead.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\teacher_dashboard_page.dart:145 - deprecated_member_use - 'scale' is deprecated and shouldn't be used. Use scaleByVector3, scaleByVector4, or scaleByDouble instead.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\teacher_reels_page.dart:841 - use_build_context_synchronously - Don't use 'BuildContext's across async gaps.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\transport_dashboard_page.dart:175 - use_build_context_synchronously - Don't use 'BuildContext's across async gaps, guarded by an unrelated 'mounted' check.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\transport_dashboard_page.dart:667 - use_build_context_synchronously - Don't use 'BuildContext's across async gaps, guarded by an unrelated 'mounted' check.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\transport_login_page.dart:73 - use_build_context_synchronously - Don't use 'BuildContext's across async gaps.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\transport_login_page.dart:77 - use_build_context_synchronously - Don't use 'BuildContext's across async gaps.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\users_management_page.dart:92 - deprecated_member_use - 'groupValue' is deprecated and shouldn't be used. Use a RadioGroup ancestor to manage group value instead. This feature was deprecated after v3.32.0-0.0.pre.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\users_management_page.dart:94 - deprecated_member_use - 'onChanged' is deprecated and shouldn't be used. Use RadioGroup to handle value change instead. This feature was deprecated after v3.32.0-0.0.pre.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\users_management_page.dart:98 - deprecated_member_use - 'groupValue' is deprecated and shouldn't be used. Use a RadioGroup ancestor to manage group value instead. This feature was deprecated after v3.32.0-0.0.pre.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\users_management_page.dart:100 - deprecated_member_use - 'onChanged' is deprecated and shouldn't be used. Use RadioGroup to handle value change instead. This feature was deprecated after v3.32.0-0.0.pre.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\users_management_page.dart:104 - deprecated_member_use - 'groupValue' is deprecated and shouldn't be used. Use a RadioGroup ancestor to manage group value instead. This feature was deprecated after v3.32.0-0.0.pre.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\users_management_page.dart:106 - deprecated_member_use - 'onChanged' is deprecated and shouldn't be used. Use RadioGroup to handle value change instead. This feature was deprecated after v3.32.0-0.0.pre.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\users_management_page.dart:124 - use_build_context_synchronously - Don't use 'BuildContext's across async gaps, guarded by an unrelated 'mounted' check.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\users_management_page.dart:202 - use_build_context_synchronously - Don't use 'BuildContext's across async gaps.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\users_management_page.dart:280 - use_build_context_synchronously - Don't use 'BuildContext's across async gaps, guarded by an unrelated 'mounted' check.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\users_management_page.dart:283 - use_build_context_synchronously - Don't use 'BuildContext's across async gaps, guarded by an unrelated 'mounted' check.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\users_management_page.dart:314 - use_build_context_synchronously - Don't use 'BuildContext's across async gaps, guarded by an unrelated 'mounted' check.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\users_management_page.dart:548 - use_build_context_synchronously - Don't use 'BuildContext's across async gaps, guarded by an unrelated 'mounted' check.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\vacancies_page.dart:2310 - use_build_context_synchronously - Don't use 'BuildContext's across async gaps.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\vacancies_page.dart:2316 - use_build_context_synchronously - Don't use 'BuildContext's across async gaps.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\wholesale_management_page.dart:515 - use_build_context_synchronously - Don't use 'BuildContext's across async gaps.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\wholesale_store_page.dart:1551 - deprecated_member_use - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\wholesale_store_page.dart:2655 - use_build_context_synchronously - Don't use 'BuildContext's across async gaps, guarded by an unrelated 'mounted' check.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\wholesale_store_page.dart:2656 - use_build_context_synchronously - Don't use 'BuildContext's across async gaps, guarded by an unrelated 'mounted' check.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\wholesale_store_page.dart:2732 - use_build_context_synchronously - Don't use 'BuildContext's across async gaps, guarded by an unrelated 'mounted' check.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\wholesale_store_page.dart:2738 - use_build_context_synchronously - Don't use 'BuildContext's across async gaps, guarded by an unrelated 'mounted' check.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\wholesale_store_page.dart:2752 - use_build_context_synchronously - Don't use 'BuildContext's across async gaps, guarded by an unrelated 'mounted' check.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\wholesale_store_page.dart:2753 - use_build_context_synchronously - Don't use 'BuildContext's across async gaps, guarded by an unrelated 'mounted' check.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\wholesale_store_page.dart:2881 - deprecated_member_use - 'groupValue' is deprecated and shouldn't be used. Use a RadioGroup ancestor to manage group value instead. This feature was deprecated after v3.32.0-0.0.pre.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\wholesale_store_page.dart:2882 - deprecated_member_use - 'onChanged' is deprecated and shouldn't be used. Use RadioGroup to handle value change instead. This feature was deprecated after v3.32.0-0.0.pre.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\repositories\geojson_repository.dart:42 - avoid_print - Don't invoke 'print' in production code.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\services\app_location_service.dart:201 - curly_braces_in_flow_control_structures - Statements in an if should be enclosed in a block.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\services\app_location_service.dart:203 - curly_braces_in_flow_control_structures - Statements in an if should be enclosed in a block.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\services\app_location_service.dart:205 - curly_braces_in_flow_control_structures - Statements in an if should be enclosed in a block.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\services\app_location_service.dart:207 - curly_braces_in_flow_control_structures - Statements in an if should be enclosed in a block.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\services\app_location_service.dart:209 - curly_braces_in_flow_control_structures - Statements in an if should be enclosed in a block.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\services\app_location_service.dart:226 - curly_braces_in_flow_control_structures - Statements in an if should be enclosed in a block.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\services\app_location_service.dart:228 - curly_braces_in_flow_control_structures - Statements in an if should be enclosed in a block.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\services\cloudinary_service.dart:12 - provide_deprecation_message - Missing a deprecation message.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\services\cloudinary_service.dart:40 - avoid_print - Don't invoke 'print' in production code.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\services\cloudinary_service.dart:41 - avoid_print - Don't invoke 'print' in production code.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\services\cloudinary_service.dart:45 - avoid_print - Don't invoke 'print' in production code.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\services\cloudinary_service.dart:66 - avoid_print - Don't invoke 'print' in production code.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\services\cloudinary_service.dart:67 - avoid_print - Don't invoke 'print' in production code.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\services\cloudinary_service.dart:71 - avoid_print - Don't invoke 'print' in production code.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\services\delegate_service.dart:90 - avoid_print - Don't invoke 'print' in production code.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\services\food_order_service.dart:118 - avoid_print - Don't invoke 'print' in production code.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\services\location_service.dart:24 - avoid_print - Don't invoke 'print' in production code.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\services\mersal_service.dart:92 - avoid_print - Don't invoke 'print' in production code.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\services\parcel_delivery_service.dart:105 - avoid_print - Don't invoke 'print' in production code.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\services\role_guard_service.dart:32 - use_build_context_synchronously - Don't use 'BuildContext's across async gaps.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\services\role_guard_service.dart:44 - use_build_context_synchronously - Don't use 'BuildContext's across async gaps.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\services\role_guard_service.dart:52 - use_build_context_synchronously - Don't use 'BuildContext's across async gaps.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\services\role_guard_service.dart:59 - use_build_context_synchronously - Don't use 'BuildContext's across async gaps.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\services\role_guard_service.dart:65 - use_build_context_synchronously - Don't use 'BuildContext's across async gaps.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\services\role_guard_service.dart:79 - use_build_context_synchronously - Don't use 'BuildContext's across async gaps.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\services\role_guard_service.dart:82 - use_build_context_synchronously - Don't use 'BuildContext's across async gaps.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\shared\snowfall_wrapper.dart:87 - deprecated_member_use - 'opacity' is deprecated and shouldn't be used. Use .a.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\shared\widgets\app_background.dart:52 - deprecated_member_use_from_same_package - 'christmasGold' is deprecated and shouldn't be used. Use primaryColor instead.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\shared\widgets\app_logo.dart:23 - deprecated_member_use_from_same_package - 'christmasGold' is deprecated and shouldn't be used. Use primaryColor instead.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\shared\widgets\app_logo.dart:29 - deprecated_member_use_from_same_package - 'christmasGold' is deprecated and shouldn't be used. Use primaryColor instead.

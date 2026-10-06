@@ -1,0 +1,70 @@
+rules_version = '2';
+service firebase.storage {
+  match /b/{bucket}/o {
+    
+    // 🛡️ Helper Functions
+    function isAuthenticated() {
+      return request.auth != null;
+    }
+    
+    function isOwner(userId) {
+      return isAuthenticated() && request.auth.uid == userId;
+    }
+    
+    function isAdmin() {
+      return isAuthenticated() && (
+        request.auth.token.role == 'admin' ||
+        request.auth.token.role == 'super_admin' ||
+        request.auth.token.role == 'main_admin' ||
+        request.auth.token.admin == true
+      );
+    }
+    
+    function isImage() {
+      return request.resource.contentType.matches('image/.*');
+    }
+    
+    function isDocument() {
+      return request.resource.contentType.matches('image/.*') || request.resource.contentType == 'application/pdf';
+    }
+
+    // 🛑 1. الحظر الافتراضي العام (Deny by default)
+    match /{allPaths=**} {
+      allow read, write: if false;
+    }
+
+    // 👤 2. صور الملفات الشخصية للمستخدمين (User Avatars)
+    match /users/{userId}/{fileName} {
+      allow read: if isAuthenticated();
+      allow write: if isOwner(userId) && isImage() && request.resource.size < 5 * 1024 * 1024;
+      allow delete: if isOwner(userId) || isAdmin();
+    }
+
+    // 🚖 3. وثائق ورخص السائقين الحساسة (Driver KYC & Licenses)
+    match /drivers/{driverId}/documents/{docName} {
+      allow read: if isOwner(driverId) || isAdmin();
+      allow write: if isOwner(driverId) && isDocument() && request.resource.size < 10 * 1024 * 1024;
+      allow delete: if isAdmin(); // السائق لا يستطيع حذف الوثائق بعد رفعها منعاً للتلاعب
+    }
+
+    // 🏪 4. وسائط ومرفقات المتاجر والمطاعم (Merchant Store Banners & Products)
+    match /merchants/{merchantId}/media/{fileName} {
+      allow read: if true;
+      allow write: if (isOwner(merchantId) || isAdmin()) && isImage() && request.resource.size < 8 * 1024 * 1024;
+      allow delete: if isOwner(merchantId) || isAdmin();
+    }
+
+    // 🍽️ 4.1 وسائط وقوائم وجبات المطاعم (Restaurant Menus & Meals)
+    match /restaurants/{restaurantId}/{allPaths=**} {
+      allow read: if true;
+      allow write: if (isOwner(restaurantId) || isAdmin()) && isImage() && request.resource.size < 8 * 1024 * 1024;
+      allow delete: if isOwner(restaurantId) || isAdmin();
+    }
+
+    // 🔒 5. أدلة الرقابة والتحقيقات الأمنية (Security & Fraud Evidence)
+    match /security_evidence/{evidenceId} {
+      allow read, write: if isAdmin() && request.resource.size < 20 * 1024 * 1024;
+      allow delete: if false; // 🛑 حظر حذف الأدلة والقرائن الأمنية إطلاقاً
+    }
+  }
+}

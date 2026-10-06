@@ -1,0 +1,88 @@
+Flutter crash report.
+Please report a bug at https://github.com/flutter/flutter/issues.
+
+## command
+
+flutter test test/madar_shop_*
+
+## exception
+
+ArgumentError: Invalid argument(s): Illegal character in path
+
+```
+#0      _Uri._checkWindowsPathReservedCharacters (dart:core/uri.dart:2169:11)
+#1      _Uri._makeWindowsFileUrl (dart:core/uri.dart:2242:7)
+#2      new _Uri.file (dart:core/uri.dart:2132:11)
+#3      TestCommand._parseTestArgument (package:flutter_tools/src/commands/test.dart:771:16)
+#4      MappedListIterable.elementAt (dart:_internal/iterable.dart:442:31)
+#5      ListIterator.moveNext (dart:_internal/iterable.dart:371:26)
+#6      new _GrowableList._ofEfficientLengthIterable (dart:core-patch/growable_array.dart:194:27)
+#7      new _GrowableList.of (dart:core-patch/growable_array.dart:154:28)
+#8      new List.of (dart:core-patch/array_patch.dart:39:18)
+#9      ListIterable.toList (dart:_internal/iterable.dart:224:7)
+#10     TestCommand.verifyThenRunCommand (package:flutter_tools/src/commands/test.dart:346:73)
+#11     FlutterCommand.run.<anonymous closure> (package:flutter_tools/src/runner/flutter_command.dart:1590:33)
+<asynchronous suspension>
+#12     AppContext.run.<anonymous closure> (package:flutter_tools/src/base/context.dart:154:19)
+<asynchronous suspension>
+#13     CommandRunner.runCommand (package:args/command_runner.dart:212:13)
+<asynchronous suspension>
+#14     FlutterCommandRunner.runCommand.<anonymous closure> (package:flutter_tools/src/runner/flutter_command_runner.dart:496:9)
+<asynchronous suspension>
+#15     AppContext.run.<anonymous closure> (package:flutter_tools/src/base/context.dart:154:19)
+<asynchronous suspension>
+#16     FlutterCommandRunner.runCommand (package:flutter_tools/src/runner/flutter_command_runner.dart:431:5)
+<asynchronous suspension>
+#17     FlutterCommandRunner.run.<anonymous closure> (package:flutter_tools/src/runner/flutter_command_runner.dart:307:33)
+<asynchronous suspension>
+#18     run.<anonymous closure>.<anonymous closure> (package:flutter_tools/runner.dart:104:11)
+<asynchronous suspension>
+#19     AppContext.run.<anonymous closure> (package:flutter_tools/src/base/context.dart:154:19)
+<asynchronous suspension>
+#20     main (package:flutter_tools/executable.dart:103:3)
+<asynchronous suspension>
+```
+
+## flutter doctor
+
+```
+[✓] Flutter (Channel stable, 3.41.5, on Microsoft Windows [Version 10.0.19045.6466], locale en-US) [831ms]
+    • Flutter version 3.41.5 on channel stable at C:\src\flutter
+    • Upstream repository https://github.com/flutter/flutter.git
+    • Framework revision 2c9eb20739 (6 months ago), 2026-03-17 16:14:01 -0700
+    • Engine revision 052f31d115
+    • Dart version 3.11.3
+    • DevTools version 2.54.2
+    • Feature flags: enable-web, enable-linux-desktop, enable-macos-desktop, enable-windows-desktop, enable-android, enable-ios, cli-animations, enable-native-assets, omit-legacy-version-file, enable-lldb-debugging, enable-uiscene-migration
+
+[✓] Windows Version (10 Pro 64-bit, 22H2, 2009) [2.2s]
+
+[✓] Android toolchain - develop for Android devices (Android SDK version 36.1.0) [53.3s]
+    • Android SDK at C:\Android\sdk
+    • Emulator version 36.4.10.0 (build_id 15004761) (CL:N/A)
+    • Platform android-36.1, build-tools 36.1.0
+    • Java binary at: C:\Program Files\Java\jdk-21.0.10\bin\java
+      This JDK is specified in your Flutter configuration.
+      To change the current JDK, run: `flutter config --jdk-dir="path/to/jdk"`.
+    • Java version Java(TM) SE Runtime Environment (build 21.0.10+8-LTS-217)
+    • All Android licenses accepted.
+
+[✓] Chrome - develop for the web [391ms]
+    • Chrome at C:\Program Files\Google\Chrome\Application\chrome.exe
+
+[!] Visual Studio - develop Windows apps (Visual Studio Build Tools 2026 18.7.3) [389ms]
+    • Visual Studio at C:\Program Files (x86)\Microsoft Visual Studio\18\BuildTools
+    • Visual Studio Build Tools 2026 version 18.7.11925.98
+    ✗ The current Visual Studio installation is incomplete.
+      Please use Visual Studio Installer to complete the installation or reinstall Visual Studio.
+
+[✓] Connected device (3 available) [624ms]
+    • Windows (desktop) • windows • windows-x64    • Microsoft Windows [Version 10.0.19045.6466]
+    • Chrome (web)      • chrome  • web-javascript • Google Chrome 152.0.7977.76
+    • Edge (web)        • edge    • web-javascript • Microsoft Edge 152.0.4191.53
+
+[✓] Network resources [3.1s]
+    • All expected network resources are available.
+
+! Doctor found issues in 1 category.
+```

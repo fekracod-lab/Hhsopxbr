@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>طلب حذف الحساب | تطبيق مدار</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Firebase SDKs -->
+  <script defer src="/__/firebase/10.7.1/firebase-app-compat.js"></script>
+  <script defer src="/__/firebase/10.7.1/firebase-firestore-compat.js"></script>
+  <script defer src="/__/firebase/init.js"></script>
+
+  <style>
+    :root {
+      --primary: #00897B;
+      --accent: #26C6DA;
+      --danger: #EF5350;
+      --dark-bg: #121212;
+      --card-dark: #1E1E1E;
+      --text-dark: #FFFFFF;
+      --text-muted: #B0B0B0;
+      
+      --light-bg: #F5F7FA;
+      --card-light: #FFFFFF;
+      --text-light: #1A1A1A;
+      --text-light-muted: #555555;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Cairo', sans-serif;
+      background: var(--light-bg);
+      color: var(--text-light);
+      line-height: 1.8;
+      padding: 20px;
+      transition: background 0.3s, color 0.3s;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      body {
+        background: var(--dark-bg);
+        color: var(--text-dark);
+      }
+      .card {
+        background: var(--card-dark) !important;
+        border-color: rgba(255, 255, 255, 0.08) !important;
+      }
+      p, label, li {
+        color: var(--text-muted) !important;
+      }
+      input, textarea, select {
+        background: #2D2D2D !important;
+        border-color: rgba(255, 255, 255, 0.1) !important;
+        color: #fff !important;
+      }
+    }
+
+    .container {
+      max-width: 600px;
+      margin: 40px auto;
+      padding: 0 10px;
+    }
+
+    .card {
+      background: var(--card-light);
+      border-radius: 24px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+      border: 1px solid rgba(0, 0, 0, 0.05);
+      padding: 40px;
+    }
+
+    h1 {
+      color: var(--danger);
+      font-size: 24px;
+      font-weight: 700;
+      margin-bottom: 10px;
+      text-align: center;
+    }
+
+    .subtitle {
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 14px;
+      margin-bottom: 30px;
+    }
+
+    p {
+      color: var(--text-light-muted);
+      font-size: 15px;
+      margin-bottom: 20px;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    label {
+      display: block;
+      font-weight: 600;
+      margin-bottom: 8px;
+      font-size: 14px;
+    }
+
+    input, select, textarea {
+      width: 100%;
+      padding: 12px 16px;
+      border-radius: 12px;
+      border: 1px solid #E0E0E0;
+      font-family: 'Cairo', sans-serif;
+      font-size: 15px;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+
+    input:focus, select:focus, textarea:focus {
+      border-color: var(--accent);
+    }
+
+    .btn-danger {
+      display: block;
+      width: 100%;
+      background: linear-gradient(135deg, var(--danger), #D32F2F);
+      color: white;
+      padding: 14px;
+      border: none;
+      border-radius: 12px;
+      font-size: 16px;
+      font-weight: 700;
+      cursor: pointer;
+      font-family: 'Cairo', sans-serif;
+      box-shadow: 0 4px 15px rgba(239, 83, 80, 0.25);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .btn-danger:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(239, 83, 80, 0.35);
+    }
+
+    .success-message {
+      display: none;
+      text-align: center;
+      padding: 30px;
+    }
+
+    .success-message h2 {
+      color: var(--primary);
+      margin-bottom: 12px;
+    }
+
+    .footer {
+      text-align: center;
+      font-size: 12px;
+      color: var(--text-muted);
+      margin-top: 30px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <div class="card">
+      <div id="form-container">
+        <h1>طلب حذف الحساب والبيانات</h1>
+        <div class="subtitle">Request Account Deletion</div>
+
+        <p>يرجى العلم أن عملية حذف الحساب <strong>نهائية ولا يمكن التراجع عنها</strong>. سيتم مسح كافة معلوماتك الشخصية وملفات التوثيق والطلبات الخاصة بك من خوادمنا بشكل كامل في غضون 7 أيام كحد أقصى.</p>
+
+        <form id="deleteForm">
+          <div class="form-group">
+            <label for="email">البريد الإلكتروني المسجل في التطبيق *</label>
+            <input type="email" id="email" required placeholder="example@email.com" dir="ltr">
+          </div>
+
+          <div class="form-group">
+            <label for="role">نوع الحساب *</label>
+            <select id="role" required>
+              <option value="customer">عميل / زبون</option>
+              <option value="driver">سائق / كابتن</option>
+              <option value="merchant">صاحب متجر / مطعم</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="reason">سبب طلب الحذف (اختياري)</label>
+            <textarea id="reason" rows="3" placeholder="اكتب السبب هنا لمساعدتنا على تحسين خدماتنا..."></textarea>
+          </div>
+
+          <button type="submit" class="btn-danger">إرسال طلب الحذف نهائياً</button>
+        </form>
+      </div>
+
+      <div id="success-container" class="success-message">
+        <h2>تم تقديم الطلب بنجاح!</h2>
+        <p>لقد استلمنا طلب حذف حسابك. سنقوم بمراجعة الطلب وحذف كافة بياناتك الشخصية من خوادم قاعدة البيانات والملفات الخاصة بنا في غضون 7 أيام كحد أقصى.</p>
+        <p>إذا كانت لديك أي استفسارات إضافية، يرجى التواصل معنا عبر: <strong>omar.muthana.rawi@gmail.com</strong></p>
+      </div>
+    </div>
+
+    <div class="footer">
+      تطبيق مدار © 2026 | <a href="privacy_policy.html" style="color: var(--accent); text-decoration: none;">سياسة الخصوصية</a>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const form = document.getElementById('deleteForm');
+      const formContainer = document.getElementById('form-container');
+      const successContainer = document.getElementById('success-container');
+
+      form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+
+        const email = document.getElementById('email').value;
+        const role = document.getElementById('role').value;
+        const reason = document.getElementById('reason').value;
+
+        try {
+          // Initialize Firestore securely via the Firebase SDK loaded above
+          const db = firebase.firestore();
+          
+          await db.collection('account_deletion_requests').add({
+            email: email,
+            role: role,
+            reason: reason,
+            status: 'pending',
+            createdAt: firebase.firestore.FieldValue.serverTimestamp()
+          });
+
+          // Show success message
+          formContainer.style.display = 'none';
+          successContainer.style.display = 'block';
+
+        } catch (error) {
+          console.error("Error adding document: ", error);
+          alert("حدث خطأ أثناء إرسال الطلب. يرجى المحاولة لاحقاً أو مراسلتنا مباشرة عبر البريد الإلكتروني.");
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>

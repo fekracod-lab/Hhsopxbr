@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "656705978860",
+    "project_id": "dala-alqaim",
+    "storage_bucket": "dala-alqaim.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:656705978860:android:07fd42dc65b8d06ed280c9",
+        "android_client_info": {
+          "package_name": "com.dalal.alqaimapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDmIrIXEKy1hmvkgDtAAws95fFnIrWVeZs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

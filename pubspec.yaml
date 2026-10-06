@@ -1,0 +1,124 @@
+
+name: dalal_alqaim
+description: "A new Flutter project."
+publish_to: 'none'
+version: 7.0.0+55701068
+
+environment:
+  sdk: ^3.7.2
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_localizations:
+    sdk: flutter
+
+  # Map
+  google_maps_flutter: ^2.5.3
+  google_maps_flutter_android: ^2.14.12
+  google_maps_flutter_platform_interface: ^2.9.7
+  http: ^1.6.0
+  shared_preferences: ^2.3.2
+
+  # Location
+  geolocator: ^10.1.0
+  geocoding: ^2.1.1
+
+  # Firebase
+  firebase_core: 4.10.0
+  firebase_auth: 6.5.2
+  cloud_firestore: 6.5.0
+  firebase_storage: ^13.4.2
+  firebase_messaging: 16.3.0
+  firebase_crashlytics: ^5.2.3
+
+  # Auth
+  google_sign_in: ^6.2.1
+  sign_in_with_apple: ^7.0.1
+  crypto: ^3.0.3
+
+  # UI / Utils
+  cupertino_icons: ^1.0.8
+  intl: ^0.20.2
+  shimmer: ^3.0.0
+  badges: ^3.1.2
+  flutter_colorpicker: ^1.1.0
+  image_picker: ^1.2.1
+  share_plus: ^10.0.0
+  url_launcher: ^6.1.11
+  flutter_staggered_animations: ^1.1.1
+  confetti: ^0.7.0
+  lottie: ^3.3.2
+  onesignal_flutter: ^5.0.0
+  provider: ^6.1.1
+  app_links: ^3.4.5
+  connectivity_plus: ^6.1.0
+  pdf: ^3.11.3
+  printing: ^5.14.2
+  flutter_screenutil: ^5.9.3
+  google_fonts: ^8.0.2
+
+
+  # Background Service & Notifications (Taxi)
+  flutter_background_service: ^5.1.0
+  flutter_local_notifications: ^20.1.0
+  web_socket_channel: ^3.0.3
+  video_player: ^2.11.0
+  ffmpeg_kit_flutter_new: ^4.1.0
+  dio: ^5.9.1
+  gal: ^2.3.2
+  path_provider: ^2.1.5
+  file_picker: ^8.0.3
+  fl_chart: ^1.1.1
+  permission_handler: ^12.0.1
+  flutter_ringtone_player: ^4.0.0+4
+  record: ^6.2.0
+  path: ^1.9.1
+  cloud_functions: ^6.2.0
+  google_generative_ai: ^0.4.0
+  speech_to_text: ^7.4.0
+  flutter_tts: ^4.0.2
+  flutter_polyline_points: ^3.1.0
+  integration_test:
+    sdk: flutter
+  local_auth: ^3.0.2
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^5.0.0
+  flutter_launcher_icons: ^0.13.1
+
+
+flutter_icons:
+  android: true
+  ios: true
+  image_path: "imges/dala_alqaim_logo.png"
+  remove_alpha_ios: true
+
+  # Supabase client for Flutter (used for image uploads/storage)
+  # Add this dependency so we can store and fetch images from Supabase Storage
+  # You'll need to run `flutter pub get` after this change.
+  # Note: keep versions compatible with your SDK; update if necessary.
+  # (This is listed under dependencies for convenience; flutter tools will merge.)
+  
+
+flutter:
+  uses-material-design: true
+  assets:
+    - imges/
+    - imges/restaurants/
+    - assets/
+    - assets/ai/
+    - assets/cars/
+    - assets/animations/
+    - assets/illustrations/
+    - assets/images/
+    - assets/map_styles/
+    - Cairo-Regular.ttf
+  fonts:
+    - family: Cairo
+      fonts:
+        - asset: Cairo-Regular.ttf
+
+

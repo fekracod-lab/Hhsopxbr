@@ -1,0 +1,53 @@
+name: madar_shop
+description: "Madar Shop System — Retail POS and Inventory Management connected to Madar Ecosystem."
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.11.3
+
+dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^1.0.8
+
+  # Firebase
+  firebase_core: any
+  firebase_auth: any
+  cloud_firestore: any
+  firebase_storage: any
+
+  # State & UI
+  provider: ^6.1.1
+  flutter_screenutil: ^5.9.3
+  google_fonts: ^8.0.2
+  intl: ^0.20.2
+  shimmer: ^3.0.0
+  shared_preferences: ^2.3.2
+  url_launcher: ^6.1.11
+
+  # Printing & Documents
+  pdf: ^3.11.3
+  printing: ^5.14.2
+
+  # Networking & Storage
+  http: ^1.6.0
+  connectivity_plus: ^6.1.0
+  image_picker: ^1.1.2
+  sqflite_common_ffi: ^2.4.0+3
+  sqlite3_flutter_libs: ^0.6.0+eol
+  uuid: ^4.6.0
+  path_provider: ^2.1.6
+  path: ^1.9.1
+  crypto: ^3.0.7
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^6.0.0
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/
+    - assets/images/

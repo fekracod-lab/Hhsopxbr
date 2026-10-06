@@ -1,0 +1,1787 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // 🔒 دالة للتحقق من صلاحيات الأدمن
+    function isAdmin(auth) {
+      return auth != null && 
+        (get(/databases/$(database)/documents/users/$(auth.uid)).data.role in ['admin', 'super_admin', 'main_admin', 'limited_admin', 'complaints_admin']);
+    }
+
+    // 🚖 دالة للتحقق مما إذا كان المستخدم كابتن تكسي معتمد
+    function isCaptain(auth) {
+      return auth != null && 
+        (get(/databases/$(database)/documents/users/$(auth.uid)).data.role in ['captain', 'driver', 'taxi_captain']);
+    }
+
+    // 🍔 دالة للتحقق مما إذا كان المستخدم صاحب مطعم معتمد
+    function isRestaurant(auth) {
+      return auth != null && 
+        get(/databases/$(database)/documents/users/$(auth.uid)).data.role == 'restaurant';
+    }
+
+    // 🏪 دالة للتحقق مما إذا كان المستخدم صاحب متجر / سوبرماركت معتمد
+    function isStore(auth) {
+      return auth != null && 
+        get(/databases/$(database)/documents/users/$(auth.uid)).data.role == 'store';
+    }
+
+    // 🛵 دالة للتحقق مما إذا كان المستخدم مندوب توصيل معتمد
+    function isDelivery(auth) {
+      return auth != null && 
+        (get(/databases/$(database)/documents/users/$(auth.uid)).data.role in ['delivery', 'delivery_captain']);
+    }
+
+    // ==============================================================================
+    // 🔒 1. حماية بيانات المستخدمين والأدوار ومنع تزوير الصلاحيات أو التعديل المالي الذاتي
+    // ==============================================================================
+    match /users/{userId} {
+      allow read: if request.auth != null && (request.auth.uid == userId || isAdmin(request.auth));
+      allow create: if request.auth != null && request.auth.uid == userId && 
+        !(request.resource.data.role in ['admin', 'super_admin', 'main_admin', 'limited_admin', 'complaints_admin']) &&
+        // إذا كان الدور ليس زبون عادي، يجب أن تكون الحالة pending وبانتظار موافقة الإدارة
+        (request.resource.data.role in ['customer', 'user'] || request.resource.data.status == 'pending');
+      
+      allow update: if request.auth != null && (
+        isAdmin(request.auth) || (
+          request.auth.uid == userId && 
+          // منع تغيير الدور الشخصي ذاتياً
+          (!('role' in resource.data) || request.resource.data.role == resource.data.role) &&
+          // منع التفعيل الذاتي للحسابات المعلقة
+          (!('isApproved' in resource.data) || request.resource.data.isApproved == resource.data.isApproved) &&
+          (!('status' in resource.data) || request.resource.data.status == resource.data.status || (resource.data.status == 'pending' && request.resource.data.status == 'pending')) &&
+          // منع فك الحظر ذاتياً
+          !(resource.data.status == 'banned') &&
+          // 🛑 الحظر الصارم لأي تعديل مالي مباشر من طرف العميل (P0 Client Financial Mutation Block)
+          (!('balance' in request.resource.data) || request.resource.data.balance == resource.data.balance) &&
+          (!('walletBalance' in request.resource.data) || request.resource.data.walletBalance == resource.data.walletBalance) &&
+          (!('points' in request.resource.data) || request.resource.data.points == resource.data.points) &&
+          (!('rewardsPoints' in request.resource.data) || request.resource.data.rewardsPoints == resource.data.rewardsPoints) &&
+          (!('totalEarnings' in request.resource.data) || request.resource.data.totalEarnings == resource.data.totalEarnings) &&
+          (!('totalCommission' in request.resource.data) || request.resource.data.totalCommission == resource.data.totalCommission) &&
+          (!('appDebt' in request.resource.data) || request.resource.data.appDebt == resource.data.appDebt) &&
+          (!('rating' in request.resource.data) || request.resource.data.rating == resource.data.rating)
+        )
+      );
+      allow delete: if request.auth != null && (request.auth.uid == userId || isAdmin(request.auth));
+
+      // 📱 سجل الأجهزة المتعددة للإشعارات (Multi-Device Token Registry)
+      match /notification_devices/{deviceId} {
+        allow read, write: if request.auth != null && (request.auth.uid == userId || isAdmin(request.auth));
+      }
+    }
+
+    // ==========================================
+    // 🍔 2. قواعد مستندات وقوائم الطعام للمطاعم
+    // ==========================================
+    match /restaurants/{restaurantId} {
+      allow read: if true;
+      allow create: if request.auth != null && (
+        request.auth.uid == restaurantId || 
+        request.resource.data.ownerId == request.auth.uid || 
+        isAdmin(request.auth)
+      ) && 
+        !(request.resource.data.role in ['admin', 'super_admin', 'main_admin', 'limited_admin', 'complaints_admin']) &&
+        (!('isApproved' in request.resource.data) || request.resource.data.isApproved == false || isAdmin(request.auth)) &&
+        (!('status' in request.resource.data) || request.resource.data.status == 'pending' || isAdmin(request.auth));
+
+      allow update: if request.auth != null && (
+        isAdmin(request.auth) || (
+          (request.auth.uid == restaurantId || resource.data.ownerId == request.auth.uid) &&
+          (!('role' in resource.data) || request.resource.data.role == resource.data.role) &&
+          (!('isApproved' in resource.data) || request.resource.data.isApproved == resource.data.isApproved) &&
+          (!('status' in resource.data) || request.resource.data.status == resource.data.status || (resource.data.status == 'pending' && request.resource.data.status == 'pending'))
+        )
+      );
+      allow delete: if request.auth != null && (request.auth.uid == restaurantId || isAdmin(request.auth));
+
+      match /menu/{itemId} {
+        allow read: if true;
+        allow write: if request.auth != null && (
+          request.auth.uid == restaurantId ||
+          isAdmin(request.auth) ||
+          (exists(/databases/$(database)/documents/restaurants/$(restaurantId)) &&
+            get(/databases/$(database)/documents/restaurants/$(restaurantId)).data.ownerId == request.auth.uid) ||
+          (exists(/databases/$(database)/documents/users/$(request.auth.uid)) && (
+            get(/databases/$(database)/documents/users/$(request.auth.uid)).data.restaurantId == restaurantId ||
+            get(/databases/$(database)/documents/users/$(request.auth.uid)).data.role in ['restaurant', 'merchant', 'cashier']
+          ))
+        );
+      }
+
+      match /categories/{catId} {
+        allow read: if true;
+        allow write: if request.auth != null && (
+          request.auth.uid == restaurantId ||
+          isAdmin(request.auth) ||
+          (exists(/databases/$(database)/documents/restaurants/$(restaurantId)) &&
+            get(/databases/$(database)/documents/restaurants/$(restaurantId)).data.ownerId == request.auth.uid) ||
+          (exists(/databases/$(database)/documents/users/$(request.auth.uid)) && (
+            get(/databases/$(database)/documents/users/$(request.auth.uid)).data.restaurantId == restaurantId ||
+            get(/databases/$(database)/documents/users/$(request.auth.uid)).data.role in ['restaurant', 'merchant', 'cashier']
+          ))
+        );
+      }
+
+      match /tables/{tableId} {
+        allow read: if true;
+        allow write: if request.auth != null && (
+          request.auth.uid == restaurantId ||
+          isAdmin(request.auth) ||
+          (exists(/databases/$(database)/documents/restaurants/$(restaurantId)) &&
+            get(/databases/$(database)/documents/restaurants/$(restaurantId)).data.ownerId == request.auth.uid) ||
+          (exists(/databases/$(database)/documents/users/$(request.auth.uid)) && (
+            get(/databases/$(database)/documents/users/$(request.auth.uid)).data.restaurantId == restaurantId ||
+            get(/databases/$(database)/documents/users/$(request.auth.uid)).data.role in ['restaurant', 'merchant', 'cashier']
+          ))
+        );
+      }
+
+      match /reservations/{resId} {
+        allow read, write: if request.auth != null && (
+          request.auth.uid == restaurantId ||
+          isAdmin(request.auth) ||
+          isRestaurant(request.auth) ||
+          (exists(/databases/$(database)/documents/restaurants/$(restaurantId)) &&
+            get(/databases/$(database)/documents/restaurants/$(restaurantId)).data.ownerId == request.auth.uid) ||
+          (exists(/databases/$(database)/documents/users/$(request.auth.uid)) && (
+            get(/databases/$(database)/documents/users/$(request.auth.uid)).data.restaurantId == restaurantId ||
+            get(/databases/$(database)/documents/users/$(request.auth.uid)).data.role in ['restaurant', 'merchant', 'cashier']
+          ))
+        );
+      }
+
+      match /customers/{custId} {
+        allow read, write: if request.auth != null && (
+          request.auth.uid == restaurantId ||
+          isAdmin(request.auth) ||
+          isRestaurant(request.auth) ||
+          (exists(/databases/$(database)/documents/restaurants/$(restaurantId)) &&
+            get(/databases/$(database)/documents/restaurants/$(restaurantId)).data.ownerId == request.auth.uid) ||
+          (exists(/databases/$(database)/documents/users/$(request.auth.uid)) && (
+            get(/databases/$(database)/documents/users/$(request.auth.uid)).data.restaurantId == restaurantId ||
+            get(/databases/$(database)/documents/users/$(request.auth.uid)).data.role in ['restaurant', 'merchant', 'cashier']
+          ))
+        );
+      }
+
+      match /modifiers/{modId} {
+        allow read: if true;
+        allow write: if request.auth != null && (
+          request.auth.uid == restaurantId ||
+          isAdmin(request.auth) ||
+          isRestaurant(request.auth) ||
+          (exists(/databases/$(database)/documents/restaurants/$(restaurantId)) &&
+            get(/databases/$(database)/documents/restaurants/$(restaurantId)).data.ownerId == request.auth.uid) ||
+          (exists(/databases/$(database)/documents/users/$(request.auth.uid)) && (
+            get(/databases/$(database)/documents/users/$(request.auth.uid)).data.restaurantId == restaurantId ||
+            get(/databases/$(database)/documents/users/$(request.auth.uid)).data.role in ['restaurant', 'merchant', 'cashier']
+          ))
+        );
+      }
+    }
+
+    // ==========================================
+    // 📦 2.1 قواعد منتجات وقوائم وجبات التجار والمطاعم
+    // ==========================================
+    match /merchant_products/{merchantId} {
+      allow read: if true;
+      allow write: if request.auth != null && (
+        request.auth.uid == merchantId || 
+        isAdmin(request.auth) ||
+        (exists(/databases/$(database)/documents/users/$(request.auth.uid)) && (
+          get(/databases/$(database)/documents/users/$(request.auth.uid)).data.role in ['restaurant', 'merchant', 'store', 'seller', 'cashier'] ||
+          get(/databases/$(database)/documents/users/$(request.auth.uid)).data.restaurantId == merchantId ||
+          get(/databases/$(database)/documents/users/$(request.auth.uid)).data.storeId == merchantId ||
+          get(/databases/$(database)/documents/users/$(request.auth.uid)).data.branchId == merchantId
+        )) ||
+        (exists(/databases/$(database)/documents/restaurants/$(merchantId)) &&
+          get(/databases/$(database)/documents/restaurants/$(merchantId)).data.ownerId == request.auth.uid)
+      );
+
+      match /{document=**} {
+        allow read: if true;
+        allow write: if request.auth != null && (
+          request.auth.uid == merchantId || 
+          isAdmin(request.auth) ||
+          (exists(/databases/$(database)/documents/users/$(request.auth.uid)) && (
+            get(/databases/$(database)/documents/users/$(request.auth.uid)).data.role in ['restaurant', 'merchant', 'store', 'seller', 'cashier'] ||
+            get(/databases/$(database)/documents/users/$(request.auth.uid)).data.restaurantId == merchantId ||
+            get(/databases/$(database)/documents/users/$(request.auth.uid)).data.storeId == merchantId ||
+            get(/databases/$(database)/documents/users/$(request.auth.uid)).data.branchId == merchantId
+          )) ||
+          (exists(/databases/$(database)/documents/restaurants/$(merchantId)) &&
+            get(/databases/$(database)/documents/restaurants/$(merchantId)).data.ownerId == request.auth.uid)
+        );
+      }
+    }
+
+    // ==========================================
+    // 🍔 قواعد تصنيفات وإضافات المطاعم
+    // ==========================================
+    match /merchant_categories/{merchantId} {
+      allow read: if true;
+      allow write: if request.auth != null && (
+        request.auth.uid == merchantId || 
+        isAdmin(request.auth) ||
+        isRestaurant(request.auth)
+      );
+
+      match /{document=**} {
+        allow read: if true;
+        allow write: if request.auth != null && (
+          request.auth.uid == merchantId || 
+          isAdmin(request.auth) ||
+          isRestaurant(request.auth)
+        );
+      }
+    }
+
+    match /merchant_modifiers/{merchantId} {
+      allow read: if true;
+      allow write: if request.auth != null && (
+        request.auth.uid == merchantId || 
+        isAdmin(request.auth) ||
+        isRestaurant(request.auth)
+      );
+
+      match /{document=**} {
+        allow read: if true;
+        allow write: if request.auth != null && (
+          request.auth.uid == merchantId || 
+          isAdmin(request.auth) ||
+          isRestaurant(request.auth)
+        );
+      }
+    }
+
+    match /merchant_reservations/{merchantId} {
+      allow read: if true;
+      allow write: if request.auth != null && (
+        request.auth.uid == merchantId || 
+        isAdmin(request.auth) ||
+        isRestaurant(request.auth) ||
+        (exists(/databases/$(database)/documents/users/$(request.auth.uid)) && (
+          get(/databases/$(database)/documents/users/$(request.auth.uid)).data.restaurantId == merchantId ||
+          get(/databases/$(database)/documents/users/$(request.auth.uid)).data.role in ['restaurant', 'merchant', 'cashier']
+        ))
+      );
+
+      match /{document=**} {
+        allow read: if true;
+        allow write: if request.auth != null && (
+          request.auth.uid == merchantId || 
+          isAdmin(request.auth) ||
+          isRestaurant(request.auth) ||
+          (exists(/databases/$(database)/documents/users/$(request.auth.uid)) && (
+            get(/databases/$(database)/documents/users/$(request.auth.uid)).data.restaurantId == merchantId ||
+            get(/databases/$(database)/documents/users/$(request.auth.uid)).data.role in ['restaurant', 'merchant', 'cashier']
+          ))
+        );
+      }
+    }
+
+    match /merchant_customers/{merchantId} {
+      allow read: if request.auth != null && (
+        request.auth.uid == merchantId || 
+        isAdmin(request.auth) ||
+        isRestaurant(request.auth) ||
+        (exists(/databases/$(database)/documents/users/$(request.auth.uid)) && (
+          get(/databases/$(database)/documents/users/$(request.auth.uid)).data.restaurantId == merchantId ||
+          get(/databases/$(database)/documents/users/$(request.auth.uid)).data.role in ['restaurant', 'merchant', 'cashier']
+        ))
+      );
+      allow write: if request.auth != null && (
+        request.auth.uid == merchantId || 
+        isAdmin(request.auth) ||
+        isRestaurant(request.auth) ||
+        (exists(/databases/$(database)/documents/users/$(request.auth.uid)) && (
+          get(/databases/$(database)/documents/users/$(request.auth.uid)).data.restaurantId == merchantId ||
+          get(/databases/$(database)/documents/users/$(request.auth.uid)).data.role in ['restaurant', 'merchant', 'cashier']
+        ))
+      );
+
+      match /{document=**} {
+        allow read: if request.auth != null && (
+          request.auth.uid == merchantId || 
+          isAdmin(request.auth) ||
+          isRestaurant(request.auth) ||
+          (exists(/databases/$(database)/documents/users/$(request.auth.uid)) && (
+            get(/databases/$(database)/documents/users/$(request.auth.uid)).data.restaurantId == merchantId ||
+            get(/databases/$(database)/documents/users/$(request.auth.uid)).data.role in ['restaurant', 'merchant', 'cashier']
+          ))
+        );
+        allow write: if request.auth != null && (
+          request.auth.uid == merchantId || 
+          isAdmin(request.auth) ||
+          isRestaurant(request.auth) ||
+          (exists(/databases/$(database)/documents/users/$(request.auth.uid)) && (
+            get(/databases/$(database)/documents/users/$(request.auth.uid)).data.restaurantId == merchantId ||
+            get(/databases/$(database)/documents/users/$(request.auth.uid)).data.role in ['restaurant', 'merchant', 'cashier']
+          ))
+        );
+      }
+    }
+
+    match /merchant_inventory/{merchantId} {
+      allow read, write: if request.auth != null && (
+        request.auth.uid == merchantId || 
+        isAdmin(request.auth) ||
+        isRestaurant(request.auth) ||
+        (exists(/databases/$(database)/documents/users/$(request.auth.uid)) && (
+          get(/databases/$(database)/documents/users/$(request.auth.uid)).data.restaurantId == merchantId ||
+          get(/databases/$(database)/documents/users/$(request.auth.uid)).data.role in ['restaurant', 'merchant', 'cashier']
+        ))
+      );
+
+      match /{document=**} {
+        allow read, write: if request.auth != null && (
+          request.auth.uid == merchantId || 
+          isAdmin(request.auth) ||
+          isRestaurant(request.auth) ||
+          (exists(/databases/$(database)/documents/users/$(request.auth.uid)) && (
+            get(/databases/$(database)/documents/users/$(request.auth.uid)).data.restaurantId == merchantId ||
+            get(/databases/$(database)/documents/users/$(request.auth.uid)).data.role in ['restaurant', 'merchant', 'cashier']
+          ))
+        );
+      }
+    }
+
+    match /merchant_purchases/{merchantId} {
+      allow read, write: if request.auth != null && (
+        request.auth.uid == merchantId || 
+        isAdmin(request.auth) ||
+        isRestaurant(request.auth) ||
+        (exists(/databases/$(database)/documents/users/$(request.auth.uid)) && (
+          get(/databases/$(database)/documents/users/$(request.auth.uid)).data.restaurantId == merchantId ||
+          get(/databases/$(database)/documents/users/$(request.auth.uid)).data.role in ['restaurant', 'merchant', 'cashier']
+        ))
+      );
+
+      match /{document=**} {
+        allow read, write: if request.auth != null && (
+          request.auth.uid == merchantId || 
+          isAdmin(request.auth) ||
+          isRestaurant(request.auth) ||
+          (exists(/databases/$(database)/documents/users/$(request.auth.uid)) && (
+            get(/databases/$(database)/documents/users/$(request.auth.uid)).data.restaurantId == merchantId ||
+            get(/databases/$(database)/documents/users/$(request.auth.uid)).data.role in ['restaurant', 'merchant', 'cashier']
+          ))
+        );
+      }
+    }
+
+    match /merchant_suppliers/{merchantId} {
+      allow read, write: if request.auth != null && (
+        request.auth.uid == merchantId || 
+        isAdmin(request.auth) ||
+        isRestaurant(request.auth) ||
+        (exists(/databases/$(database)/documents/users/$(request.auth.uid)) && (
+          get(/databases/$(database)/documents/users/$(request.auth.uid)).data.restaurantId == merchantId ||
+          get(/databases/$(database)/documents/users/$(request.auth.uid)).data.role in ['restaurant', 'merchant', 'cashier']
+        ))
+      );
+
+      match /{document=**} {
+        allow read, write: if request.auth != null && (
+          request.auth.uid == merchantId || 
+          isAdmin(request.auth) ||
+          isRestaurant(request.auth) ||
+          (exists(/databases/$(database)/documents/users/$(request.auth.uid)) && (
+            get(/databases/$(database)/documents/users/$(request.auth.uid)).data.restaurantId == merchantId ||
+            get(/databases/$(database)/documents/users/$(request.auth.uid)).data.role in ['restaurant', 'merchant', 'cashier']
+          ))
+        );
+      }
+    }
+
+    match /merchant_expenses/{merchantId} {
+      allow read, write: if request.auth != null && (
+        request.auth.uid == merchantId || 
+        isAdmin(request.auth) ||
+        isRestaurant(request.auth) ||
+        (exists(/databases/$(database)/documents/users/$(request.auth.uid)) && (
+          get(/databases/$(database)/documents/users/$(request.auth.uid)).data.restaurantId == merchantId ||
+          get(/databases/$(database)/documents/users/$(request.auth.uid)).data.role in ['restaurant', 'merchant', 'cashier']
+        ))
+      );
+
+      match /{document=**} {
+        allow read, write: if request.auth != null && (
+          request.auth.uid == merchantId || 
+          isAdmin(request.auth) ||
+          isRestaurant(request.auth) ||
+          (exists(/databases/$(database)/documents/users/$(request.auth.uid)) && (
+            get(/databases/$(database)/documents/users/$(request.auth.uid)).data.restaurantId == merchantId ||
+            get(/databases/$(database)/documents/users/$(request.auth.uid)).data.role in ['restaurant', 'merchant', 'cashier']
+          ))
+        );
+      }
+    }
+
+    match /merchant_employees/{merchantId} {
+      allow read, write: if request.auth != null && (
+        request.auth.uid == merchantId || 
+        isAdmin(request.auth) ||
+        isRestaurant(request.auth) ||
+        (exists(/databases/$(database)/documents/users/$(request.auth.uid)) && (
+          get(/databases/$(database)/documents/users/$(request.auth.uid)).data.restaurantId == merchantId ||
+          get(/databases/$(database)/documents/users/$(request.auth.uid)).data.role in ['restaurant', 'merchant', 'cashier']
+        ))
+      );
+
+      match /{document=**} {
+        allow read, write: if request.auth != null && (
+          request.auth.uid == merchantId || 
+          isAdmin(request.auth) ||
+          isRestaurant(request.auth) ||
+          (exists(/databases/$(database)/documents/users/$(request.auth.uid)) && (
+            get(/databases/$(database)/documents/users/$(request.auth.uid)).data.restaurantId == merchantId ||
+            get(/databases/$(database)/documents/users/$(request.auth.uid)).data.role in ['restaurant', 'merchant', 'cashier']
+          ))
+        );
+      }
+    }
+
+    match /merchant_coupons/{merchantId} {
+      allow read: if true;
+      allow write: if request.auth != null && (
+        request.auth.uid == merchantId || 
+        isAdmin(request.auth) ||
+        isRestaurant(request.auth) ||
+        (exists(/databases/$(database)/documents/users/$(request.auth.uid)) && (
+          get(/databases/$(database)/documents/users/$(request.auth.uid)).data.restaurantId == merchantId ||
+          get(/databases/$(database)/documents/users/$(request.auth.uid)).data.role in ['restaurant', 'merchant', 'cashier']
+        ))
+      );
+
+      match /{document=**} {
+        allow read: if true;
+        allow write: if request.auth != null && (
+          request.auth.uid == merchantId || 
+          isAdmin(request.auth) ||
+          isRestaurant(request.auth) ||
+          (exists(/databases/$(database)/documents/users/$(request.auth.uid)) && (
+            get(/databases/$(database)/documents/users/$(request.auth.uid)).data.restaurantId == merchantId ||
+            get(/databases/$(database)/documents/users/$(request.auth.uid)).data.role in ['restaurant', 'merchant', 'cashier']
+          ))
+        );
+      }
+    }
+
+    match /merchant_zones/{merchantId} {
+      allow read: if true;
+      allow write: if request.auth != null && (
+        request.auth.uid == merchantId || 
+        isAdmin(request.auth) ||
+        isRestaurant(request.auth) ||
+        (exists(/databases/$(database)/documents/users/$(request.auth.uid)) && (
+          get(/databases/$(database)/documents/users/$(request.auth.uid)).data.restaurantId == merchantId ||
+          get(/databases/$(database)/documents/users/$(request.auth.uid)).data.role in ['restaurant', 'merchant', 'cashier']
+        ))
+      );
+
+      match /{document=**} {
+        allow read: if true;
+        allow write: if request.auth != null && (
+          request.auth.uid == merchantId || 
+          isAdmin(request.auth) ||
+          isRestaurant(request.auth) ||
+          (exists(/databases/$(database)/documents/users/$(request.auth.uid)) && (
+            get(/databases/$(database)/documents/users/$(request.auth.uid)).data.restaurantId == merchantId ||
+            get(/databases/$(database)/documents/users/$(request.auth.uid)).data.role in ['restaurant', 'merchant', 'cashier']
+          ))
+        );
+      }
+    }
+
+    match /merchant_delivery_zones/{merchantId} {
+      allow read: if true;
+      allow write: if request.auth != null && (
+        request.auth.uid == merchantId || 
+        isAdmin(request.auth) ||
+        isRestaurant(request.auth) ||
+        (exists(/databases/$(database)/documents/users/$(request.auth.uid)) && (
+          get(/databases/$(database)/documents/users/$(request.auth.uid)).data.restaurantId == merchantId ||
+          get(/databases/$(database)/documents/users/$(request.auth.uid)).data.role in ['restaurant', 'merchant', 'cashier']
+        ))
+      );
+
+      match /{document=**} {
+        allow read: if true;
+        allow write: if request.auth != null && (
+          request.auth.uid == merchantId || 
+          isAdmin(request.auth) ||
+          isRestaurant(request.auth) ||
+          (exists(/databases/$(database)/documents/users/$(request.auth.uid)) && (
+            get(/databases/$(database)/documents/users/$(request.auth.uid)).data.restaurantId == merchantId ||
+            get(/databases/$(database)/documents/users/$(request.auth.uid)).data.role in ['restaurant', 'merchant', 'cashier']
+          ))
+        );
+      }
+    }
+
+    match /merchant_notifications/{merchantId} {
+      allow read, write: if request.auth != null && (
+        request.auth.uid == merchantId || 
+        isAdmin(request.auth) ||
+        isRestaurant(request.auth) ||
+        (exists(/databases/$(database)/documents/users/$(request.auth.uid)) && (
+          get(/databases/$(database)/documents/users/$(request.auth.uid)).data.restaurantId == merchantId ||
+          get(/databases/$(database)/documents/users/$(request.auth.uid)).data.role in ['restaurant', 'merchant', 'cashier']
+        ))
+      );
+
+      match /{document=**} {
+        allow read, write: if request.auth != null && (
+          request.auth.uid == merchantId || 
+          isAdmin(request.auth) ||
+          isRestaurant(request.auth) ||
+          (exists(/databases/$(database)/documents/users/$(request.auth.uid)) && (
+            get(/databases/$(database)/documents/users/$(request.auth.uid)).data.restaurantId == merchantId ||
+            get(/databases/$(database)/documents/users/$(request.auth.uid)).data.role in ['restaurant', 'merchant', 'cashier']
+          ))
+        );
+      }
+    }
+
+    // تصنيفات وأقسام المنيو للتجار
+    match /merchant_categories/{merchantId} {
+      allow read: if true;
+      allow write: if request.auth != null && (
+        request.auth.uid == merchantId || 
+        isAdmin(request.auth) ||
+        isRestaurant(request.auth) ||
+        (exists(/databases/$(database)/documents/users/$(request.auth.uid)) && (
+          get(/databases/$(database)/documents/users/$(request.auth.uid)).data.restaurantId == merchantId ||
+          get(/databases/$(database)/documents/users/$(request.auth.uid)).data.role in ['restaurant', 'merchant', 'cashier']
+        ))
+      );
+
+      match /{document=**} {
+        allow read: if true;
+        allow write: if request.auth != null && (
+          request.auth.uid == merchantId || 
+          isAdmin(request.auth) ||
+          isRestaurant(request.auth) ||
+          (exists(/databases/$(database)/documents/users/$(request.auth.uid)) && (
+            get(/databases/$(database)/documents/users/$(request.auth.uid)).data.restaurantId == merchantId ||
+            get(/databases/$(database)/documents/users/$(request.auth.uid)).data.role in ['restaurant', 'merchant', 'cashier']
+          ))
+        );
+      }
+    }
+
+    // ورديات الكاشير وصندوق النقد
+    match /merchant_shifts/{merchantId}/{document=**} {
+      allow read, write: if request.auth != null && (
+        request.auth.uid == merchantId || 
+        isAdmin(request.auth) ||
+        isRestaurant(request.auth) ||
+        (exists(/databases/$(database)/documents/users/$(request.auth.uid)) && (
+          get(/databases/$(database)/documents/users/$(request.auth.uid)).data.restaurantId == merchantId ||
+          get(/databases/$(database)/documents/users/$(request.auth.uid)).data.role in ['restaurant', 'merchant', 'cashier']
+        ))
+      );
+    }
+
+    match /restaurants/{restaurantId}/shifts/{shiftId} {
+      allow read, write: if request.auth != null && (
+        request.auth.uid == restaurantId || 
+        isAdmin(request.auth) ||
+        isRestaurant(request.auth) ||
+        (exists(/databases/$(database)/documents/users/$(request.auth.uid)) && (
+          get(/databases/$(database)/documents/users/$(request.auth.uid)).data.restaurantId == restaurantId ||
+          get(/databases/$(database)/documents/users/$(request.auth.uid)).data.role in ['restaurant', 'merchant', 'cashier']
+        ))
+      );
+    }
+
+    // ==========================================
+    // 🏪 قواعد التجار والشركاء واستدعاء الويتر (Merchants & Table Calls)
+    // ==========================================
+    match /merchants/{merchantId} {
+      allow read: if true;
+      allow write: if request.auth != null && (
+        request.auth.uid == merchantId ||
+        isAdmin(request.auth) ||
+        isRestaurant(request.auth) ||
+        (exists(/databases/$(database)/documents/users/$(request.auth.uid)) && (
+          get(/databases/$(database)/documents/users/$(request.auth.uid)).data.restaurantId == merchantId ||
+          get(/databases/$(database)/documents/users/$(request.auth.uid)).data.merchantId == merchantId ||
+          get(/databases/$(database)/documents/users/$(request.auth.uid)).data.role in ['restaurant', 'merchant', 'cashier', 'store']
+        ))
+      );
+
+      match /table_calls/{callId} {
+        // يسمح بالإنشاء لأي زبون عبر QR الطاولة
+        allow create: if true;
+        // يسمح بالقراءة والتحديث لصاحب المطعم والكاشير والإدارة
+        allow read, update, delete: if request.auth != null && (
+          request.auth.uid == merchantId ||
+          isAdmin(request.auth) ||
+          isRestaurant(request.auth) ||
+          (exists(/databases/$(database)/documents/users/$(request.auth.uid)) && (
+            get(/databases/$(database)/documents/users/$(request.auth.uid)).data.restaurantId == merchantId ||
+            get(/databases/$(database)/documents/users/$(request.auth.uid)).data.merchantId == merchantId ||
+            get(/databases/$(database)/documents/users/$(request.auth.uid)).data.role in ['restaurant', 'merchant', 'cashier', 'store']
+          ))
+        );
+      }
+
+      match /{document=**} {
+        allow read: if true;
+        allow write: if request.auth != null && (
+          request.auth.uid == merchantId ||
+          isAdmin(request.auth) ||
+          isRestaurant(request.auth) ||
+          (exists(/databases/$(database)/documents/users/$(request.auth.uid)) && (
+            get(/databases/$(database)/documents/users/$(request.auth.uid)).data.restaurantId == merchantId ||
+            get(/databases/$(database)/documents/users/$(request.auth.uid)).data.merchantId == merchantId ||
+            get(/databases/$(database)/documents/users/$(request.auth.uid)).data.role in ['restaurant', 'merchant', 'cashier', 'store']
+          ))
+        );
+      }
+    }
+
+    match /table_calls/{callId} {
+      allow create: if true;
+      allow read, update, delete: if request.auth != null;
+    }
+
+    match /merchant_offers/{merchantId} {
+      allow read: if true;
+      allow write: if request.auth != null && (
+        request.auth.uid == merchantId || 
+        isAdmin(request.auth) ||
+        isRestaurant(request.auth) ||
+        (exists(/databases/$(database)/documents/users/$(request.auth.uid)) && (
+          get(/databases/$(database)/documents/users/$(request.auth.uid)).data.restaurantId == merchantId ||
+          get(/databases/$(database)/documents/users/$(request.auth.uid)).data.role in ['restaurant', 'merchant', 'cashier']
+        ))
+      );
+      match /{document=**} {
+        allow read: if true;
+        allow write: if request.auth != null && (
+          request.auth.uid == merchantId || 
+          isAdmin(request.auth) ||
+          isRestaurant(request.auth) ||
+          (exists(/databases/$(database)/documents/users/$(request.auth.uid)) && (
+            get(/databases/$(database)/documents/users/$(request.auth.uid)).data.restaurantId == merchantId ||
+            get(/databases/$(database)/documents/users/$(request.auth.uid)).data.role in ['restaurant', 'merchant', 'cashier']
+          ))
+        );
+      }
+    }
+
+    match /merchant_recipes/{merchantId} {
+      allow read, write: if request.auth != null && (
+        request.auth.uid == merchantId || 
+        isAdmin(request.auth) ||
+        isRestaurant(request.auth) ||
+        (exists(/databases/$(database)/documents/users/$(request.auth.uid)) && (
+          get(/databases/$(database)/documents/users/$(request.auth.uid)).data.restaurantId == merchantId ||
+          get(/databases/$(database)/documents/users/$(request.auth.uid)).data.role in ['restaurant', 'merchant', 'cashier']
+        ))
+      );
+      match /{document=**} {
+        allow read, write: if request.auth != null && (
+          request.auth.uid == merchantId || 
+          isAdmin(request.auth) ||
+          isRestaurant(request.auth) ||
+          (exists(/databases/$(database)/documents/users/$(request.auth.uid)) && (
+            get(/databases/$(database)/documents/users/$(request.auth.uid)).data.restaurantId == merchantId ||
+            get(/databases/$(database)/documents/users/$(request.auth.uid)).data.role in ['restaurant', 'merchant', 'cashier']
+          ))
+        );
+      }
+    }
+
+    match /merchant_audit_logs/{merchantId} {
+      allow read, write: if request.auth != null && (
+        request.auth.uid == merchantId || 
+        isAdmin(request.auth) ||
+        isRestaurant(request.auth) ||
+        (exists(/databases/$(database)/documents/users/$(request.auth.uid)) && (
+          get(/databases/$(database)/documents/users/$(request.auth.uid)).data.restaurantId == merchantId ||
+          get(/databases/$(database)/documents/users/$(request.auth.uid)).data.role in ['restaurant', 'merchant', 'cashier']
+        ))
+      );
+      match /{document=**} {
+        allow read, write: if request.auth != null && (
+          request.auth.uid == merchantId || 
+          isAdmin(request.auth) ||
+          isRestaurant(request.auth) ||
+          (exists(/databases/$(database)/documents/users/$(request.auth.uid)) && (
+            get(/databases/$(database)/documents/users/$(request.auth.uid)).data.restaurantId == merchantId ||
+            get(/databases/$(database)/documents/users/$(request.auth.uid)).data.role in ['restaurant', 'merchant', 'cashier']
+          ))
+        );
+      }
+    }
+
+    match /audit_logs/{logId} {
+      allow read, create: if request.auth != null;
+      allow update, delete: if isAdmin(request.auth);
+    }
+
+    // ==========================================
+    // 🏪 3. قواعد مستندات وأقسام ومنتجات المتاجر
+    // ==========================================
+    match /stores/{storeId} {
+      allow read: if true;
+      allow create: if request.auth != null && (
+        request.auth.uid == storeId || 
+        request.resource.data.ownerId == request.auth.uid || 
+        isAdmin(request.auth)
+      ) && 
+        !(request.resource.data.role in ['admin', 'super_admin', 'main_admin', 'limited_admin', 'complaints_admin']) &&
+        (!('isApproved' in request.resource.data) || request.resource.data.isApproved == false || isAdmin(request.auth)) &&
+        (!('status' in request.resource.data) || request.resource.data.status == 'pending' || isAdmin(request.auth));
+
+      allow update: if request.auth != null && (
+        isAdmin(request.auth) || (
+          (request.auth.uid == storeId || resource.data.ownerId == request.auth.uid) &&
+          (!('role' in resource.data) || request.resource.data.role == resource.data.role) &&
+          (!('isApproved' in resource.data) || request.resource.data.isApproved == resource.data.isApproved) &&
+          (!('status' in resource.data) || request.resource.data.status == resource.data.status || (resource.data.status == 'pending' && request.resource.data.status == 'pending'))
+        )
+      );
+      allow delete: if request.auth != null && (request.auth.uid == storeId || isAdmin(request.auth));
+
+      match /categories/{catId} {
+        allow read: if true;
+        allow write: if request.auth != null && (
+          request.auth.uid == storeId ||
+          get(/databases/$(database)/documents/stores/$(storeId)).data.ownerId == request.auth.uid ||
+          isAdmin(request.auth)
+        );
+      }
+
+      match /products/{prodId} {
+        allow read: if true;
+        allow write: if request.auth != null && (
+          request.auth.uid == storeId ||
+          get(/databases/$(database)/documents/stores/$(storeId)).data.ownerId == request.auth.uid ||
+          isAdmin(request.auth)
+        );
+      }
+
+      match /banners/{bannerId} {
+        allow read: if true;
+        allow write: if request.auth != null && (
+          request.auth.uid == storeId ||
+          isAdmin(request.auth)
+        );
+      }
+
+      // 🛍️ طلبات المتاجر الفرعية
+      match /madar_orders/{orderId} {
+        allow read: if request.auth != null && (
+          resource.data.status == 'ready' || 
+          resource.data.driverId == request.auth.uid || 
+          resource.data.customerId == request.auth.uid ||
+          request.auth.uid == storeId ||
+          get(/databases/$(database)/documents/stores/$(storeId)).data.ownerId == request.auth.uid ||
+          isAdmin(request.auth)
+        );
+
+        allow create: if request.auth != null && (
+          request.resource.data.customerId == request.auth.uid ||
+          request.auth.uid == storeId ||
+          isAdmin(request.auth)
+        );
+        allow update: if request.auth != null && (
+          isAdmin(request.auth) || 
+          resource.data.customerId == request.auth.uid || 
+          resource.data.driverId == request.auth.uid || 
+          request.auth.uid == storeId ||
+          get(/databases/$(database)/documents/stores/$(storeId)).data.ownerId == request.auth.uid ||
+          (isDelivery(request.auth) && resource.data.status == 'ready' && request.resource.data.driverId == request.auth.uid)
+        );
+        allow delete: if request.auth != null && (isAdmin(request.auth) || (resource.data.customerId == request.auth.uid && resource.data.status in ['pending', 'placed']));
+
+        // 🔒 المجلد الفرعي لحماية خصوصية بيانات العميل
+        match /customer_details/privacy_shield {
+          allow read: if request.auth != null && (
+            get(/databases/$(database)/documents/stores/$(storeId)/madar_orders/$(orderId)).data.customerId == request.auth.uid ||
+            request.auth.uid == storeId ||
+            get(/databases/$(database)/documents/stores/$(storeId)).data.ownerId == request.auth.uid ||
+            (
+              get(/databases/$(database)/documents/stores/$(storeId)/madar_orders/$(orderId)).data.driverId == request.auth.uid &&
+              (
+                get(/databases/$(database)/documents/stores/$(storeId)/madar_orders/$(orderId)).data.status in ['picked_up', 'completed', 'delivered']
+              )
+            ) ||
+            isAdmin(request.auth)
+          );
+
+          allow write: if request.auth != null && (
+            get(/databases/$(database)/documents/stores/$(storeId)/madar_orders/$(orderId)).data.customerId == request.auth.uid ||
+            isAdmin(request.auth)
+          );
+        }
+      }
+    }
+
+    // ==========================================
+    // 📝 3.1 قواعد طلبات تسجيل الشركاء (Partner Registration Requests)
+    // ==========================================
+    match /store_requests/{requestId} {
+      allow read: if request.auth != null && (
+        request.auth.uid == requestId || 
+        resource.data.uid == request.auth.uid || 
+        resource.data.userId == request.auth.uid || 
+        isAdmin(request.auth)
+      );
+      allow create: if request.auth != null && (
+        request.auth.uid == requestId || 
+        request.resource.data.uid == request.auth.uid || 
+        request.resource.data.userId == request.auth.uid
+      ) && 
+        !(request.resource.data.role in ['admin', 'super_admin', 'main_admin', 'limited_admin', 'complaints_admin']) &&
+        (!('status' in request.resource.data) || request.resource.data.status == 'pending') &&
+        (!('isApproved' in request.resource.data) || request.resource.data.isApproved == false);
+      allow update: if request.auth != null && (
+        isAdmin(request.auth) || (
+          (request.auth.uid == requestId || resource.data.uid == request.auth.uid || resource.data.userId == request.auth.uid) &&
+          (!('role' in resource.data) || request.resource.data.role == resource.data.role) &&
+          (!('isApproved' in resource.data) || request.resource.data.isApproved == resource.data.isApproved) &&
+          (!('status' in resource.data) || request.resource.data.status == resource.data.status || (resource.data.status == 'pending' && request.resource.data.status == 'pending'))
+        )
+      );
+      allow delete: if request.auth != null && (
+        request.auth.uid == requestId || 
+        resource.data.uid == request.auth.uid || 
+        isAdmin(request.auth)
+      );
+    }
+
+    match /driver_requests/{requestId} {
+      allow read: if request.auth != null && (
+        request.auth.uid == requestId || 
+        resource.data.uid == request.auth.uid || 
+        resource.data.userId == request.auth.uid || 
+        isAdmin(request.auth)
+      );
+      allow create: if request.auth != null && (
+        request.auth.uid == requestId || 
+        request.resource.data.uid == request.auth.uid || 
+        request.resource.data.userId == request.auth.uid
+      ) && 
+        !(request.resource.data.role in ['admin', 'super_admin', 'main_admin', 'limited_admin', 'complaints_admin']) &&
+        (!('status' in request.resource.data) || request.resource.data.status == 'pending') &&
+        (!('isApproved' in request.resource.data) || request.resource.data.isApproved == false);
+      allow update: if request.auth != null && (
+        isAdmin(request.auth) || (
+          (request.auth.uid == requestId || resource.data.uid == request.auth.uid || resource.data.userId == request.auth.uid) &&
+          (!('role' in resource.data) || request.resource.data.role == resource.data.role) &&
+          (!('isApproved' in resource.data) || request.resource.data.isApproved == resource.data.isApproved) &&
+          (!('status' in resource.data) || request.resource.data.status == resource.data.status || (resource.data.status == 'pending' && request.resource.data.status == 'pending'))
+        )
+      );
+      allow delete: if request.auth != null && (
+        request.auth.uid == requestId || 
+        resource.data.uid == request.auth.uid || 
+        isAdmin(request.auth)
+      );
+    }
+
+    match /restaurant_requests/{requestId} {
+      allow read: if request.auth != null && (
+        request.auth.uid == requestId || 
+        resource.data.uid == request.auth.uid || 
+        resource.data.userId == request.auth.uid || 
+        isAdmin(request.auth)
+      );
+      allow create: if request.auth != null && (
+        request.auth.uid == requestId || 
+        request.resource.data.uid == request.auth.uid || 
+        request.resource.data.userId == request.auth.uid
+      ) && 
+        !(request.resource.data.role in ['admin', 'super_admin', 'main_admin', 'limited_admin', 'complaints_admin']) &&
+        (!('status' in request.resource.data) || request.resource.data.status == 'pending') &&
+        (!('isApproved' in request.resource.data) || request.resource.data.isApproved == false);
+      allow update: if request.auth != null && (
+        isAdmin(request.auth) || (
+          (request.auth.uid == requestId || resource.data.uid == request.auth.uid || resource.data.userId == request.auth.uid) &&
+          (!('role' in resource.data) || request.resource.data.role == resource.data.role) &&
+          (!('isApproved' in resource.data) || request.resource.data.isApproved == resource.data.isApproved) &&
+          (!('status' in resource.data) || request.resource.data.status == resource.data.status || (resource.data.status == 'pending' && request.resource.data.status == 'pending'))
+        )
+      );
+      allow delete: if request.auth != null && (
+        request.auth.uid == requestId || 
+        resource.data.uid == request.auth.uid || 
+        isAdmin(request.auth)
+      );
+    }
+
+    match /transport_requests/{requestId} {
+      allow read: if request.auth != null && (
+        request.auth.uid == requestId || 
+        resource.data.uid == request.auth.uid || 
+        resource.data.userId == request.auth.uid || 
+        isAdmin(request.auth)
+      );
+      allow create: if request.auth != null && (
+        request.auth.uid == requestId || 
+        request.resource.data.uid == request.auth.uid || 
+        request.resource.data.userId == request.auth.uid
+      ) && 
+        !(request.resource.data.role in ['admin', 'super_admin', 'main_admin', 'limited_admin', 'complaints_admin']) &&
+        (!('status' in request.resource.data) || request.resource.data.status == 'pending');
+      allow update, delete: if request.auth != null && isAdmin(request.auth);
+    }
+
+    // ==========================================
+    // 🛍️ 3.3 قواعد طلبات المتاجر العامة (Root Store Orders)
+    // ==========================================
+    match /madar_orders/{orderId} {
+      allow read: if request.auth != null && (
+        resource.data.status == 'ready' || 
+        resource.data.driverId == request.auth.uid || 
+        resource.data.customerId == request.auth.uid ||
+        resource.data.storeId == request.auth.uid ||
+        resource.data.merchantId == request.auth.uid ||
+        isAdmin(request.auth)
+      );
+
+      allow create: if request.auth != null && (
+        request.resource.data.customerId == request.auth.uid ||
+        isAdmin(request.auth)
+      );
+      allow update: if request.auth != null && (
+        isAdmin(request.auth) || 
+        resource.data.customerId == request.auth.uid || 
+        resource.data.driverId == request.auth.uid || 
+        resource.data.storeId == request.auth.uid ||
+        resource.data.merchantId == request.auth.uid ||
+        (isDelivery(request.auth) && resource.data.status == 'ready' && request.resource.data.driverId == request.auth.uid)
+      );
+      allow delete: if request.auth != null && (isAdmin(request.auth) || (resource.data.customerId == request.auth.uid && resource.data.status in ['pending', 'placed']));
+    }
+
+    // ==========================================
+    // 🍔 4. قواعد طلبات المطاعم الرئيسية (Orders)
+    // ==========================================
+    match /orders/{orderId} {
+      allow read: if request.auth != null && (
+        resource.data.status == 'ready' || 
+        resource.data.driverId == request.auth.uid || 
+        resource.data.customerId == request.auth.uid || 
+        resource.data.userId == request.auth.uid || 
+        resource.data.restaurantOwnerId == request.auth.uid ||
+        resource.data.restaurantId == request.auth.uid ||
+        resource.data.restaurantDocId == request.auth.uid ||
+        isAdmin(request.auth) ||
+        isRestaurant(request.auth) ||
+        (exists(/databases/$(database)/documents/users/$(request.auth.uid)) && (
+          get(/databases/$(database)/documents/users/$(request.auth.uid)).data.restaurantId == resource.data.restaurantId ||
+          get(/databases/$(database)/documents/users/$(request.auth.uid)).data.merchantId == resource.data.restaurantId ||
+          get(/databases/$(database)/documents/users/$(request.auth.uid)).data.role in ['restaurant', 'merchant', 'cashier', 'store']
+        ))
+      );
+      
+      allow create: if request.auth != null && (
+        request.resource.data.customerId == request.auth.uid || 
+        request.resource.data.userId == request.auth.uid ||
+        request.resource.data.restaurantId == request.auth.uid ||
+        request.resource.data.restaurantOwnerId == request.auth.uid ||
+        isAdmin(request.auth) ||
+        isRestaurant(request.auth) ||
+        (exists(/databases/$(database)/documents/users/$(request.auth.uid)) && (
+          get(/databases/$(database)/documents/users/$(request.auth.uid)).data.restaurantId == request.resource.data.restaurantId ||
+          get(/databases/$(database)/documents/users/$(request.auth.uid)).data.merchantId == request.resource.data.restaurantId ||
+          get(/databases/$(database)/documents/users/$(request.auth.uid)).data.role in ['restaurant', 'merchant', 'cashier', 'store']
+        ))
+      );
+      allow update: if request.auth != null && (
+        isAdmin(request.auth) || 
+        resource.data.customerId == request.auth.uid || 
+        resource.data.userId == request.auth.uid || 
+        resource.data.driverId == request.auth.uid || 
+        resource.data.restaurantOwnerId == request.auth.uid ||
+        resource.data.restaurantId == request.auth.uid ||
+        resource.data.restaurantDocId == request.auth.uid ||
+        isRestaurant(request.auth) ||
+        (isDelivery(request.auth) && resource.data.status == 'ready' && request.resource.data.driverId == request.auth.uid) ||
+        (exists(/databases/$(database)/documents/users/$(request.auth.uid)) && (
+          get(/databases/$(database)/documents/users/$(request.auth.uid)).data.restaurantId == resource.data.restaurantId ||
+          get(/databases/$(database)/documents/users/$(request.auth.uid)).data.merchantId == resource.data.restaurantId ||
+          get(/databases/$(database)/documents/users/$(request.auth.uid)).data.role in ['restaurant', 'merchant', 'cashier', 'store']
+        ))
+      );
+      allow delete: if request.auth != null && (isAdmin(request.auth) || ((resource.data.customerId == request.auth.uid || resource.data.userId == request.auth.uid) && resource.data.status in ['pending', 'placed']));
+
+      match /customer_details/privacy_shield {
+        allow read: if request.auth != null && (
+          get(/databases/$(database)/documents/orders/$(orderId)).data.customerId == request.auth.uid ||
+          get(/databases/$(database)/documents/orders/$(orderId)).data.userId == request.auth.uid ||
+          get(/databases/$(database)/documents/orders/$(orderId)).data.restaurantOwnerId == request.auth.uid ||
+          get(/databases/$(database)/documents/orders/$(orderId)).data.restaurantId == request.auth.uid ||
+          get(/databases/$(database)/documents/orders/$(orderId)).data.restaurantDocId == request.auth.uid ||
+          (
+            get(/databases/$(database)/documents/orders/$(orderId)).data.driverId == request.auth.uid &&
+            (
+              get(/databases/$(database)/documents/orders/$(orderId)).data.status in ['picked_up', 'completed', 'delivered']
+            )
+          ) ||
+          isAdmin(request.auth)
+        );
+        
+        allow write: if request.auth != null && 
+          (get(/databases/$(database)/documents/orders/$(orderId)).data.customerId == request.auth.uid || get(/databases/$(database)/documents/orders/$(orderId)).data.userId == request.auth.uid || isAdmin(request.auth));
+      }
+    }
+
+    // ==========================================
+    // 🚖 5. قواعد رحلات وكباتن التكسي (Taxi Rides & Captains)
+    // ==========================================
+    match /ride_requests/{rideId} {
+      allow read: if request.auth != null && (
+        resource.data.userId == request.auth.uid ||
+        resource.data.driverId == request.auth.uid ||
+        (resource.data.status in ['searching', 'pending']) ||
+        isAdmin(request.auth)
+      );
+      allow create: if request.auth != null && request.resource.data.userId == request.auth.uid;
+      allow update: if request.auth != null && (
+        isAdmin(request.auth) ||
+        (resource.data.userId == request.auth.uid && request.resource.data.userId == resource.data.userId) ||
+        (resource.data.driverId == request.auth.uid) ||
+        (resource.data.status in ['searching', 'pending'] && request.resource.data.driverId == request.auth.uid)
+      );
+      allow delete: if request.auth != null && (isAdmin(request.auth) || resource.data.userId == request.auth.uid);
+    }
+
+    // ==========================================
+    // 🛵 5.1 قواعد طلبات مرسال والطرود (Mersal Requests)
+    // ==========================================
+    match /mersal_requests/{reqId} {
+      allow read: if request.auth != null && (
+        resource.data.userId == request.auth.uid ||
+        resource.data.driverId == request.auth.uid ||
+        (isDelivery(request.auth) && resource.data.status in ['pending', 'ready']) ||
+        isAdmin(request.auth)
+      );
+      allow create: if request.auth != null && request.resource.data.userId == request.auth.uid;
+      allow update: if request.auth != null && (
+        isAdmin(request.auth) ||
+        resource.data.userId == request.auth.uid ||
+        resource.data.driverId == request.auth.uid ||
+        (isDelivery(request.auth) && resource.data.status == 'pending' && request.resource.data.driverId == request.auth.uid)
+      );
+      allow delete: if request.auth != null && (isAdmin(request.auth) || (resource.data.userId == request.auth.uid && resource.data.status == 'pending'));
+    }
+
+    // ==========================================
+    // 🚖 5.2 حسابات الكباتن والمناديب
+    // ==========================================
+    match /drivers/{driverId} {
+      allow read: if request.auth != null;
+      allow create: if request.auth != null && (
+        request.auth.uid == driverId || 
+        request.resource.data.uid == request.auth.uid || 
+        request.resource.data.driverId == request.auth.uid ||
+        isAdmin(request.auth)
+      ) &&
+        !(request.resource.data.role in ['admin', 'super_admin', 'main_admin', 'limited_admin', 'complaints_admin']) &&
+        (!('isApproved' in request.resource.data) || request.resource.data.isApproved == false || isAdmin(request.auth)) &&
+        (!('status' in request.resource.data) || request.resource.data.status == 'pending' || isAdmin(request.auth));
+
+      allow update: if request.auth != null && (
+        isAdmin(request.auth) || 
+        (request.auth.uid == driverId && 
+          (!('balance' in request.resource.data) || request.resource.data.balance == resource.data.balance) &&
+          (!('walletBalance' in request.resource.data) || request.resource.data.walletBalance == resource.data.walletBalance) &&
+          (!('totalEarnings' in request.resource.data) || request.resource.data.totalEarnings == resource.data.totalEarnings) &&
+          (!('totalCommission' in request.resource.data) || request.resource.data.totalCommission == resource.data.totalCommission) &&
+          (!('appDebt' in request.resource.data) || request.resource.data.appDebt == resource.data.appDebt) &&
+          (!('completedDeliveriesCount' in request.resource.data) || request.resource.data.completedDeliveriesCount == resource.data.completedDeliveriesCount) &&
+          (!('isApproved' in request.resource.data) || request.resource.data.isApproved == resource.data.isApproved) &&
+          (!('status' in request.resource.data) || request.resource.data.status == resource.data.status) &&
+          (!('role' in request.resource.data) || request.resource.data.role == resource.data.role)
+        )
+      );
+      allow delete: if request.auth != null && (request.auth.uid == driverId || isAdmin(request.auth));
+      
+      match /reward_transactions/{txId} {
+        allow read: if request.auth != null && (request.auth.uid == driverId || isAdmin(request.auth));
+        allow write: if request.auth != null && isAdmin(request.auth);
+      }
+    }
+
+    // ==========================================
+    // 🛵 5.2.1 حسابات وطلبات مناديب التوصيل (Delivery Boys)
+    // ==========================================
+    match /delivery_boys/{boyId} {
+      allow read: if request.auth != null;
+      allow create: if request.auth != null && (
+        request.auth.uid == boyId ||
+        request.resource.data.uid == request.auth.uid ||
+        request.resource.data.boyId == request.auth.uid ||
+        isAdmin(request.auth)
+      ) &&
+        !(request.resource.data.role in ['admin', 'super_admin', 'main_admin', 'limited_admin', 'complaints_admin']) &&
+        (!('isApproved' in request.resource.data) || request.resource.data.isApproved == false || isAdmin(request.auth)) &&
+        (!('status' in request.resource.data) || request.resource.data.status == 'pending' || isAdmin(request.auth));
+
+      allow update: if request.auth != null && (
+        isAdmin(request.auth) || (
+          (request.auth.uid == boyId || resource.data.uid == request.auth.uid) &&
+          (!('role' in resource.data) || request.resource.data.role == resource.data.role) &&
+          (!('isApproved' in resource.data) || request.resource.data.isApproved == resource.data.isApproved) &&
+          (!('status' in resource.data) || request.resource.data.status == resource.data.status || (resource.data.status == 'pending' && request.resource.data.status == 'pending'))
+        )
+      );
+      allow delete: if request.auth != null && (request.auth.uid == boyId || isAdmin(request.auth));
+    }
+
+    // ==========================================
+    // 💳 5.3 طلبات الاسترداد المالي والحركات المحمية (P0 Refunds & Transactions)
+    // ==========================================
+    match /refund_requests/{reqId} {
+      allow read: if request.auth != null && (resource.data.userId == request.auth.uid || isAdmin(request.auth));
+      allow create: if request.auth != null && request.resource.data.userId == request.auth.uid && request.resource.data.status == 'pending';
+      allow update, delete: if request.auth != null && isAdmin(request.auth);
+    }
+
+    match /wallet_transactions/{txId} {
+      allow read: if request.auth != null && (resource.data.userId == request.auth.uid || resource.data.sourceUserId == request.auth.uid || isAdmin(request.auth));
+      allow create, update, delete: if request.auth != null && isAdmin(request.auth);
+    }
+
+    match /financial_accounts/{accId} {
+      allow read: if request.auth != null && (resource.data.ownerId == request.auth.uid || isAdmin(request.auth));
+      allow create, update, delete: if request.auth != null && isAdmin(request.auth);
+    }
+
+    match /wallets/{walletId} {
+      allow read: if request.auth != null && (request.auth.uid == walletId || resource.data.ownerId == request.auth.uid || isAdmin(request.auth));
+      allow write: if false; // 🛑 حظر تعديل رصيد المحافظ مباشرة من العميل منعاً للتزوير المالي
+    }
+
+    match /wallet_transactions/{txId} {
+      allow read: if request.auth != null && (
+        resource.data.userId == request.auth.uid ||
+        resource.data.walletId == request.auth.uid ||
+        isAdmin(request.auth)
+      );
+      allow create: if request.auth != null && isAdmin(request.auth);
+      allow update, delete: if false; // 🛑 حركات المحفظة غير قابلة للتعديل أو الحذف (Immutable Ledger)
+    }
+
+    match /refund_requests/{refundId} {
+      allow read: if request.auth != null && (resource.data.customerId == request.auth.uid || isAdmin(request.auth));
+      allow create: if request.auth != null && request.resource.data.customerId == request.auth.uid && request.resource.data.status == 'pending';
+      allow update: if request.auth != null && isAdmin(request.auth);
+      allow delete: if false;
+    }
+
+    match /payout_requests/{payoutId} {
+      allow read: if request.auth != null && (
+        resource.data.driverId == request.auth.uid ||
+        resource.data.merchantId == request.auth.uid ||
+        isAdmin(request.auth)
+      );
+      allow create: if request.auth != null && (
+        request.resource.data.driverId == request.auth.uid ||
+        request.resource.data.merchantId == request.auth.uid
+      ) && request.resource.data.status == 'pending';
+      allow update: if request.auth != null && isAdmin(request.auth);
+      allow delete: if false;
+    }
+
+    match /platform_ledger/{entryId} {
+      allow read: if request.auth != null && (resource.data.ownerId == request.auth.uid || isAdmin(request.auth));
+      allow create, update, delete: if request.auth != null && isAdmin(request.auth);
+    }
+
+    match /settlements/{stlId} {
+      allow read: if request.auth != null && (
+        resource.data.customerId == request.auth.uid ||
+        resource.data.driverId == request.auth.uid ||
+        resource.data.merchantId == request.auth.uid ||
+        isAdmin(request.auth)
+      );
+      allow create, update, delete: if request.auth != null && isAdmin(request.auth);
+    }
+
+    match /refund_ledger_records/{recId} {
+      allow read: if request.auth != null && (resource.data.customerId == request.auth.uid || isAdmin(request.auth));
+      allow create, update, delete: if request.auth != null && isAdmin(request.auth);
+    }
+
+    match /inventory_reservations/{resId} {
+      allow read: if request.auth != null && (
+        resource.data.customerId == request.auth.uid ||
+        resource.data.storeId == request.auth.uid ||
+        isAdmin(request.auth)
+      );
+      allow create, update, delete: if request.auth != null && isAdmin(request.auth);
+    }
+
+    match /idempotency_keys/{keyId} {
+      allow read, create: if request.auth != null;
+      allow update, delete: if request.auth != null && isAdmin(request.auth);
+    }
+
+    match /security_violations/{vId} {
+      allow create: if request.auth != null;
+      allow read, update, delete: if request.auth != null && isAdmin(request.auth);
+    }
+
+    match /dispatch_sessions/{sessionId} {
+      allow read: if request.auth != null && (
+        resource.data.assignedDriverId == request.auth.uid ||
+        isAdmin(request.auth)
+      );
+      allow create, update, delete: if request.auth != null && isAdmin(request.auth);
+    }
+
+    match /dispatch_offers/{offerId} {
+      allow read: if request.auth != null && (resource.data.driverId == request.auth.uid || isAdmin(request.auth));
+      allow create, delete: if request.auth != null && isAdmin(request.auth);
+      allow update: if request.auth != null && (
+        isAdmin(request.auth) ||
+        (resource.data.driverId == request.auth.uid && request.resource.data.status in ['accepted', 'rejected'])
+      );
+    }
+
+    // ==========================================
+    // 💵 5.3.1 سياسات ولقطات التسعير الديناميكي
+    // ==========================================
+    match /pricing_policies/{policyId} {
+      allow read: if request.auth != null;
+      allow create, update, delete: if request.auth != null && isAdmin(request.auth);
+    }
+
+    match /pricing_snapshots/{snapshotId} {
+      allow read: if request.auth != null;
+      allow create: if request.auth != null;
+      allow update, delete: if false; // 🛑 غير قابلة للتعديل أو الحذف إطلاقاً (Immutable)
+    }
+
+    match /pricing_audit/{auditId} {
+      allow read: if request.auth != null && isAdmin(request.auth);
+      allow create: if request.auth != null;
+      allow update, delete: if false; // 🛑 سجل تدقيق غير قابل للتغيير (Immutable Audit)
+    }
+
+    // ==========================================
+    // 🔔 5.3.2 منظومة الإشعارات الذكية والتدقيق
+    // ==========================================
+    match /notification_events/{eventId} {
+      allow read: if request.auth != null;
+      allow create: if request.auth != null;
+      allow update, delete: if request.auth != null && isAdmin(request.auth);
+    }
+
+    match /notification_deliveries/{deliveryId} {
+      allow read: if request.auth != null && (resource.data.userId == request.auth.uid || isAdmin(request.auth));
+      allow create, update: if request.auth != null;
+      allow delete: if request.auth != null && isAdmin(request.auth);
+    }
+
+    match /notification_preferences/{userId} {
+      allow read, write: if request.auth != null && (request.auth.uid == userId || isAdmin(request.auth));
+    }
+
+    match /notification_audit/{auditId} {
+      allow read: if request.auth != null && isAdmin(request.auth);
+      allow create: if request.auth != null;
+      allow update, delete: if false; // 🛑 سجل تدقيق غير قابل للتعديل
+    }
+
+    // ==========================================
+    // 🏛️ 5.3.3 تنسيق المعاملات والملاحم الموزعة
+    // ==========================================
+    match /transactions/{transactionId} {
+      allow read: if request.auth != null;
+      allow create: if request.auth != null;
+      allow update: if request.auth != null && (request.resource.data.actorId == request.auth.uid || isAdmin(request.auth));
+      allow delete: if false; // 🛑 غير قابلة للحذف
+    }
+
+    match /saga_executions/{sagaId} {
+      allow read: if request.auth != null;
+      allow create, update: if request.auth != null;
+      allow delete: if false;
+    }
+
+    match /domain_events/{eventId} {
+      allow read: if request.auth != null;
+      allow create: if request.auth != null;
+      allow update, delete: if false; // 🛑 سجل أحداث متين غير قابل للتعديل (Append-only Outbox)
+    }
+
+    match /consistency_violations/{violationId} {
+      allow read: if request.auth != null && isAdmin(request.auth);
+      allow create: if request.auth != null;
+      allow update, delete: if false; // 🛑 سجل انتهاكات اتساق غير قابل للتعديل أو الحذف
+    }
+
+    match /recovery_jobs/{jobId} {
+      allow read: if request.auth != null && isAdmin(request.auth);
+      allow create, update: if request.auth != null;
+      allow delete: if false;
+    }
+
+    // ==========================================
+    // 🛰️ 5.3.4 العمليات اللحظية والتتبع المباشر (Real-Time Operations)
+    // ==========================================
+    match /driver_presence/{driverId} {
+      allow read: if request.auth != null;
+      allow write: if request.auth != null && (request.auth.uid == driverId || isAdmin(request.auth));
+    }
+
+    match /driver_heartbeats/{heartbeatId} {
+      allow read: if request.auth != null && (resource.data.driverId == request.auth.uid || isAdmin(request.auth));
+      allow create: if request.auth != null && (request.resource.data.driverId == request.auth.uid || isAdmin(request.auth));
+      allow update, delete: if false; // 🛑 نبضات الاتصال سجل دائم غير قابل للتعديل
+    }
+
+    match /driver_locations/{driverId} {
+      allow read: if request.auth != null;
+      allow write: if request.auth != null && (request.auth.uid == driverId || isAdmin(request.auth));
+    }
+
+    match /tracking_sessions/{sessionId} {
+      allow read: if request.auth != null && (resource.data.customerId == request.auth.uid || resource.data.driverId == request.auth.uid || isAdmin(request.auth));
+      allow create, update: if request.auth != null;
+      allow delete: if false;
+    }
+
+    match /realtime_events/{eventId} {
+      allow read: if request.auth != null;
+      allow create: if request.auth != null;
+      allow update, delete: if false; // 🛑 غير قابل للتعديل
+    }
+
+    match /realtime_recovery_jobs/{jobId} {
+      allow read: if request.auth != null && isAdmin(request.auth);
+      allow create, update: if request.auth != null;
+      allow delete: if false;
+    }
+
+    // ==========================================
+    // 🛡️ 5.3.5 حوكمة المخاطر ومكافحة الاحتيال (Risk & Fraud Intelligence)
+    // ==========================================
+    match /risk_evaluations/{evaluationId} {
+      allow read: if request.auth != null && (resource.data.context.subjectId == request.auth.uid || isAdmin(request.auth));
+      allow create: if request.auth != null;
+      allow update, delete: if false; // 🛑 سجلات التقييم غير قابلة للتعديل أو الحذف
+    }
+
+    match /risk_signals/{signalId} {
+      allow read: if request.auth != null && isAdmin(request.auth);
+      allow create: if request.auth != null;
+      allow update, delete: if false; // 🛑 إشارات الخطر سجل دائم غير قابل للتعديل
+    }
+
+    match /risk_devices/{deviceId} {
+      allow read: if request.auth != null;
+      allow create, update: if request.auth != null;
+      allow delete: if false;
+    }
+
+    match /risk_velocity/{recordId} {
+      allow read, write: if request.auth != null;
+    }
+
+    match /fraud_cases/{caseId} {
+      allow read: if request.auth != null && (resource.data.subjectId == request.auth.uid || isAdmin(request.auth));
+      allow create, update: if request.auth != null;
+      allow delete: if false; // 🛑 قضايا الاحتيال لا تحذف
+    }
+
+    match /fraud_evidence/{evidenceId} {
+      allow read: if request.auth != null && isAdmin(request.auth);
+      allow create: if request.auth != null;
+      allow update, delete: if false; // 🛑 الأدلة الجنائية غير قابلة للتعديل أو الحذف إطلاقاً
+    }
+
+    match /risk_policies/{policyId} {
+      allow read: if request.auth != null;
+      allow write: if request.auth != null && isAdmin(request.auth);
+      allow delete: if false;
+    }
+
+    // ==========================================
+    // 🌟 5.4 تقييمات السائقين والركاب
+    // ==========================================
+    match /driver_reviews/{reviewId} {
+      allow read: if request.auth != null;
+      allow create: if request.auth != null && (request.resource.data.customerId == request.auth.uid || request.resource.data.userId == request.auth.uid);
+      allow update, delete: if request.auth != null && isAdmin(request.auth);
+    }
+
+    match /passenger_reviews/{reviewId} {
+      allow read: if request.auth != null;
+      allow create: if request.auth != null && (request.resource.data.driverId == request.auth.uid);
+      allow update, delete: if request.auth != null && isAdmin(request.auth);
+    }
+
+    // ==========================================
+    // 🚨 5.5 تنبيهات الطوارئ والحوادث
+    // ==========================================
+    match /emergency_alerts/{alertId} {
+      allow read: if request.auth != null && (resource.data.driverId == request.auth.uid || isAdmin(request.auth));
+      allow create: if request.auth != null && (request.resource.data.driverId == request.auth.uid || request.resource.data.userId == request.auth.uid);
+      allow update, delete: if request.auth != null && isAdmin(request.auth);
+    }
+
+    match /emergency_sos_alerts/{alertId} {
+      allow read: if request.auth != null && (resource.data.driverId == request.auth.uid || isAdmin(request.auth));
+      allow create: if request.auth != null && (request.resource.data.driverId == request.auth.uid || request.resource.data.userId == request.auth.uid);
+      allow update, delete: if request.auth != null && isAdmin(request.auth);
+    }
+
+    match /breakdown_reports/{reportId} {
+      allow read: if request.auth != null && (resource.data.driverId == request.auth.uid || isAdmin(request.auth));
+      allow create: if request.auth != null && request.resource.data.driverId == request.auth.uid;
+      allow update, delete: if request.auth != null && isAdmin(request.auth);
+    }
+
+    // ==========================================
+    // ⚙️ 6. قواعد الإعدادات العامة والتعرفة والذكاء الاصطناعي (Settings & Config)
+    // ==========================================
+    match /settings/{docId} {
+      allow read: if true;
+      allow write: if request.auth != null && isAdmin(request.auth);
+    }
+
+    match /app_config/{docId} {
+      allow read: if request.auth != null;
+      allow write: if request.auth != null && isAdmin(request.auth);
+    }
+
+    // ==========================================
+    // 🔔 7. قواعد الإشعارات والعمليات الإدارية والموقع
+    // ==========================================
+    match /notifications/{notifId} {
+      allow read: if request.auth != null && (resource.data.userId == request.auth.uid || isAdmin(request.auth));
+      allow create: if request.auth != null && (request.resource.data.userId == request.auth.uid || request.resource.data.senderId == request.auth.uid || isAdmin(request.auth));
+      allow update: if request.auth != null && resource.data.userId == request.auth.uid;
+      allow delete: if request.auth != null && (resource.data.userId == request.auth.uid || isAdmin(request.auth));
+    }
+
+    match /notification_requests/{reqId} {
+      allow create: if request.auth != null && request.resource.data.senderId == request.auth.uid;
+      allow read, update, delete: if request.auth != null && isAdmin(request.auth);
+    }
+
+    match /notification_events/{eventId} {
+      allow read: if request.auth != null;
+      // 🛡️ A3: إلزام مطابقة actorId مع المستخدم المصادق عليه ومنع انتحال الهوية
+      allow create: if request.auth != null && (
+        request.resource.data.actorId == request.auth.uid ||
+        isAdmin(request.auth)
+      );
+      allow update, delete: if request.auth != null && isAdmin(request.auth);
+    }
+
+    match /notification_deliveries/{delivId} {
+      // 🛡️ A2: القراءة مقتصرة على صاحب الإشعار أو الإدارة
+      allow read: if request.auth != null && (
+        resource.data.userId == request.auth.uid || 
+        isAdmin(request.auth)
+      );
+      // 🛡️ A2: الإنشاء مقتصر على الحالات الأولية، وحظر تزوير providerResponse أو retryCount
+      allow create: if request.auth != null && (
+        (
+          request.resource.data.userId == request.auth.uid &&
+          request.resource.data.status in ['pending', 'queued', 'suppressed'] &&
+          (!('retryCount' in request.resource.data) || request.resource.data.retryCount == 0) &&
+          !('providerResponse' in request.resource.data) &&
+          !('providerMessageId' in request.resource.data)
+        ) ||
+        isAdmin(request.auth)
+      );
+      // 🛡️ A2: الحظر الصارم لأي تزوير لحالات السيرفر (sent, delivered, failed, retrying)
+      // العميل يسمح له فقط بتحديث status إلى 'read' وتحديث readAt
+      allow update: if request.auth != null && (
+        isAdmin(request.auth) || (
+          resource.data.userId == request.auth.uid &&
+          request.resource.data.diff(resource.data).affectedKeys().hasOnly(['status', 'readAt']) &&
+          request.resource.data.status == 'read'
+        )
+      );
+      allow delete: if request.auth != null && isAdmin(request.auth);
+    }
+
+    match /notification_audit/{auditId} {
+      allow read: if request.auth != null && isAdmin(request.auth);
+      // 🛡️ A1: تدقيق من طرف العميل مقتصر فقط على أحداثه وبحالات client-originated (منع تزوير sent أو delivered أو provider_ack)
+      allow create: if request.auth != null && (
+        isAdmin(request.auth) || (
+          (request.resource.data.userId == request.auth.uid || request.resource.data.actorId == request.auth.uid) &&
+          request.resource.data.status in ['suppressed', 'queued', 'pending'] &&
+          !('providerResponse' in request.resource.data) &&
+          !('provider_ack' in request.resource.data) &&
+          !('retryCount' in request.resource.data)
+        )
+      );
+      allow update, delete: if false; // أصل غير قابل للتعديل نهائياً (Append-Only Immutable)
+    }
+
+    match /notification_preferences/{userId} {
+      allow read, write: if request.auth != null && (request.auth.uid == userId || isAdmin(request.auth));
+    }
+
+    match /withdrawal_requests/{reqId} {
+      allow create: if request.auth != null && request.resource.data.driverId == request.auth.uid;
+      allow read: if request.auth != null && (resource.data.driverId == request.auth.uid || isAdmin(request.auth));
+      allow update, delete: if request.auth != null && isAdmin(request.auth);
+    }
+
+    match /sections/{sectionId} {
+      allow read: if true;
+      allow write: if request.auth != null && isAdmin(request.auth);
+
+      match /pages/{pageId} {
+        allow read: if true;
+        allow write: if request.auth != null && isAdmin(request.auth);
+      }
+    }
+
+    match /governorates/{govId} {
+      allow read: if true;
+      allow write: if request.auth != null && isAdmin(request.auth);
+      match /regions/{regionId} {
+        allow read: if true;
+        allow write: if request.auth != null && isAdmin(request.auth);
+        match /sub_regions/{subRegionId} {
+          allow read: if true;
+          allow write: if request.auth != null && isAdmin(request.auth);
+        }
+      }
+    }
+
+    match /admin_audit_logs/{logId} {
+      allow read, write: if request.auth != null && isAdmin(request.auth);
+    }
+
+    // ==========================================
+    // 📊 8.10 قواعد المراقبة الموزعة والمقاييس وتتبع العمليات (Observability & Ops Center)
+    // ==========================================
+    match /observability_spans/{spanId} {
+      allow read: if request.auth != null && isAdmin(request.auth);
+      allow create, update: if request.auth != null;
+      allow delete: if false;
+    }
+
+    match /observability_metrics/{snapshotId} {
+      allow read: if request.auth != null && isAdmin(request.auth);
+      allow create: if request.auth != null;
+      allow update, delete: if false;
+    }
+
+    match /system_health/{serviceId} {
+      allow read: if request.auth != null;
+      allow write: if request.auth != null && isAdmin(request.auth);
+    }
+
+    match /observability_alerts/{alertId} {
+      allow read: if request.auth != null && isAdmin(request.auth);
+      allow create, update: if request.auth != null && isAdmin(request.auth);
+      allow delete: if false;
+    }
+
+    match /observability_incidents/{incidentId} {
+      allow read, update: if request.auth != null && isAdmin(request.auth);
+      allow create: if request.auth != null;
+      allow delete: if false;
+    }
+
+    match /operational_audit_log/{auditId} {
+      allow read: if request.auth != null && isAdmin(request.auth);
+      allow create: if request.auth != null;
+      allow update, delete: if false; // 🛑 سجلات غير قابلة للتعديل أو الحذف إطلاقاً (Append-Only)
+    }
+
+    // ==========================================
+    // 🛡️ 8.11 قواعد الصمود والتعافي والسلامة والجاهزية الإنتاجية (Resilience & Hardening)
+    // ==========================================
+    match /resilience_checkpoints/{operationId} {
+      allow read: if request.auth != null && (
+        resource.data.correlationId == request.auth.uid ||
+        isAdmin(request.auth)
+      );
+      allow create, update: if request.auth != null;
+      allow delete: if request.auth != null && isAdmin(request.auth);
+    }
+
+    match /circuit_breakers/{serviceKey} {
+      allow read: if request.auth != null;
+      allow write: if request.auth != null && isAdmin(request.auth);
+    }
+
+    match /integrity_violations/{violationId} {
+      allow read: if request.auth != null && isAdmin(request.auth);
+      allow create: if request.auth != null;
+      allow update, delete: if false; // 🛑 خروقات البيانات سجلات دائمة غير قابلة للحذف
+    }
+
+    match /disaster_recovery_snapshots/{snapshotId} {
+      allow read: if request.auth != null && isAdmin(request.auth);
+      allow create: if request.auth != null && isAdmin(request.auth);
+      allow update, delete: if false;
+    }
+
+    match /production_readiness_audits/{docId} {
+      allow read, write: if request.auth != null && isAdmin(request.auth);
+    }
+
+    // ==========================================
+    // 🔐 8.12 قواعد الأمان والخصوصية وتدقيق Zero-Trust (Security & Privacy Hardening)
+    // ==========================================
+    match /security_events/{eventId} {
+      allow read: if request.auth != null && isAdmin(request.auth);
+      allow create: if request.auth != null;
+      allow update, delete: if false; // 🛑 سجلات الأحداث الأمنية دائمة غير قابلة للتلاعب أو الحذف (Append-Only)
+    }
+
+    match /security_findings/{findingId} {
+      allow read, write: if request.auth != null && isAdmin(request.auth);
+      allow delete: if false;
+    }
+
+    match /security_sessions/{sessionId} {
+      allow read, write: if request.auth != null && (
+        resource.data.userId == request.auth.uid ||
+        request.resource.data.userId == request.auth.uid ||
+        isAdmin(request.auth)
+      );
+      allow delete: if request.auth != null && (resource.data.userId == request.auth.uid || isAdmin(request.auth));
+    }
+
+    match /security_rate_limits/{rateKey} {
+      allow read, write: if request.auth != null;
+    }
+
+    match /security_readiness_audits/{docId} {
+      allow read, write: if request.auth != null && isAdmin(request.auth);
+      allow delete: if false;
+    }
+
+    // ==========================================
+    // 📢 9. قواعد البلاغات والشكاوى المجتمعية (Community Complaints & Reports)
+    // ==========================================
+    match /complaints/{complaintId} {
+      // أي مستخدم مسجل يمكنه قراءة البلاغات (بيانات عامة على الخريطة)
+      allow read: if request.auth != null;
+      // أي مستخدم مسجل يمكنه إنشاء بلاغ جديد
+      allow create: if request.auth != null;
+      // صاحب البلاغ أو الأدمن فقط يمكنه التعديل
+      allow update: if request.auth != null && (
+        resource.data.userId == request.auth.uid ||
+        isAdmin(request.auth)
+      );
+      // صاحب البلاغ أو الأدمن فقط يمكنه الحذف
+      allow delete: if request.auth != null && (
+        resource.data.userId == request.auth.uid ||
+        isAdmin(request.auth)
+      );
+    }
+
+    // ==========================================
+    // 💼 10. قواعد الوظائف الشاغرة والملفات المهنية (Vacancies & Job Profiles)
+    // ==========================================
+    match /vacancies/{vacancyId} {
+      // أي مستخدم مسجل يمكنه تصفح الوظائف
+      allow read: if request.auth != null;
+      // أي مستخدم مسجل يمكنه نشر وظيفة
+      allow create: if request.auth != null;
+      // صاحب الوظيفة أو الأدمن فقط يمكنه التعديل
+      allow update: if request.auth != null && (
+        resource.data.createdBy == request.auth.uid ||
+        isAdmin(request.auth)
+      );
+      // صاحب الوظيفة أو الأدمن فقط يمكنه الحذف
+      allow delete: if request.auth != null && (
+        resource.data.createdBy == request.auth.uid ||
+        isAdmin(request.auth)
+      );
+    }
+
+    match /user_job_profiles/{userId} {
+      // صاحب الملف أو الأدمن يمكنه القراءة
+      allow read: if request.auth != null && (
+        request.auth.uid == userId ||
+        isAdmin(request.auth)
+      );
+      // صاحب الملف فقط يمكنه الإنشاء والتعديل
+      allow create, update: if request.auth != null && request.auth.uid == userId;
+      // صاحب الملف أو الأدمن يمكنه الحذف
+      allow delete: if request.auth != null && (
+        request.auth.uid == userId ||
+        isAdmin(request.auth)
+      );
+    }
+
+    // ==========================================
+    // 🏬 11. قواعد المتاجر وأقسامها وبياناتها (Stores, Categories, Sections & Banners)
+    // ==========================================
+    match /store_categories/{categoryId} {
+      // أي مستخدم مسجل يمكنه قراءة تصنيفات المتاجر
+      allow read: if request.auth != null;
+      // الأدمن فقط يمكنه التعديل والإنشاء والحذف
+      allow create, update, delete: if request.auth != null && isAdmin(request.auth);
+    }
+
+    match /sections/{sectionId} {
+      allow read: if true;
+      allow write: if request.auth != null && isAdmin(request.auth);
+
+      // 📦 عناصر الأقسام (المنتجات / الوجبات)
+      match /items/{itemId} {
+        allow read: if true;
+        allow write: if request.auth != null && (
+          isAdmin(request.auth) ||
+          (resource != null && resource.data.ownerId == request.auth.uid) ||
+          (request.resource != null && request.resource.data.ownerId == request.auth.uid) ||
+          (exists(/databases/$(database)/documents/users/$(request.auth.uid)) && 
+            get(/databases/$(database)/documents/users/$(request.auth.uid)).data.role in ['restaurant', 'merchant', 'store', 'cashier'])
+        );
+
+        match /{subCollection=**} {
+          allow read: if true;
+          allow write: if request.auth != null && (
+            isAdmin(request.auth) ||
+            (exists(/databases/$(database)/documents/sections/$(sectionId)/items/$(itemId)) &&
+              get(/databases/$(database)/documents/sections/$(sectionId)/items/$(itemId)).data.ownerId == request.auth.uid) ||
+            (exists(/databases/$(database)/documents/users/$(request.auth.uid)) && 
+              get(/databases/$(database)/documents/users/$(request.auth.uid)).data.role in ['restaurant', 'merchant', 'store', 'cashier'])
+          );
+        }
+      }
+    }
+
+    // ==========================================
+    // 🏢 12. قواعد العقارات (Real Estate)
+    // ==========================================
+    match /real_estate/{propId} {
+      allow read: if true; // Public catalog for active properties
+      allow create: if request.auth != null && (
+        request.resource.data.createdBy == request.auth.uid ||
+        request.resource.data.ownerUid == request.auth.uid ||
+        isAdmin(request.auth)
+      );
+      allow update: if request.auth != null && (
+        isAdmin(request.auth) ||
+        (resource.data.createdBy == request.auth.uid && request.resource.data.createdBy == resource.data.createdBy) ||
+        (resource.data.ownerUid == request.auth.uid && request.resource.data.ownerUid == resource.data.ownerUid) ||
+        (
+          request.resource.data.diff(resource.data).affectedKeys().hasOnly(['views', 'likesCount', 'updatedAt'])
+        )
+      );
+      allow delete: if request.auth != null && (
+        isAdmin(request.auth) ||
+        resource.data.createdBy == request.auth.uid ||
+        resource.data.ownerUid == request.auth.uid
+      );
+    }
+  }
+}

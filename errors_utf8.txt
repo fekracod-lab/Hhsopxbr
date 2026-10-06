@@ -1,0 +1,227 @@
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\features\taxi\presentation\pages\captain\driver_dashboard_page.dart:101 - undefined_identifier - Undefined name '_fadeAnimation'.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\features\taxi\presentation\pages\captain\driver_dashboard_page.dart:108 - undefined_identifier - Undefined name '_slideAnimation'.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\features\taxi\presentation\pages\captain\driver_dashboard_page.dart:167 - undefined_identifier - Undefined name '_currentRideRequestId'.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\features\trip\presentation\widgets\live_map_view.dart:114 - expected_class_member - Expected a class member.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\features\trip\presentation\widgets\live_map_view.dart:114 - concrete_class_with_abstract_member - 'Stack' must have a method body because 'LiveMapView' isn't abstract.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\features\trip\presentation\widgets\live_map_view.dart:115 - named_parameter_outside_group - Named parameters must be enclosed in curly braces ('{' and '}').
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\features\trip\presentation\widgets\live_map_view.dart:115 - obsolete_colon_for_default_value - Using a colon as the separator before a default value is no longer supported.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\features\trip\presentation\widgets\live_map_view.dart:116 - named_parameter_outside_group - Named parameters must be enclosed in curly braces ('{' and '}').
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\features\trip\presentation\widgets\live_map_view.dart:116 - obsolete_colon_for_default_value - Using a colon as the separator before a default value is no longer supported.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\features\trip\presentation\widgets\live_map_view.dart:116 - non_constant_default_value - The default value of an optional parameter must be constant.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\features\trip\presentation\widgets\live_map_view.dart:132 - expected_identifier_but_got_keyword - 'return' can't be used as an identifier because it's a keyword.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\features\trip\presentation\widgets\live_map_view.dart:132 - expected_token - Expected to find ';'.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\features\trip\presentation\widgets\live_map_view.dart:132 - missing_const_final_var_or_type - Variables must be declared using the keywords 'const', 'final', 'var' or a type name.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\features\trip\presentation\widgets\live_map_view.dart:132 - missing_function_parameters - Functions must have an explicit list of parameters.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\features\trip\presentation\widgets\live_map_view.dart:132 - missing_function_body - A function body must be provided.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\features\trip\presentation\widgets\live_map_view.dart:132 - expected_executable - Expected a method, getter, setter or operator declaration.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\features\trip\presentation\widgets\live_map_view.dart:132 - missing_identifier - Expected an identifier.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\features\trip\presentation\widgets\live_map_view.dart:132 - named_parameter_outside_group - Named parameters must be enclosed in curly braces ('{' and '}').
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\features\trip\presentation\widgets\live_map_view.dart:132 - obsolete_colon_for_default_value - Using a colon as the separator before a default value is no longer supported.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\features\trip\presentation\widgets\live_map_view.dart:132 - missing_function_body - A function body must be provided.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\features\trip\presentation\widgets\live_map_view.dart:133 - expected_executable - Expected a method, getter, setter or operator declaration.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\features\trip\presentation\widgets\live_map_view.dart:149 - expected_executable - Expected a method, getter, setter or operator declaration.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\add_food_page.dart:158 - undefined_identifier - Undefined name '_uploadedImageUrl'.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\add_place_page.dart:14 - new_with_undefined_constructor_default - The class '_AddPlacePageState' doesn't have an unnamed constructor.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\add_place_page.dart:779 - not_a_type - IconData isn't a type.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\add_place_page.dart:800 - not_a_type - IconData isn't a type.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\add_place_page.dart:853 - cast_to_non_type - The name 'IconData' isn't a type, so it can't be used in an 'as' expression.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\add_place_page.dart:912 - expected_class_member - Expected a class member.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\add_place_page.dart:912 - invalid_constructor_name - The name of a constructor must match the name of the enclosing class.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\add_place_page.dart:913 - missing_identifier - Expected an identifier.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\add_place_page.dart:913 - expected_token - Expected to find ')'.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\add_place_page.dart:915 - missing_function_body - A function body must be provided.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\add_place_page.dart:915 - expected_class_member - Expected a class member.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\add_place_page.dart:915 - expected_class_member - Expected a class member.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\add_place_page.dart:915 - expected_class_member - Expected a class member.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\add_place_page.dart:916 - expected_token - Expected to find ';'.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\add_place_page.dart:916 - missing_const_final_var_or_type - Variables must be declared using the keywords 'const', 'final', 'var' or a type name.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\add_place_page.dart:916 - missing_const_final_var_or_type - Variables must be declared using the keywords 'const', 'final', 'var' or a type name.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\add_place_page.dart:920 - undefined_identifier - Undefined name '_isLoadingGovernorates'.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\add_place_page.dart:924 - undefined_identifier - Undefined name '_selectedGovernorateId'.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\add_place_page.dart:929 - invalid_constant - Invalid constant value.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\add_place_page.dart:929 - undefined_identifier - Undefined name 'accentColor'.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\add_place_page.dart:938 - undefined_identifier - Undefined name '_governorates'.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\add_place_page.dart:942 - undefined_identifier - Undefined name '_governorates'.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\add_place_page.dart:943 - undefined_function - The function 'setState' isn't defined.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\add_place_page.dart:944 - undefined_identifier - Undefined name '_selectedGovernorateId'.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\add_place_page.dart:945 - undefined_identifier - Undefined name '_selectedGovernorateName'.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\add_place_page.dart:947 - undefined_function - The function '_fetchRegions' isn't defined.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\add_place_page.dart:954 - undefined_identifier - Undefined name '_isLoadingRegions'.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\add_place_page.dart:958 - undefined_identifier - Undefined name '_selectedRegionId'.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\add_place_page.dart:963 - invalid_constant - Invalid constant value.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\add_place_page.dart:963 - undefined_identifier - Undefined name 'accentColor'.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\add_place_page.dart:972 - undefined_identifier - Undefined name '_regions'.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\add_place_page.dart:976 - undefined_identifier - Undefined name '_regions'.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\add_place_page.dart:977 - undefined_function - The function 'setState' isn't defined.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\add_place_page.dart:978 - undefined_identifier - Undefined name '_selectedRegionId'.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\add_place_page.dart:979 - undefined_identifier - Undefined name '_selectedRegionName'.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\add_place_page.dart:985 - expected_executable - Expected a method, getter, setter or operator declaration.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:33 - new_with_undefined_constructor_default - The class '_AdminDashboardPageState' doesn't have an unnamed constructor.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:247 - undefined_method - The method 'of' isn't defined for the type 'Function'.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:253 - undefined_method - The method 'of' isn't defined for the type 'Function'.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:255 - undefined_method - The method 'of' isn't defined for the type 'Function'.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:258 - undefined_method - The method 'of' isn't defined for the type 'Function'.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:301 - undefined_method - The method 'of' isn't defined for the type 'Function'.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:326 - undefined_method - The method 'of' isn't defined for the type 'Function'.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:334 - undefined_method - The method 'of' isn't defined for the type 'Function'.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:342 - undefined_method - The method 'of' isn't defined for the type 'Function'.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:350 - undefined_method - The method 'of' isn't defined for the type 'Function'.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:357 - undefined_method - The method 'of' isn't defined for the type 'Function'.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:363 - undefined_method - The method 'of' isn't defined for the type 'Function'.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:395 - undefined_method - The method 'of' isn't defined for the type 'Function'.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:401 - undefined_method - The method 'push' isn't defined for the type 'Function'.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:411 - undefined_method - The method 'of' isn't defined for the type 'Function'.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:416 - undefined_method - The method 'of' isn't defined for the type 'Function'.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:421 - wrong_number_of_type_arguments_method - The method 'dynamic Function({dynamic builder, dynamic context})' is declared with 0 type parameters, but 1 type arguments are given.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:428 - undefined_method - The method 'of' isn't defined for the type 'Function'.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:430 - undefined_method - The method 'of' isn't defined for the type 'Function'.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:443 - undefined_method - The method 'of' isn't defined for the type 'Function'.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:446 - undefined_method - The method 'of' isn't defined for the type 'Function'.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:538 - undefined_method - The method 'of' isn't defined for the type 'Function'.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:544 - undefined_method - The method 'of' isn't defined for the type 'Function'.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:623 - undefined_method - The method 'pop' isn't defined for the type 'Function'.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:634 - undefined_method - The method 'push' isn't defined for the type 'Function'.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:637 - undefined_method - The method 'push' isn't defined for the type 'Function'.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:640 - undefined_method - The method 'push' isn't defined for the type 'Function'.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:643 - undefined_method - The method 'push' isn't defined for the type 'Function'.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:646 - undefined_method - The method 'push' isn't defined for the type 'Function'.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:649 - undefined_method - The method 'push' isn't defined for the type 'Function'.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:652 - undefined_method - The method 'push' isn't defined for the type 'Function'.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:683 - undefined_method - The method 'pop' isn't defined for the type 'Function'.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:869 - undefined_method - The method 'push' isn't defined for the type 'Function'.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:880 - undefined_method - The method 'push' isn't defined for the type 'Function'.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:891 - undefined_method - The method 'push' isn't defined for the type 'Function'.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:902 - undefined_method - The method 'push' isn't defined for the type 'Function'.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:926 - undefined_method - The method 'push' isn't defined for the type 'Function'.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:937 - undefined_method - The method 'push' isn't defined for the type 'Function'.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:948 - undefined_method - The method 'push' isn't defined for the type 'Function'.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:961 - undefined_method - The method 'push' isn't defined for the type 'Function'.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:985 - undefined_method - The method 'push' isn't defined for the type 'Function'.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:996 - undefined_method - The method 'push' isn't defined for the type 'Function'.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:1009 - undefined_method - The method 'push' isn't defined for the type 'Function'.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:1022 - undefined_method - The method 'push' isn't defined for the type 'Function'.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:1096 - undefined_method - The method 'push' isn't defined for the type 'Function'.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:1259 - undefined_method - The method 'pop' isn't defined for the type 'Function'.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:1267 - undefined_method - The method 'pop' isn't defined for the type 'Function'.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:1275 - undefined_method - The method 'of' isn't defined for the type 'Function'.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:1286 - undefined_method - The method 'of' isn't defined for the type 'Function'.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:1511 - undefined_method - The method 'push' isn't defined for the type 'Function'.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:1612 - undefined_method - The method 'pop' isn't defined for the type 'Function'.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:1622 - undefined_method - The method 'pop' isn't defined for the type 'Function'.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:1640 - undefined_method - The method 'of' isn't defined for the type 'Function'.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:1644 - undefined_method - The method 'of' isn't defined for the type 'Function'.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:1656 - undefined_method - The method 'push' isn't defined for the type 'Function'.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:1660 - undefined_method - The method 'push' isn't defined for the type 'Function'.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:1664 - invalid_constructor_name - The name of a constructor must match the name of the enclosing class.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:1665 - concrete_class_with_abstract_member - 'showDialog' must have a method body because '_AdminDashboardPageState' isn't abstract.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:1666 - named_parameter_outside_group - Named parameters must be enclosed in curly braces ('{' and '}').
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:1666 - obsolete_colon_for_default_value - Using a colon as the separator before a default value is no longer supported.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:1666 - non_constant_default_value - The default value of an optional parameter must be constant.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:1667 - named_parameter_outside_group - Named parameters must be enclosed in curly braces ('{' and '}').
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:1667 - obsolete_colon_for_default_value - Using a colon as the separator before a default value is no longer supported.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:1667 - non_constant_default_value - The default value of an optional parameter must be constant.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:1731 - wrong_number_of_type_arguments_method - The method 'dynamic Function({dynamic builder, dynamic context})' is declared with 0 type parameters, but 1 type arguments are given.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:1744 - undefined_method - The method 'pop' isn't defined for the type 'Function'.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:1766 - undefined_method - The method 'pop' isn't defined for the type 'Function'.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:1778 - undefined_method - The method 'pop' isn't defined for the type 'Function'.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:1791 - missing_function_parameters - Functions must have an explicit list of parameters.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:1791 - missing_function_body - A function body must be provided.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:1791 - expected_executable - Expected a method, getter, setter or operator declaration.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:1791 - missing_function_body - A function body must be provided.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:1793 - named_parameter_outside_group - Named parameters must be enclosed in curly braces ('{' and '}').
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:1793 - obsolete_colon_for_default_value - Using a colon as the separator before a default value is no longer supported.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:1793 - undefined_identifier - Undefined name 'context'.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:1794 - named_parameter_outside_group - Named parameters must be enclosed in curly braces ('{' and '}').
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:1794 - obsolete_colon_for_default_value - Using a colon as the separator before a default value is no longer supported.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:1794 - non_constant_default_value - The default value of an optional parameter must be constant.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:1820 - undefined_method - The method 'pop' isn't defined for the type 'Function'.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:1830 - undefined_method - The method 'pop' isn't defined for the type 'Function'.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:1838 - missing_function_body - A function body must be provided.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:1839 - expected_executable - Expected a method, getter, setter or operator declaration.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:1908 - wrong_number_of_type_arguments_method - The method 'dynamic Function({dynamic builder, dynamic context})' is declared with 0 type parameters, but 1 type arguments are given.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:1921 - undefined_method - The method 'pop' isn't defined for the type 'Function'.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:1943 - undefined_method - The method 'pop' isn't defined for the type 'Function'.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:1953 - undefined_method - The method 'pop' isn't defined for the type 'Function'.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:1965 - duplicate_definition - The name 'showDialog' is already defined.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:1966 - named_parameter_outside_group - Named parameters must be enclosed in curly braces ('{' and '}').
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:1966 - obsolete_colon_for_default_value - Using a colon as the separator before a default value is no longer supported.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:1966 - undefined_identifier - Undefined name 'context'.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:1967 - named_parameter_outside_group - Named parameters must be enclosed in curly braces ('{' and '}').
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:1967 - obsolete_colon_for_default_value - Using a colon as the separator before a default value is no longer supported.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:1967 - non_constant_default_value - The default value of an optional parameter must be constant.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:1968 - undefined_identifier - Undefined name 'data'.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:1969 - undefined_identifier - Undefined name 'data'.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:1970 - undefined_identifier - Undefined name 'data'.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:1993 - undefined_method - The method 'pop' isn't defined for the type 'Function'.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:1996 - undefined_identifier - Undefined name 'docId'.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:2001 - undefined_method - The method 'pop' isn't defined for the type 'Function'.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:2008 - missing_function_body - A function body must be provided.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:2009 - expected_executable - Expected a method, getter, setter or operator declaration.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:2012 - duplicate_definition - The name 'showDialog' is already defined.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:2013 - named_parameter_outside_group - Named parameters must be enclosed in curly braces ('{' and '}').
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:2013 - obsolete_colon_for_default_value - Using a colon as the separator before a default value is no longer supported.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:2013 - undefined_identifier - Undefined name 'context'.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:2014 - named_parameter_outside_group - Named parameters must be enclosed in curly braces ('{' and '}').
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:2014 - obsolete_colon_for_default_value - Using a colon as the separator before a default value is no longer supported.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:2015 - non_constant_default_value - The default value of an optional parameter must be constant.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:2019 - undefined_method - The method 'of' isn't defined for the type 'Function'.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:2022 - undefined_identifier - Undefined name 'docId'.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:2023 - undefined_method - The method 'of' isn't defined for the type 'Function'.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:2030 - missing_function_body - A function body must be provided.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:2031 - expected_executable - Expected a method, getter, setter or operator declaration.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:2174 - expected_executable - Expected a method, getter, setter or operator declaration.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:2510 - undefined_method - The method '_navigateToEditSection' isn't defined for the type '_AdminDashboardPageState'.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:2512 - undefined_method - The method 'push' isn't defined for the type 'Function'.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:2533 - undefined_method - The method 'of' isn't defined for the type 'Function'.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:2540 - undefined_method - The method 'of' isn't defined for the type 'Function'.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:2695 - undefined_method - The method 'pop' isn't defined for the type 'Function'.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:2696 - undefined_method - The method 'push' isn't defined for the type 'Function'.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:2707 - undefined_method - The method 'pop' isn't defined for the type 'Function'.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:2708 - undefined_method - The method 'push' isn't defined for the type 'Function'.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:2719 - undefined_method - The method 'pop' isn't defined for the type 'Function'.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:2728 - undefined_method - The method 'pop' isn't defined for the type 'Function'.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:2729 - undefined_method - The method 'push' isn't defined for the type 'Function'.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:2740 - undefined_method - The method 'pop' isn't defined for the type 'Function'.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:2749 - undefined_method - The method 'pop' isn't defined for the type 'Function'.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:2764 - wrong_number_of_type_arguments_method - The method 'dynamic Function({dynamic builder, dynamic context})' is declared with 0 type parameters, but 1 type arguments are given.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:2854 - undefined_method - The method 'pop' isn't defined for the type 'Function'.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:2855 - undefined_method - The method 'push' isn't defined for the type 'Function'.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:2879 - undefined_method - The method 'pop' isn't defined for the type 'Function'.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:2936 - undefined_method - The method 'pop' isn't defined for the type 'Function'.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:2941 - undefined_method - The method 'pop' isn't defined for the type 'Function'.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:2942 - undefined_method - The method 'of' isn't defined for the type 'Function'.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:2965 - undefined_method - The method 'of' isn't defined for the type 'Function'.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:3048 - final_not_initialized_constructor - All final variables must be initialized, but 'colors', 'icon', and 2 others aren't.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:3048 - invalid_constructor_name - The name of a constructor must match the name of the enclosing class.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:3049 - concrete_class_with_abstract_member - 'showDialog' must have a method body because '_QuickActionItem' isn't abstract.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:3050 - named_parameter_outside_group - Named parameters must be enclosed in curly braces ('{' and '}').
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:3050 - obsolete_colon_for_default_value - Using a colon as the separator before a default value is no longer supported.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:3050 - undefined_identifier - Undefined name 'context'.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:3051 - named_parameter_outside_group - Named parameters must be enclosed in curly braces ('{' and '}').
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:3051 - obsolete_colon_for_default_value - Using a colon as the separator before a default value is no longer supported.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:3051 - non_constant_default_value - The default value of an optional parameter must be constant.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:3072 - undefined_method - The method 'of' isn't defined for the type 'Function'.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:3076 - undefined_method - The method 'of' isn't defined for the type 'Function'.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:3077 - undefined_method - The method 'of' isn't defined for the type 'Function'.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:3077 - undefined_identifier - Undefined name 'context'.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:3090 - missing_function_parameters - Functions must have an explicit list of parameters.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:3090 - duplicate_definition - The name 'Navigator' is already defined.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:3090 - missing_function_body - A function body must be provided.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:3090 - expected_executable - Expected a method, getter, setter or operator declaration.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:3090 - duplicate_definition - The name 'pop' is already defined.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:3090 - missing_function_body - A function body must be provided.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:3091 - missing_function_parameters - Functions must have an explicit list of parameters.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:3091 - missing_function_body - A function body must be provided.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:3091 - expected_executable - Expected a method, getter, setter or operator declaration.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:3091 - missing_function_body - A function body must be provided.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:3091 - expected_executable - Expected a method, getter, setter or operator declaration.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:3093 - named_parameter_outside_group - Named parameters must be enclosed in curly braces ('{' and '}').
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:3093 - obsolete_colon_for_default_value - Using a colon as the separator before a default value is no longer supported.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:3100 - named_parameter_outside_group - Named parameters must be enclosed in curly braces ('{' and '}').
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:3100 - obsolete_colon_for_default_value - Using a colon as the separator before a default value is no longer supported.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:3102 - missing_function_body - A function body must be provided.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:3103 - expected_executable - Expected a method, getter, setter or operator declaration.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\admin_dashboard_page.dart:3104 - expected_executable - Expected a method, getter, setter or operator declaration.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\merchant_page.dart:25 - missing_identifier - Expected an identifier.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\page_items_screen.dart:75 - undefined_identifier - Undefined name '_fadeAnimation'.
+C:\Users\Vibok\Desktop\dalal_Alqaim\dalal_alqaim\lib\pages\settings_page.dart:22 - missing_identifier - Expected an identifier.

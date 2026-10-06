@@ -1,0 +1,146 @@
+{
+  "system_name": "MADAR Mobile & Enterprise Control Plane",
+  "version": "Phase 8.13 Field Certification",
+  "certification_categories": [
+    {
+      "id": "CAT-01",
+      "name": "Installation & APK Integrity",
+      "required_device": "PHYSICAL_DEVICE",
+      "test_scenarios": ["Debug Install", "Release Install", "Upgrade Install", "ProGuard Minify Verification"],
+      "status": "EVALUATING"
+    },
+    {
+      "id": "CAT-02",
+      "name": "Real Authentication & Sessions",
+      "required_device": "PHYSICAL_DEVICE",
+      "test_scenarios": ["Valid Login", "Revoked Session", "OTP Rate Limit", "Token Expire"],
+      "status": "EVALUATING"
+    },
+    {
+      "id": "CAT-03",
+      "name": "Server-Authoritative Authorization & Zero-Trust",
+      "required_device": "FIREBASE_ENV",
+      "test_scenarios": ["Cross-Tenant Isolation", "Direct Mutation Block", "RBAC Capability Validation"],
+      "status": "EVALUATING"
+    },
+    {
+      "id": "CAT-04",
+      "name": "Android Runtime Permissions",
+      "required_device": "PHYSICAL_DEVICE",
+      "test_scenarios": ["Location While Using", "Background Location", "Post Notifications", "Permission Deny/Revoke"],
+      "status": "EVALUATING"
+    },
+    {
+      "id": "CAT-05",
+      "name": "Realtime Operations (Phase 8.8)",
+      "required_device": "MULTI_ACTOR",
+      "test_scenarios": ["Driver GPS Stream", "Matching Dispatch", "Customer ETA Tracking"],
+      "status": "EVALUATING"
+    },
+    {
+      "id": "CAT-06",
+      "name": "Taxi End-to-End Lifecycle",
+      "required_device": "MULTI_ACTOR",
+      "test_scenarios": ["Ride Request", "Driver Accept", "Trip Started", "Trip Completed", "Fare Settlement"],
+      "status": "EVALUATING"
+    },
+    {
+      "id": "CAT-07",
+      "name": "Orders & Inventory Atomic Locks",
+      "required_device": "FIREBASE_ENV",
+      "test_scenarios": ["Store Order Atomic Place", "Stock Lock", "Concurrency Out-of-Stock"],
+      "status": "EVALUATING"
+    },
+    {
+      "id": "CAT-08",
+      "name": "Delivery & Logistics Pipeline",
+      "required_device": "MULTI_ACTOR",
+      "test_scenarios": ["Order Pickup", "Courier Telemetry", "Delivery Proof"],
+      "status": "EVALUATING"
+    },
+    {
+      "id": "CAT-09",
+      "name": "Merchants & Restaurants Management",
+      "required_device": "ADMIN_WEB",
+      "test_scenarios": ["Menu Updates", "Commission Tiers", "Store Toggle"],
+      "status": "EVALUATING"
+    },
+    {
+      "id": "CAT-10",
+      "name": "Stores & Grocery Catalogs",
+      "required_device": "ADMIN_WEB",
+      "test_scenarios": ["Product Sync", "Category Management", "Inventory Updates"],
+      "status": "EVALUATING"
+    },
+    {
+      "id": "CAT-11",
+      "name": "Health & Medical Services",
+      "required_device": "PHYSICAL_DEVICE",
+      "test_scenarios": ["Ambulance Request", "Medical Dispatch"],
+      "status": "EVALUATING"
+    },
+    {
+      "id": "CAT-12",
+      "name": "FCM Push Notifications on Device",
+      "required_device": "PHYSICAL_DEVICE",
+      "test_scenarios": ["Foreground", "Background", "Screen Locked", "Process Terminated"],
+      "status": "EVALUATING"
+    },
+    {
+      "id": "CAT-13",
+      "name": "Durable Offline Queue & Recovery (Phase 8.11)",
+      "required_device": "PHYSICAL_DEVICE",
+      "test_scenarios": ["Offline Operation Enqueue", "Reboot Survival", "Reconnection Auto-Replay"],
+      "status": "EVALUATING"
+    },
+    {
+      "id": "CAT-14",
+      "name": "Crash Recovery & Checkpoints (Phase 8.11)",
+      "required_device": "PHYSICAL_DEVICE",
+      "test_scenarios": ["Force Stop during Active Ride", "Reopen App", "State Reconciled"],
+      "status": "EVALUATING"
+    },
+    {
+      "id": "CAT-15",
+      "name": "Security Hardening & Storage Rules (Phase 8.12)",
+      "required_device": "FIREBASE_ENV",
+      "test_scenarios": ["Storage Document Lock", "Firestore Match Rules", "Secret Scanner Zero Leaks"],
+      "status": "EVALUATING"
+    },
+    {
+      "id": "CAT-16",
+      "name": "Financial Integrity & Escrow",
+      "required_device": "FIREBASE_ENV",
+      "test_scenarios": ["Double Debit Prevention", "Double Refund Rejection", "Atomic Balance Commit"],
+      "status": "EVALUATING"
+    },
+    {
+      "id": "CAT-17",
+      "name": "Admin Web Modular Control Plane",
+      "required_device": "ADMIN_WEB",
+      "test_scenarios": ["React Vite Clean Build", "12 Control Centers", "Command Palette & Auth"],
+      "status": "EVALUATING"
+    },
+    {
+      "id": "CAT-18",
+      "name": "Device Performance, Memory & Battery",
+      "required_device": "PHYSICAL_DEVICE",
+      "test_scenarios": ["60 FPS UI Rendering", "Low Memory Footprint", "Background Battery Saver"],
+      "status": "EVALUATING"
+    },
+    {
+      "id": "CAT-19",
+      "name": "Distributed Observability (Phase 8.10)",
+      "required_device": "ADMIN_WEB",
+      "test_scenarios": ["TraceId / SpanId Propagation", "Audit Event Ingestion"],
+      "status": "EVALUATING"
+    },
+    {
+      "id": "CAT-20",
+      "name": "Disaster Recovery & Data Integrity",
+      "required_device": "FIREBASE_ENV",
+      "test_scenarios": ["Snapshot Verification", "Hash Chain Tamper Detection"],
+      "status": "EVALUATING"
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+import json
+
+with open('issues2.json', 'r', encoding='utf-16') as f:
+    d = json.load(f)
+
+print(f"Total issues: {len(d.get('diagnostics', []))}")
+types = {}
+for i in d.get('diagnostics', []):
+    code = i.get('code', 'unknown')
+    types[code] = types.get(code, 0) + 1
+
+from pprint import pprint
+print("Issue types:")
+pprint(types)
+
+with open('issues2.txt', 'w', encoding='utf-8') as f:
+    for i in d.get('diagnostics', []):
+        f.write(f"{i['location']['file']}:{i['location']['range']['start']['line']} - {i['code']} - {i['problemMessage']}\n")
